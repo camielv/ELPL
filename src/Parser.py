@@ -26,6 +26,7 @@ class Parser():
             if left_pos < right_pos and left_pos != -1:
                 # Case if previous parenthesis is open and current is open.
                 if iterator_status:
+                    print 'Case ( ('
                     if depth in temp_db:
                         temp_db[depth].append( sentence[iterator+1:left_pos-1] )
                     else:
@@ -33,6 +34,7 @@ class Parser():
 
                 # Case if previous parenthesis is closed and current is open
                 else:
+                    print 'Case ) ('
                     pass
                 depth += 1
                 iterator = left_pos
@@ -40,6 +42,7 @@ class Parser():
             else:
                 # Case if previous parenthesis is open and current is closed.
                 if iterator_status:
+                    print 'Case ( )'
                     temp = sentence[iterator+1:right_pos]
                     terms = temp.split( ' ' )
                     if terms[0] in database:
@@ -56,8 +59,8 @@ class Parser():
                         temp_db[depth] = [ terms[0] ]
                 # Case if previous parenthesis is closed and current is closed.
                 else:
-                    left_term  = temp_db[depth]
-                    left_term  = left_term.pop()
+                    print 'Case ) )'
+                    left_term = temp_db[depth][len(temp_db[depth])-1]
                     right_term = tuple(temp_db[depth+1])
                     if left_term in database:
                         if right_term in database[left_term]:
@@ -66,16 +69,15 @@ class Parser():
                             database[left_term][right_term] = 1
                     else:
                         database[left_term] = {right_term: 1}
-                    del temp_db[depth+1]
+                    del temp_db[depth+1] 
                 depth -= 1
                 iterator = right_pos
                 iterator_status = False
+            print 'Depth', depth
+            print temp_db
+            print database
         for key in database:
             print key, database[key]
-
-# We zoeken het eerste haakje (
-# Dan zoeken we het volgende haakje ( wat een hoger level is )
-# Dan sla je er wat er tussen is als de left term.
 
 
 if __name__ == '__main__':
