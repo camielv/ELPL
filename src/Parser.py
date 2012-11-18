@@ -1,32 +1,44 @@
+import cPickle as pickle
 
 class Parser():
     def __init__(self):
         pass
 
-    def parse(self, sentence):
+    def save_database(self, database, path):
+        pickle.dump( database, open( path, 'wb' ) )
+
+    def load_database(self, path):
+        return pickle.load( open( path, 'rb' ) )
+
+    def parse_document(self, path):
+        file = open( path, 'r+' )
+        database = dict()
+        i =0
+        for sentence in file:
+            database = self.parse_sentence( sentence, database )
+
+        return database
+
+    def parse_sentence(self, sentence, database):
         count = sentence.count( '(' )
         if count  == 0:
             print 'Error: Non-valid sentence!'
-            return
-        database = dict()
-        temp_db  = dict()
+            return database
 
+        temp_db  = dict()
         length = len( sentence )
-        
         depth = 0
-        done = False
         iterator = sentence.find( '(' )
         # If the current parenthesis is open (True) or closed (False)
         iterator_status = True
 
-        while( iterator+1 != length ):
+        while( depth >= 0 ):
             left_pos  = sentence.find( '(', iterator+1 )
             right_pos = sentence.find( ')', iterator+1 )
 
             if left_pos < right_pos and left_pos != -1:
                 # Case if previous parenthesis is open and current is open.
                 if iterator_status:
-                    print 'Case ( ('
                     if depth in temp_db:
                         temp_db[depth].append( sentence[iterator+1:left_pos-1] )
                     else:
@@ -34,7 +46,6 @@ class Parser():
 
                 # Case if previous parenthesis is closed and current is open
                 else:
-                    print 'Case ) ('
                     pass
                 depth += 1
                 iterator = left_pos
@@ -42,7 +53,6 @@ class Parser():
             else:
                 # Case if previous parenthesis is open and current is closed.
                 if iterator_status:
-                    print 'Case ( )'
                     temp = sentence[iterator+1:right_pos]
                     terms = temp.split( ' ' )
                     if terms[0] in database:
@@ -59,7 +69,6 @@ class Parser():
                         temp_db[depth] = [ terms[0] ]
                 # Case if previous parenthesis is closed and current is closed.
                 else:
-                    print 'Case ) )'
                     left_term = temp_db[depth][len(temp_db[depth])-1]
                     right_term = tuple(temp_db[depth+1])
                     if left_term in database:
@@ -73,15 +82,11 @@ class Parser():
                 depth -= 1
                 iterator = right_pos
                 iterator_status = False
-            print 'Depth', depth
-            print temp_db
-            print database
-        for key in database:
-            print key, database[key]
+        return database
 
 
 if __name__ == '__main__':
-    string = "(TOP (S (PP (IN In) (NP (NP (DT an) (NP@ (NNP Oct.) (NP@ (CD 19) (NN review)))) (NP@ (PP (IN of) (NP (`` ``) (NP@ (NP (DT The) (NN Misanthrope)) (NP@ ('' '') (PP (IN at) (NP (NP (NNP Chicago) (POS 's)) (NP@ (NNP Goodman) (NNP Theatre)))))))) (PRN (-LRB- -LRB-) (PRN@ (`` ``) (PRN@ (S (NP (VBN Revitalized) (NNS Classics)) (VP (VBP Take) (VP@ (NP (DT the) (NN Stage)) (PP (IN in) (NP (NNP Windy) (NNP City)))))) (PRN@ (, ,) (PRN@ ('' '') (PRN@ (NP (NN Leisure) (NP@ (CC &) (NNS Arts))) (-RRB- -RRB-)))))))))) (S@ (, ,) (S@ (NP (NP (NP (DT the) (NN role)) (PP (IN of) (NP (NNP Celimene)))) (NP@ (, ,) (NP@ (VP (VBN played) (PP (IN by) (NP (NNP Kim) (NNP Cattrall)))) (, ,)))) (S@ (VP (VBD was) (VP (ADVP (RB mistakenly)) (VP@ (VBN attributed) (PP (TO to) (NP (NNP Christina) (NNP Haag)))))) (. .))))) )"
-    #string = "(TT (TEST tr)(PP tf))" 
     x = Parser()
-    x.parse( string )
+    database = x.load_database( 'database1.p' )
+    print database
+    #x.save_database( x.parse_document( '../data/wsj.02-21.training.nounary' ), 'database1.p' )
