@@ -123,7 +123,13 @@ class Parser():
 
 if __name__ == '__main__':
     x = Parser()
-    probability, transition = x.parse_document( '../data/wsj.02-21.training.nounary' )
-    x.save_database( probability, 'database_p.p' )
-    x.save_database( transition,  'database_t.p' )
+    #probability, transition = x.parse_document( '../data/wsj.02-21.training.nounary' )
+    #x.save_database( probability, 'database_p.p' )
+    #x.save_database( transition,  'database_t.p' )
     #x.save_database( x.parse_document( '../data/wsj.02-21.training.nounary' ), 'database1.p' )
+    probability = x.load_database( 'database_p.p' )
+    transition = x.load_database( 'database_t.p' )
+    sentence = '`` The equity market was illiquid .'
+    words    = sentence.split( ' ' )
+    for word in words:
+        print word, transition[word]
