@@ -121,6 +121,44 @@ class Parser():
                 iterator_status = False
         return probability, transition
 
+class CKY():
+    def __init__( self, probability, transition):
+        self.probability = probability
+        self.transition = transition
+
+    def run( self, sentence ):
+        words = sentence.split( ' ' )
+        n     = len( words )
+        score = dict()
+        for i in range(n+1):
+            for j in range(n+1):
+                score[(i,j)] = dict()
+
+        # Step 1 search terminal possibilities and save them with probability 
+        for i in range(n):
+            poss_rules = transition[ words[i] ]
+            for rule in poss_rules:
+                print 'Rule added:', rule, '->', words[i]
+                score[(i, i+1)][( rule, words[i])] = \
+                    probability[ rule ][ words[i] ] / float( sum( probability[ rule ].values() ) )
+
+        # Step 2 handle unaries
+            added = True
+            while added:
+                added = False
+                candidates = score[(i, i+1)].keys()
+                # All possible rules for a unary
+                for candidate in candidates:
+                    if candidate[0] in transition:
+                        poss_unaries = transition[ candidate[0] ]
+                        for unary in poss_unaries:
+                            P = ( probability[ unary ][ candidate[0] ] / float( sum( probability[ rule ].values() ) ) ) * score[(i, i+1)][candidate]
+                            if not( (unary, candidate[0]) in score[(i, i+1)] ) or P > score[(i, i+1)][candidate]:
+                                print 'Unary Found:', unary, '->', candidate[0]
+                                score[(i, i+1)][(unary, candidate[0])] = P
+                                added = True
+        for key in score:
+            print key, score[key]
 if __name__ == '__main__':
     x = Parser()
     #probability, transition = x.parse_document( '../data/wsj.02-21.training.nounary' )
@@ -128,8 +166,7 @@ if __name__ == '__main__':
     #x.save_database( transition,  'database_t.p' )
     #x.save_database( x.parse_document( '../data/wsj.02-21.training.nounary' ), 'database1.p' )
     probability = x.load_database( 'database_p.p' )
-    transition = x.load_database( 'database_t.p' )
+    transition  = x.load_database( 'database_t.p' )
     sentence = '`` The equity market was illiquid .'
-    words    = sentence.split( ' ' )
-    for word in words:
-        print word, transition[word]
+    y = CKY( probability, transition )
+    y.run( sentence )
