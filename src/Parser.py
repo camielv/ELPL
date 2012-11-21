@@ -127,38 +127,112 @@ class CKY():
         self.transition = transition
 
     def run( self, sentence ):
+        # Split the sentence
         words = sentence.split( ' ' )
         n     = len( words )
+
+        # Create table
         score = dict()
+        trace = dict()
         for i in range(n+1):
             for j in range(n+1):
                 score[(i,j)] = dict()
+                trace[(i,j)] = dict()
 
-        # Step 1 search terminal possibilities and save them with probability 
+        # Step 1 search terminal possibilities and save them with probability
         for i in range(n):
-            poss_rules = transition[ words[i] ]
-            for rule in poss_rules:
-                print 'Rule added:', rule, '->', words[i]
-                score[(i, i+1)][( rule, words[i])] = \
-                    probability[ rule ][ words[i] ] / float( sum( probability[ rule ].values() ) )
+            # Check if terminal exists
+            if words[i] in transition:
+                # Find all possible rules to terminal and save them
+                poss_rules = transition[ words[i] ]
+                for rule in poss_rules:
+                    print 'New Rule Found:', rule, '->', words[i]
+                    score[(i, i+1)][ rule ] = \
+                        probability[ rule ][ words[i] ] / \
+                        float( sum( probability[ rule ].values() ) )
 
         # Step 2 handle unaries
-            added = True
-            while added:
-                added = False
-                candidates = score[(i, i+1)].keys()
-                # All possible rules for a unary
-                for candidate in candidates:
-                    if candidate[0] in transition:
-                        poss_unaries = transition[ candidate[0] ]
-                        for unary in poss_unaries:
-                            P = ( probability[ unary ][ candidate[0] ] / float( sum( probability[ rule ].values() ) ) ) * score[(i, i+1)][candidate]
-                            if not( (unary, candidate[0]) in score[(i, i+1)] ) or P > score[(i, i+1)][candidate]:
-                                print 'Unary Found:', unary, '->', candidate[0]
-                                score[(i, i+1)][(unary, candidate[0])] = P
-                                added = True
-        for key in score:
-            print key, score[key]
+                added = True
+                while added:
+                    added = False
+                    # Look for possible candidates for unary and find their
+                    # corresponding transition
+                    candidates = score[(i, i+1)].keys()
+                    for candidate in candidates:
+                        if candidate in transition:
+                            poss_unaries = transition[ candidate ]
+                            for unary in poss_unaries:
+                                P = ( probability[ unary ][ candidate ] / \
+                                    float( sum( probability[ rule ].values() ) ) ) * \
+                                    score[(i, i+1)][ candidate ]
+                                # When the corresponding transition does not exist or has a higher probability save it
+                                if not( unary in score[(i, i+1)] ):
+                                    print 'New Unary Found:', unary, '->', candidate
+                                    score[(i, i+1)][ unary ] = P
+                                    trace[(i, i+1)][ unary ] = candidate
+                                    added = True
+                                elif P > score[(i, i+1)][unary]:
+                                    print 'Better Unary Found:', unary, '->', candidate
+                                    print 'New:', P, 'Previous:', score[(i, i+1)][unary]
+                                    score[(i, i+1)][ unary ] = P
+                                    trace[(i, i+1)][ unary ] = candidate
+                                    added = True
+            else:
+                print "Terminal does not exist in database"
+                return False
+        # Step 3 binaries
+        # Loop diagonally over the table
+        for span in range(2, n):
+            for begin in range(n - span):
+                end = begin + span
+                for split in range(begin+1, end):
+                    candidates_A = score[(begin, split)].keys()
+                    candidates_B = score[(split, end)].keys()
+                    for candidate_A in candidates_A:
+                        for candidate_B in candidates_B:
+                            consequence = (candidate_A, candidate_B)
+                            if consequence in transition:
+                                poss_rules = transition[ consequence ]
+                                for poss_rule in poss_rules:
+                                    P = score[(begin, split)][candidate_A] * \
+                                        score[(split, end)][candidate_B] * \
+                                        probability[poss_rule][consequence] / \
+                                        float(sum(probability[ poss_rule ].values() ) )
+                                    if not( poss_rule in score[(begin, end)] ):
+                                        print 'New Rule Found:', poss_rule, '->', consequence
+                                        score[(begin, end)][poss_rule] = P
+                                        trace[(begin, end)][poss_rule] = (consequence, split)
+
+                                    elif P > score[(begin, end)][ poss_rule ]:
+                                        print 'Better Rule Found:', poss_rule, '->', consequence
+                                        print 'New:', P, 'Previous:', score[(begin, end)][poss_rule]
+                                        score[(begin, end)][poss_rule] = P
+                                        trace[(begin, end)][poss_rule] = (consequence, split)
+        # Step 4 unaries
+                added = True
+                while added:
+                    added = False
+                    candidates = score[(begin, end)].keys()
+                    # All possible rules for a unary
+                    for candidate in candidates:
+                        if candidate in transition:
+                            poss_unaries = transition[ candidate ]
+                            for unary in poss_unaries:
+                                P = ( probability[ unary ][ candidate[0] ] / \
+                                    float( sum( probability[ rule ].values() ) ) ) * \
+                                    score[(begin, end)][candidate]
+                                if not( unary in score[(begin, end)] ):
+                                    print 'New Unary Found:', unary, '->', candidate
+                                    score[(begin, end)][unary] = P
+                                    trace[(begin, end)][unary] = candidate
+                                    added = True
+                                elif P > score[(begin, end)][ unary ]:
+                                    print 'Better Unary Found:', unary, '->', candidate
+                                    print 'New:', P, 'Previous:', score[(begin, end)][unary]
+                                    score[(begin, end)][unary] = P
+                                    trace[(begin, end)][unary] = candidate
+                                    added = True
+        print trace
 if __name__ == '__main__':
     x = Parser()
     #probability, transition = x.parse_document( '../data/wsj.02-21.training.nounary' )
