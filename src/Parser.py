@@ -1,4 +1,5 @@
 import cPickle as pickle
+import operator
 '''
     We save the rules in a in dictionary of dictionaries as dictionaries are a quick datatype.
 '''
@@ -17,15 +18,18 @@ class Parser():
     def parse_document(self, path):
         ''' Parses a document of annotated sentences '''
         file = open( path, 'r+' )
-        probability = dict()
-        transition  = dict()
+        parse_information = dict()
+        parse_information['probability_terminal']     = dict()
+        parse_information['probability_non-terminal'] = dict()
+        parse_information['transition_terminal']      = dict()
+        parse_information['transition_non-terminal']  = dict()
 
         for sentence in file:
-            probability, transition = self.parse_sentence( sentence, probability, transition )
+            parse_information = self.parse_sentence(sentence, parse_information)
 
-        return probability, transition
+        return parse_information
 
-    def parse_sentence(self, sentence, probability, transition):
+    def parse_sentence(self, sentence, parse_information):
         ''' Parses a annotated sentence linearly for probabilty of a transition and a transition '''
         count = sentence.count( '(' )
         if count  == 0:
@@ -69,22 +73,22 @@ class Parser():
                     terms = temp.split( ' ' )
 
                     # Update probability database
-                    if terms[0] in probability:
-                        if terms[1] in probability[terms[0]]:
-                            probability[terms[0]][terms[1]] += 1
+                    if terms[0] in parse_information['probability_terminal']:
+                        if terms[1] in parse_information['probability_terminal'][terms[0]]:
+                            parse_information['probability_terminal'][terms[0]][terms[1]] += 1
                         else:
-                            probability[terms[0]][terms[1]] = 1
+                            parse_information['probability_terminal'][terms[0]][terms[1]] = 1
                     else:
-                        probability[terms[0]] = {terms[1]: 1}
+                        parse_information['probability_terminal'][terms[0]] = {terms[1]: 1}
 
                     # Update transition database
-                    if terms[1] in transition:
-                        if terms[0] in transition[terms[1]]:
+                    if terms[1] in parse_information['transition_terminal']:
+                        if terms[0] in parse_information['transition_terminal'][terms[1]]:
                             pass
                         else:
-                            transition[terms[1]].append( terms[0] )
+                            parse_information['transition_terminal'][terms[1]].append( terms[0] )
                     else:
-                        transition[terms[1]] = [terms[0]]
+                        parse_information['transition_terminal'][terms[1]] = [terms[0]]
 
                     # Saving for higher depth
                     if depth in temp_db:
@@ -98,33 +102,34 @@ class Parser():
                     right_term = tuple(temp_db[depth+1])
 
                     # Update probability database
-                    if left_term in probability:
-                        if right_term in probability[left_term]:
-                            probability[left_term][right_term] += 1
+                    if left_term in parse_information['probability_non-terminal']:
+                        if right_term in parse_information['probability_non-terminal'][left_term]:
+                            parse_information['probability_non-terminal'][left_term][right_term] += 1
                         else:
-                            probability[left_term][right_term] = 1
+                            parse_information['probability_non-terminal'][left_term][right_term] = 1
                     else:
-                        probability[left_term] = {right_term: 1}
+                        parse_information['probability_non-terminal'][left_term] = {right_term: 1}
 
                     # Update transition database
-                    if right_term in transition:
-                        if left_term in transition[right_term]:
+                    if right_term in parse_information['transition_non-terminal']:
+                        if left_term in parse_information['transition_non-terminal'][right_term]:
                             pass
                         else:
-                            transition[right_term].append( left_term )
+                            parse_information['transition_non-terminal'][right_term].append( left_term )
                     else:
-                        transition[right_term] = [left_term]
+                        parse_information['transition_non-terminal'][right_term] = [left_term]
 
                     del temp_db[depth+1] 
                 depth -= 1
                 iterator = right_pos
                 iterator_status = False
-        return probability, transition
+        return parse_information
 
 class CKY():
-    def __init__( self, probability, transition):
-        self.probability = probability
-        self.transition = transition
+    def __init__( self, parse_information):
+        self.parse_information = parse_information
+        self.score = dict()
+        self.trace = dict()
 
     def run( self, sentence ):
         # Split the sentence
@@ -142,14 +147,16 @@ class CKY():
         # Step 1 search terminal possibilities and save them with probability
         for i in range(n):
             # Check if terminal exists
-            if words[i] in transition:
+            if words[i] in parse_information['transition_terminal']:
                 # Find all possible rules to terminal and save them
-                poss_rules = transition[ words[i] ]
+                poss_rules = parse_information['transition_terminal'][ words[i] ]
                 for rule in poss_rules:
+                    key = (rule,)
 #                    print 'New Rule Found:', rule, '->', words[i]
-                    score[(i, i+1)][ rule ] = \
-                        probability[ rule ][ words[i] ] / \
-                        float( sum( probability[ rule ].values() ) )
+                    score[(i, i+1)][ key ] = \
+                        parse_information['probability_terminal'][ rule ][ words[i] ] / \
+                        float( sum( parse_information['probability_terminal'][ rule ].values() ) )
+                    trace[(i, i+1)][ key ] = words[i]
 
         # Step 2 handle unaries
                 added = True
@@ -159,21 +166,22 @@ class CKY():
                     # corresponding transition
                     candidates = score[(i, i+1)].keys()
                     for candidate in candidates:
-                        if candidate in transition:
-                            poss_unaries = transition[ candidate ]
+                        if candidate in parse_information['transition_non-terminal']:
+                            poss_unaries = parse_information['transition_non-terminal'][ candidate ]
                             for unary in poss_unaries:
-                                P = ( probability[ unary ][ candidate ] / \
-                                    float( sum( probability[ rule ].values() ) ) ) * \
+                                P = ( parse_information['probability_non-terminal'][ unary ][ candidate ] / \
+                                    float( sum( parse_information['probability_non-terminal'][ unary ].values() ) ) ) * \
                                     score[(i, i+1)][ candidate ]
                                 # When the corresponding transition does not exist or has a higher probability save it
+                                unary = (unary,)
                                 if not( unary in score[(i, i+1)] ):
- #                                   print 'New Unary Found:', unary, '->', candidate
+#                                    print 'New Unary Found:', unary, '->', candidate
                                     score[(i, i+1)][ unary ] = P
                                     trace[(i, i+1)][ unary ] = candidate
                                     added = True
                                 elif P > score[(i, i+1)][unary]:
- #                                   print 'Better Unary Found:', unary, '->', candidate
-                                    print 'New:', P, 'Previous:', score[(i, i+1)][unary]
+#                                    print 'Better Unary Found:', unary, '->', candidate
+#                                    print 'New:', P, 'Previous:', score[(i, i+1)][unary]
                                     score[(i, i+1)][ unary ] = P
                                     trace[(i, i+1)][ unary ] = candidate
                                     added = True
@@ -186,19 +194,19 @@ class CKY():
             for begin in range((n - span)+1):
                 end = begin + span
                 for split in range(begin+1, end):
-                    print "Begin:", begin, "Split:", split, "End:", end
                     candidates_A = score[(begin, split)].keys()
                     candidates_B = score[(split, end)].keys()
                     for candidate_A in candidates_A:
                         for candidate_B in candidates_B:
-                            consequence = (candidate_A, candidate_B)
-                            if consequence in transition:
-                                poss_rules = transition[ consequence ]
+                            consequence = (candidate_A[0], candidate_B[0])
+                            if consequence in parse_information['transition_non-terminal']:
+                                poss_rules = parse_information['transition_non-terminal'][consequence]
                                 for poss_rule in poss_rules:
                                     P = score[(begin, split)][candidate_A] * \
                                         score[(split, end)][candidate_B] * \
-                                        probability[poss_rule][consequence] / \
-                                        float(sum(probability[ poss_rule ].values() ) )
+                                        parse_information['probability_non-terminal'][poss_rule][consequence] / \
+                                        float(sum(parse_information['probability_non-terminal'][ poss_rule ].values() ) )
+                                    poss_rule = (poss_rule,)
                                     if not( poss_rule in score[(begin, end)] ):
 #                                        print 'New Rule Found:', poss_rule, '->', consequence
                                         score[(begin, end)][poss_rule] = P
@@ -216,12 +224,13 @@ class CKY():
                     candidates = score[(begin, end)].keys()
                     # All possible rules for a unary
                     for candidate in candidates:
-                        if candidate in transition:
-                            poss_unaries = transition[ candidate ]
+                        if candidate in parse_information['transition_non-terminal']:
+                            poss_unaries = parse_information['transition_non-terminal'][ candidate ]
                             for unary in poss_unaries:
-                                P = ( probability[ unary ][ candidate[0] ] / \
-                                    float( sum( probability[ rule ].values() ) ) ) * \
+                                P = ( parse_information['probability_non-terminal'][ unary ][ candidate ] / \
+                                    float( sum( parse_information['probability_non-terminal'][ unary ].values() ) ) ) * \
                                     score[(begin, end)][candidate]
+                                unary = (unary,)
                                 if not( unary in score[(begin, end)] ):
 #                                    print 'New Unary Found:', unary, '->', candidate
                                     score[(begin, end)][unary] = P
@@ -233,15 +242,78 @@ class CKY():
                                     score[(begin, end)][unary] = P
                                     trace[(begin, end)][unary] = candidate
                                     added = True
+        self.score = score
+        self.trace = trace
+        return self.viterbi(0, n, ('TOP',))
+
+    def viterbi(self, i, j, tag):
+        print "========"
+        if(abs(i-j) == 1):
+            if isinstance(tag, str):
+                print i, j, tag
+                return tag
+            else:
+                print i, j, tag[0]
+                rule = self.trace[(i,j)][tag]
+                return tag[0], self.viterbi(i, j, rule)
+        best = self.score[(i,j)][tag]
+        print i, j, tag[0]
+        print self.score[(i,j)]
+        rule = self.trace[(i,j)][tag]
+        print best, rule
+        if len(rule) == 1:
+            return tag[0], self.viterbi(i, j, rule)
+        else:
+            x = self.viterbi(i, rule[1], (rule[0][0],))
+            y = self.viterbi(rule[1], j, (rule[0][1],))
+            # NP@ check. Remove NP@
+            if tag[0].count('@') > 0:
+                return x, y
+            elif tag[0].count('%') > 0 and tag[0].count('%') % 5 == 0:
+                pass
+                print "PERCENT ALERT", tag[0]
+                pos_tags = tuple(tag[0].split('%%%%%'))
+                count_tags = len(pos_tags)
+                test = (pos_tags[count_tags-1], x, y)
+                for i in range(len(pos_tags)-2,0-1,-1):
+                    test = (pos_tags[i], test)
+                return test
+            if isinstance(x[0], tuple) and isinstance(y[0], tuple):
+                return tag[0], x[0], x[1], y[0], y[1]
+            elif isinstance(x[0], tuple):
+                return tag[0], x[0], x[1], y
+            elif isinstance(y[0], tuple):
+                return tag[0], x, y[0], y[1]
+                    
+            return tag[0], x, y
+       
+        
 
 if __name__ == '__main__':
     x = Parser()
-    #probability, transition = x.parse_document( '../data/wsj.02-21.training.nounary' )
-    #x.save_database( probability, 'database_p.p' )
-    #x.save_database( transition,  'database_t.p' )
-    #x.save_database( x.parse_document( '../data/wsj.02-21.training.nounary' ), 'database1.p' )
-    probability = x.load_database( 'database_p.p' )
-    transition  = x.load_database( 'database_t.p' )
+    #parse_information = x.parse_document( '../data/wsj.02-21.training.nounary' )
+    #x.save_database( parse_information, 'parse_information.p' )
+    parse_information = x.load_database( 'parse_information.p' )
     sentence = '`` The equity market was illiquid .'
-    y = CKY( probability, transition )
-    y.run( sentence )
+    test_s   = 'Not all those who wrote oppose the changes .'
+    y = CKY( parse_information )
+    best_parse = y.run( test_s )
+    print best_parse
+    '''
+    keys = parse_information['probability_non-terminal'].keys()
+    i = 0
+    for key in keys:
+        if i == 10:
+            break
+        print key, parse_information['probability_non-terminal'][key]
+        i+= 1
+    i = 0
+    keys = parse_information['transition_non-terminal'].keys()
+    for key in keys:
+        if i == 10:
+            break
+        print key, parse_information['transition_non-terminal'][key]
+        i+=1
+    '''
+    #y = CKY( parse_information )
+    #best_parse = y.run( sentence )
