@@ -7,10 +7,8 @@ class CKY():
         self.score = dict()
         self.trace = dict()
 
-    def run( self, sentence ):
-        # Split the sentence
-        words = sentence.split( ' ' )
-        n     = len( words )
+    def run( self, words ):
+        n = len( words )
 
         # Create table
         score = dict()
@@ -62,9 +60,7 @@ class CKY():
                                     trace[(i, i+1)][ unary ] = candidate
                                     added = True
             else:
-                print "Terminal", words[i], "does not exist"
-                print words
-                print i
+                print "Terminal", words[i], "does not exist", i
                 return False
         # Step 3 binaries
         # Loop diagonally over the table
@@ -122,7 +118,8 @@ class CKY():
                                     added = True
         self.score = score
         self.trace = trace
-        return self.viterbi(0, n, ('TOP',))
+        tree = self.viterbi(0, n, ('TOP',))
+        return tree[:len(tree)-1] + " )\n"
 
     def viterbi(self, i, j, tag):
         if(abs(i-j) == 1):
@@ -130,23 +127,23 @@ class CKY():
                 return tag
             else:
                 rule = self.trace[(i,j)][tag]
-                return tag[0], self.viterbi(i, j, rule)
+                return "(" + tag[0] + " " + self.viterbi(i, j, rule) + ")"
         rule = self.trace[(i,j)][tag]
         if len(rule) == 1:
-            return tag[0], self.viterbi(i, j, rule)
+            return "(" + tag[0] + " " + self.viterbi(i, j, rule) + ")"
         else:
             x = self.viterbi(i, rule[1], (rule[0][0],))
             y = self.viterbi(rule[1], j, (rule[0][1],))
             # Handling NP@ case
             if tag[0].count('@') > 0:
-                return x, y
+                return x + " " + y
             # Handling %%%%% case
             elif tag[0].count('%') > 0 and tag[0].count('%') % 5 == 0:
                 pos_tags = tuple(tag[0].split('%%%%%'))
                 count_tags = len(pos_tags)
-                branch = (pos_tags[count_tags-1], x, y)
+                branch = "(" + pos_tags[count_tags-1] + " " +  x + " " +  y + ")"
                 for i in range(len(pos_tags)-2,0-1,-1):
-                    branch = (pos_tags[i], test)
+                    branch = "(" + pos_tags[i] + " " + branch + ")"
                 return branch
             # Handling tuples
             if isinstance(x[0], tuple) and isinstance(y[0], tuple):
@@ -156,4 +153,4 @@ class CKY():
             elif isinstance(y[0], tuple):
                 return tag[0], x, y[0], y[1]
                     
-            return tag[0], x, y
+            return "(" + tag[0] + " " +  x + " " + y + ")"
