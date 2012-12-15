@@ -10,7 +10,7 @@ class CKY():
     def run( self, words ):
         n = len( words )
 
-        # Create table
+        # Create tables
         score = dict()
         trace = dict()
         for i in range(n+1):
@@ -18,103 +18,130 @@ class CKY():
                 score[(i,j)] = dict()
                 trace[(i,j)] = dict()
 
-        # Step 1 search terminal possibilities and save them with probability
+        # Step 1 search terminal possibilities and save them with their probability
         for i in range(n):
-            # Check if terminal exists
+
+            # Check if terminal exists in database
             if words[i] in self.parse_information['transition_terminal']:
+
                 # Find all possible rules to terminal and save them
-                poss_rules = self.parse_information['transition_terminal'][ words[i] ]
+                poss_rules = self.parse_information['transition_terminal'][words[i]]
                 for rule in poss_rules:
+
                     key = (rule,)
-#                    print 'New Rule Found:', rule, '->', words[i]
-                    score[(i, i+1)][ key ] = \
-                        self.parse_information['probability_terminal'][ rule ][ words[i] ] / \
-                        float( sum( self.parse_information['probability_terminal'][ rule ].values() ) )
-                    trace[(i, i+1)][ key ] = words[i]
+                    total_count_rule = self.parse_information['probability_terminal'][rule].values()
+
+                    # Add non-terminal count of the rule
+                    if rule in self.parse_information['probability_non-terminal']:
+                        total_count_rule += self.parse_information['probability_non-terminal'][rule].values()
+
+                    # Update score and trace table
+                    score[(i, i+1)][key] = self.parse_information['probability_terminal'][rule][words[i]] / \
+                                                float(sum(total_count_rule))
+                    trace[(i, i+1)][key] = words[i]
 
         # Step 2 handle unaries
                 added = True
                 while added:
                     added = False
-                    # Look for possible candidates for unary and find their
-                    # corresponding transition
+
+                    # Look for possible candidates for unary rules and find their corresponding transition
                     candidates = score[(i, i+1)].keys()
                     for candidate in candidates:
+
                         if candidate in self.parse_information['transition_non-terminal']:
-                            poss_unaries = self.parse_information['transition_non-terminal'][ candidate ]
+
+                            poss_unaries = self.parse_information['transition_non-terminal'][candidate]
                             for unary in poss_unaries:
-                                P = ( self.parse_information['probability_non-terminal'][ unary ][ candidate ] / \
-                                    float( sum( self.parse_information['probability_non-terminal'][ unary ].values() ) ) ) * \
-                                    score[(i, i+1)][ candidate ]
+
+                                key = (unary,)
+                                total_count_rule = self.parse_information['probability_non-terminal'][unary].values()
+
+                                if unary in self.parse_information['probability_terminal']:
+                                    total_count_rule = self.parse_information['probability_terminal'][unary].values()
+            
+                                P = ( self.parse_information['probability_non-terminal'][unary][candidate] / \
+                                      float(sum(total_count_rule)) ) * score[(i, i+1)][candidate]
+
                                 # When the corresponding transition does not exist or has a higher probability save it
-                                unary = (unary,)
-                                if not( unary in score[(i, i+1)] ):
-#                                    print 'New Unary Found:', unary, '->', candidate
-                                    score[(i, i+1)][ unary ] = P
-                                    trace[(i, i+1)][ unary ] = candidate
+                                if not(key in score[(i, i+1)]):
+                                    score[(i, i+1)][key] = P
+                                    trace[(i, i+1)][key] = candidate
                                     added = True
-                                elif P > score[(i, i+1)][unary]:
-#                                    print 'Better Unary Found:', unary, '->', candidate
-#                                    print 'New:', P, 'Previous:', score[(i, i+1)][unary]
-                                    score[(i, i+1)][ unary ] = P
-                                    trace[(i, i+1)][ unary ] = candidate
+                                elif P > score[(i, i+1)][key]:
+                                    score[(i, i+1)][key] = P
+                                    trace[(i, i+1)][key] = candidate
                                     added = True
             else:
                 print "Terminal", words[i], "does not exist", i
                 return False
+
         # Step 3 binaries
         # Loop diagonally over the table
         for span in range(2, n+1):
             for begin in range((n - span)+1):
+
                 end = begin + span
                 for split in range(begin+1, end):
+                    # Possible candidate rules
                     candidates_A = score[(begin, split)].keys()
                     candidates_B = score[(split, end)].keys()
                     for candidate_A in candidates_A:
                         for candidate_B in candidates_B:
+
                             consequence = (candidate_A[0], candidate_B[0])
                             if consequence in self.parse_information['transition_non-terminal']:
+
                                 poss_rules = self.parse_information['transition_non-terminal'][consequence]
                                 for poss_rule in poss_rules:
+
+                                    key = (poss_rule,)
+                                    total_count_rule = self.parse_information['probability_non-terminal'][poss_rule].values()
+
+                                    if poss_rule in self.parse_information['probability_terminal']:
+                                        total_count_rule = self.parse_information['probability_terminal'][poss_rule].values()
+            
                                     P = score[(begin, split)][candidate_A] * \
                                         score[(split, end)][candidate_B] * \
                                         self.parse_information['probability_non-terminal'][poss_rule][consequence] / \
-                                        float(sum(self.parse_information['probability_non-terminal'][ poss_rule ].values() ) )
-                                    poss_rule = (poss_rule,)
-                                    if not( poss_rule in score[(begin, end)] ):
-#                                        print 'New Rule Found:', poss_rule, '->', consequence
-                                        score[(begin, end)][poss_rule] = P
-                                        trace[(begin, end)][poss_rule] = (consequence, split)
+                                        float(sum(total_count_rule))
 
-                                    elif P > score[(begin, end)][ poss_rule ]:
-#                                        print 'Better Rule Found:', poss_rule, '->', consequence
-#                                        print 'New:', P, 'Previous:', score[(begin, end)][poss_rule]
-                                        score[(begin, end)][poss_rule] = P
-                                        trace[(begin, end)][poss_rule] = (consequence, split)
+                                    if not(key in score[(begin, end)]):
+                                        score[(begin, end)][key] = P
+                                        trace[(begin, end)][key] = (consequence, split)
+                                    elif P > score[(begin, end)][key]:
+                                        score[(begin, end)][key] = P
+                                        trace[(begin, end)][key] = (consequence, split)
         # Step 4 unaries
                 added = True
                 while added:
                     added = False
                     candidates = score[(begin, end)].keys()
+
                     # All possible rules for a unary
                     for candidate in candidates:
                         if candidate in self.parse_information['transition_non-terminal']:
-                            poss_unaries = self.parse_information['transition_non-terminal'][ candidate ]
+
+                            poss_unaries = self.parse_information['transition_non-terminal'][candidate]
                             for unary in poss_unaries:
-                                P = ( self.parse_information['probability_non-terminal'][ unary ][ candidate ] / \
-                                    float( sum( self.parse_information['probability_non-terminal'][ unary ].values() ) ) ) * \
-                                    score[(begin, end)][candidate]
-                                unary = (unary,)
-                                if not( unary in score[(begin, end)] ):
-#                                    print 'New Unary Found:', unary, '->', candidate
-                                    score[(begin, end)][unary] = P
-                                    trace[(begin, end)][unary] = candidate
+
+                                key = (unary,)
+                                total_count_rule = self.parse_information['probability_non-terminal'][unary].values()
+
+                                if unary in self.parse_information['probability_terminal']:
+                                        total_count_rule = self.parse_information['probability_terminal'][unary].values()
+
+                                P = ( self.parse_information['probability_non-terminal'][unary][candidate] / \
+                                    float( sum( total_count_rule ) ) ) \
+                                    * score[(begin, end)][candidate]
+
+                                if not(key in score[(begin, end)]):
+                                    score[(begin, end)][key] = P
+                                    trace[(begin, end)][key] = candidate
                                     added = True
-                                elif P > score[(begin, end)][ unary ]:
-#                                    print 'Better Unary Found:', unary, '->', candidate
-#                                    print 'New:', P, 'Previous:', score[(begin, end)][unary]
-                                    score[(begin, end)][unary] = P
-                                    trace[(begin, end)][unary] = candidate
+                                elif P > score[(begin, end)][key]:
+                                    score[(begin, end)][key] = P
+                                    trace[(begin, end)][key] = candidate
                                     added = True
         self.score = score
         self.trace = trace

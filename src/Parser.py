@@ -27,93 +27,6 @@ class Parser():
             parse_information = self.parse_sentence(sentence, parse_information)
 
         return parse_information
-        '''
-    def toTuple(self, sentence, previous, rest):
-        left_pos  = sentence.find( '(' )
-        right_pos = sentence.find( ')' )
-
-        if left_pos < right_pos and left_pos != -1:
-            if previous:
-                return self.toTuple( sentence[left_pos+1:], rest.append([:left_pos-1] )
-            else:
-                return self.toTuple( sentence[left_pos+1:], rest )
-        elif right_pos < left_pos and right_pos != -1:
-            if previous:
-                terms = sentence[:right_pos].split( ' ' )
-                if result:
-                    return  (terms[0], terms[1]), result
-                else:
-                    return (terms[0], terms[1])
-            else:
-                if result:
-                    return result
-                else:
-                    return False
-        else:
-            print "Einde"
-            return False
-'''
-    def toTuple2(self, sentence):
-        ''' Parses a annotated sentence linearly for probabilty of a transition and a transition '''
-        count = sentence.count( '(' )
-        if count  == 0:
-            print 'Error: Non-valid sentence!'
-            return database, probability
-
-        # Temporary datastructure to save nodes.
-        temp_db  = dict()
-        length = len( sentence )
-        depth = 0
-        iterator = sentence.find( '(' )
-        # If the current parenthesis is open (True) or closed (False)
-        iterator_status = True
-
-        while( depth >= 0 ):
-            # Find next closest parenthesis.
-            left_pos  = sentence.find( '(', iterator+1 )
-            right_pos = sentence.find( ')', iterator+1 )
-
-            # Determine what parenthesis is closer.
-            if left_pos < right_pos and left_pos != -1:
-                # Case if previous parenthesis is open and current is open.
-                if iterator_status:
-                    # Save it to the temporary database
-                    if depth in temp_db:
-                        temp_db[depth].append( sentence[iterator+1:left_pos-1] )
-                    else:
-                        temp_db[depth] = [ sentence[iterator+1:left_pos-1] ]
-
-                # Case if previous parenthesis is closed and current is open
-                else:
-                    pass
-                depth += 1
-                iterator = left_pos
-                iterator_status = True
-            else:
-                # Case if previous parenthesis is open and current is closed.
-                if iterator_status:
-                    # Terminal case, extract terminal.
-                    temp  = sentence[iterator+1:right_pos]
-                    terms = tuple(temp.split( ' ' ))
-
-                    # Saving for higher depth
-                    if depth in temp_db:
-                        temp_db[depth].append( terms )
-                    else:
-                        temp_db[depth] = [ terms ]
-
-                # Case if previous parenthesis is closed and current is closed.
-                else:
-                    left_term = temp_db[depth][len(temp_db[depth])-1]
-                    right_term = tuple(temp_db[depth+1])
-                    temp_db[depth][len(temp_db[depth])-1] = (left_term, right_term)
-
-
-                    del temp_db[depth+1] 
-                depth -= 1
-                iterator = right_pos
-                iterator_status = False
-        print temp_db[0]
 
     def parse_sentence(self, sentence, parse_information):
         ''' Parses a annotated sentence linearly for probabilty of a transition and a transition '''
@@ -157,6 +70,8 @@ class Parser():
                     # Terminal case, extract terminal.
                     temp  = sentence[iterator+1:right_pos]
                     terms = temp.split( ' ' )
+                    # Make terminal uppercase
+                    terms[1] = terms[1].upper()
 
                     # Update probability database
                     if terms[0] in parse_information['probability_terminal']:
