@@ -1,5 +1,10 @@
 from Parser import Parser
 from CKY import CKY
+def printKeys():
+    SentenceParser = Parser()
+    parse_information = SentenceParser.load_database( 'parse_information_unknown.p' )
+    print parse_information['transition_terminal'].keys()
+
 def printStep1():
     SentenceParser = Parser()
     parse_information = SentenceParser.load_database( 'parse_information.p' )
@@ -14,20 +19,20 @@ def printStep1():
 def readDocument(path_sentences, path_trees):
     file_sentences = open(path_sentences, 'r+')
     file_trees     = open(path_trees, 'r+')
-    correct_trees  = open("correct.txt", 'w+')
-    test_trees  = open("test.txt", 'w+')
+    correct_trees  = open("set_correct.txt", 'w+')
+    test_trees  = open("set_test.txt", 'w+')
 
     SentenceParser = Parser()
-    parse_information = SentenceParser.load_database( 'parse_information15.p' )
+    parse_information = SentenceParser.load_database( 'parse_information_unknown.p' )
     Algorithm = CKY( parse_information )
 
     i = 0
     correct = 0
     total = 0
     while True:
-        sentence     = file_sentences.readline().upper()
-        correct_tree = file_trees.readline().upper()
-        words = sentence.split( ' ' )
+        sentence     = file_sentences.readline()
+        correct_tree = file_trees.readline()
+        words = sentence.split(' ')
 
         size = len(words) - 2
         print "Sentence:", i, "Size:", size
@@ -51,13 +56,13 @@ def readDocument(path_sentences, path_trees):
 def parseData():
     TreeParser = Parser()
     database = TreeParser.parse_document('../data/wsj.02-21.training.nounary')
-    TreeParser.save_database(database, 'parse_information15.p')
-
+    TreeParser.save_database(database, 'parse_information_unknown.p')
 
 if __name__ == '__main__':
     #parseData()
     #printStep1()
     readDocument('../data/test.sentence.23', '../data/test.trees.23')
+    #printKeys()
     '''
     x = Parser()
     #x.save_database( parse_information, 'parse_information15.p' )

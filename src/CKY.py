@@ -10,6 +10,10 @@ class CKY():
     def run( self, words ):
         n = len( words )
 
+        # Save unknown words
+        self.sentence = words[:]
+        self.sentence.reverse()
+
         # Create tables
         score = dict()
         trace = dict()
@@ -20,61 +24,65 @@ class CKY():
 
         # Step 1 search terminal possibilities and save them with their probability
         for i in range(n):
+            # Check if number
+            try:
+                float(words[i])
+                words[i] = 'XXXNUMBER'
+            except ValueError:
+                words[i] = words[i].upper()
+                # Check if word exists
+                if not(words[i] in self.parse_information['transition_terminal']):
+                    print words[i]
+                    words[i] = 'XXXUNKNOWN'
 
-            # Check if terminal exists in database
-            if words[i] in self.parse_information['transition_terminal']:
+            # Find all possible rules to terminal and save them
+            poss_rules = self.parse_information['transition_terminal'][words[i]].keys()
+            for rule in poss_rules:
 
-                # Find all possible rules to terminal and save them
-                poss_rules = self.parse_information['transition_terminal'][words[i]]
-                for rule in poss_rules:
+                key = (rule,)
+                total_count_rule = self.parse_information['probability_terminal'][rule].values()
 
-                    key = (rule,)
-                    total_count_rule = self.parse_information['probability_terminal'][rule].values()
+                # Add non-terminal count of the rule
+                if rule in self.parse_information['probability_non-terminal']:
+                    total_count_rule += self.parse_information['probability_non-terminal'][rule].values()
 
-                    # Add non-terminal count of the rule
-                    if rule in self.parse_information['probability_non-terminal']:
-                        total_count_rule += self.parse_information['probability_non-terminal'][rule].values()
-
-                    # Update score and trace table
-                    score[(i, i+1)][key] = self.parse_information['probability_terminal'][rule][words[i]] / \
-                                                float(sum(total_count_rule))
-                    trace[(i, i+1)][key] = words[i]
+                # Update score and trace table
+                score[(i, i+1)][key] = self.parse_information['probability_terminal'][rule][words[i]] / \
+                                            float(sum(total_count_rule))
+                trace[(i, i+1)][key] = words[i]
 
         # Step 2 handle unaries
-                added = True
-                while added:
-                    added = False
+            added = True
+            while added:
+                added = False
 
-                    # Look for possible candidates for unary rules and find their corresponding transition
-                    candidates = score[(i, i+1)].keys()
-                    for candidate in candidates:
+                # Look for possible candidates for unary rules and find their corresponding transition
+                candidates = score[(i, i+1)].keys()
+                for candidate in candidates:
 
-                        if candidate in self.parse_information['transition_non-terminal']:
+                    if candidate in self.parse_information['transition_non-terminal']:
 
-                            poss_unaries = self.parse_information['transition_non-terminal'][candidate]
-                            for unary in poss_unaries:
+                        poss_unaries = self.parse_information['transition_non-terminal'][candidate].keys()
+                        for unary in poss_unaries:
 
-                                key = (unary,)
-                                total_count_rule = self.parse_information['probability_non-terminal'][unary].values()
+                            key = (unary,)
+                            total_count_rule = self.parse_information['probability_non-terminal'][unary].values()
 
-                                if unary in self.parse_information['probability_terminal']:
-                                    total_count_rule = self.parse_information['probability_terminal'][unary].values()
+                            if unary in self.parse_information['probability_terminal']:
+                                total_count_rule = self.parse_information['probability_terminal'][unary].values()
             
-                                P = ( self.parse_information['probability_non-terminal'][unary][candidate] / \
-                                      float(sum(total_count_rule)) ) * score[(i, i+1)][candidate]
+                            P = ( self.parse_information['probability_non-terminal'][unary][candidate] / \
+                                  float(sum(total_count_rule)) ) * score[(i, i+1)][candidate]
 
-                                # When the corresponding transition does not exist or has a higher probability save it
-                                if not(key in score[(i, i+1)]):
-                                    score[(i, i+1)][key] = P
-                                    trace[(i, i+1)][key] = candidate
-                                    added = True
-                                elif P > score[(i, i+1)][key]:
-                                    score[(i, i+1)][key] = P
-                                    trace[(i, i+1)][key] = candidate
-                                    added = True
-            else:
-                print "Terminal", words[i], "does not exist", i
-                return False
+                            # When the corresponding transition does not exist or has a higher probability save it
+                            if not(key in score[(i, i+1)]):
+                                score[(i, i+1)][key] = P
+                                trace[(i, i+1)][key] = candidate
+                                added = True
+                            elif P > score[(i, i+1)][key]:
+                                score[(i, i+1)][key] = P
+                                trace[(i, i+1)][key] = candidate
+                                added = True
 
         # Step 3 binaries
         # Loop diagonally over the table
@@ -92,7 +100,7 @@ class CKY():
                             consequence = (candidate_A[0], candidate_B[0])
                             if consequence in self.parse_information['transition_non-terminal']:
 
-                                poss_rules = self.parse_information['transition_non-terminal'][consequence]
+                                poss_rules = self.parse_information['transition_non-terminal'][consequence].keys()
                                 for poss_rule in poss_rules:
 
                                     key = (poss_rule,)
@@ -122,7 +130,7 @@ class CKY():
                     for candidate in candidates:
                         if candidate in self.parse_information['transition_non-terminal']:
 
-                            poss_unaries = self.parse_information['transition_non-terminal'][candidate]
+                            poss_unaries = self.parse_information['transition_non-terminal'][candidate].keys()
                             for unary in poss_unaries:
 
                                 key = (unary,)
@@ -146,12 +154,13 @@ class CKY():
         self.score = score
         self.trace = trace
         tree = self.viterbi(0, n, ('TOP',))
+
         return tree[:len(tree)-1] + " )\n"
 
     def viterbi(self, i, j, tag):
         if(abs(i-j) == 1):
             if isinstance(tag, str):
-                return tag
+                return self.sentence.pop()
             else:
                 rule = self.trace[(i,j)][tag]
                 return "(" + tag[0] + " " + self.viterbi(i, j, rule) + ")"

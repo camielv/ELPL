@@ -26,7 +26,7 @@ class Parser():
         for sentence in file:
             parse_information = self.parse_sentence(sentence, parse_information)
 
-        return parse_information
+        return self.renameLowTerminals(parse_information)
 
     def parse_sentence(self, sentence, parse_information):
         ''' Parses a annotated sentence linearly for probabilty of a transition and a transition '''
@@ -70,8 +70,14 @@ class Parser():
                     # Terminal case, extract terminal.
                     temp  = sentence[iterator+1:right_pos]
                     terms = temp.split( ' ' )
+                    
+                    # Check if its a number
+                    try:
+                        float(terms[1])
+                        terms[1] = 'XXXNUMBER'
+                    except ValueError:
                     # Make terminal uppercase
-                    terms[1] = terms[1].upper()
+                        terms[1] = terms[1].upper()
 
                     # Update probability database
                     if terms[0] in parse_information['probability_terminal']:
@@ -85,11 +91,11 @@ class Parser():
                     # Update transition database
                     if terms[1] in parse_information['transition_terminal']:
                         if terms[0] in parse_information['transition_terminal'][terms[1]]:
-                            pass
+                            parse_information['transition_terminal'][terms[1]][terms[0]] += 1
                         else:
-                            parse_information['transition_terminal'][terms[1]].append( terms[0] )
+                            parse_information['transition_terminal'][terms[1]][terms[0]] = 1
                     else:
-                        parse_information['transition_terminal'][terms[1]] = [terms[0]]
+                        parse_information['transition_terminal'][terms[1]] = {terms[0]: 1}
 
                     # Saving for higher depth
                     if depth in temp_db:
@@ -114,14 +120,37 @@ class Parser():
                     # Update transition database
                     if right_term in parse_information['transition_non-terminal']:
                         if left_term in parse_information['transition_non-terminal'][right_term]:
-                            pass
+                            parse_information['transition_non-terminal'][right_term][left_term] += 1
                         else:
-                            parse_information['transition_non-terminal'][right_term].append( left_term )
+                            parse_information['transition_non-terminal'][right_term][left_term] = 1
                     else:
-                        parse_information['transition_non-terminal'][right_term] = [left_term]
+                        parse_information['transition_non-terminal'][right_term] = {left_term: 1}
 
                     del temp_db[depth+1] 
                 depth -= 1
                 iterator = right_pos
                 iterator_status = False
+        return parse_information
+
+    def renameLowTerminals(self, parse_information):
+        name = 'XXXUNKNOWN'
+        terminals = parse_information['transition_terminal'].keys()
+        parse_information['transition_terminal'][name] = dict()
+        for terminal in terminals:
+            if sum(parse_information['transition_terminal'][terminal].values()) < 6:
+                # Update databases and remove low freq words
+                tags = parse_information['transition_terminal'][terminal].keys()
+                for tag in tags:
+                    if name in parse_information['probability_terminal'][tag]:
+                        parse_information['probability_terminal'][tag][name] += 1
+                    else:
+                        parse_information['probability_terminal'][tag][name] = 1
+
+                    if tag in parse_information['transition_terminal'][name]:
+                        parse_information['transition_terminal'][name][tag] += 1
+                    else:
+                        parse_information['transition_terminal'][name][tag] = 1
+
+                    del parse_information['probability_terminal'][tag][terminal]
+                del parse_information['transition_terminal'][terminal]
         return parse_information
