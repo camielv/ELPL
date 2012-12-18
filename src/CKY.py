@@ -30,9 +30,8 @@ class CKY():
                 words[i] = 'XXXNUMBER'
             except ValueError:
                 words[i] = words[i].upper()
-                # Check if word exists
+                # Check if word exists otherwise cast it to uknown
                 if not(words[i] in self.parse_information['transition_terminal']):
-                    print words[i]
                     words[i] = 'XXXUNKNOWN'
 
             # Find all possible rules to terminal and save them
