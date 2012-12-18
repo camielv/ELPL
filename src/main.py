@@ -17,7 +17,7 @@ def printStep2():
         for i in range(4):
             print key, "->", sorted_dict[i], 'P', sorted_dict[i][1] / float(sum(possible.values()))
 
-
+'''
 def printStep1():
     best = 0
     best_key = None
@@ -41,7 +41,7 @@ def printStep1():
             total_count += parse_information['probability_non-terminal'][(rule,)].values()
         P = parse_information['probability_terminal'][rule][best_key] / float(sum(total_count))
         print rule, "->", best_key, ":", P
-
+'''
 def readDocument(path_sentences, path_trees):
     file_sentences = open(path_sentences, 'r+')
     file_trees     = open(path_trees, 'r+')
@@ -62,15 +62,9 @@ def readDocument(path_sentences, path_trees):
 
         size = len(words) - 2
         print "Sentence:", i, "Size:", size
-        if i < 748+833:
-            i += 1
-            continue
         i += 1
         if sentence == '':
             break
-#        if(size > 20):
-#            continue
-        # Total actual parsed sentences
         total += 1
 
         # Run CKY and Viterbi
