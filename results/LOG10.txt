@@ -1,0 +1,1890 @@
+Sentence: 1
+	Gold: (TOP (S (INTJ (RB No)) (, ,) (NP (PRP it)) (VP (VBD was) (RB n't) (NP (NNP Black) (NNP Monday))) (. .)))
+	Test: (TOP (S (NP (DT No) (, ,) (NP (PRP it))) (VP (VBD was) (ADVP (RB n't)) (NP (NNP Black) (NNP Monday))) (. .)))
+	Unmatched Gold: [(INTJ: No)]
+	Unmatched Test: [(NP: No , it), (ADVP: n't)]
+
+
+Sentence: 2
+	Gold: (TOP (S (NP (DT The) (NN finger-pointing)) (VP (VBZ has) (ADVP (RB already)) (VP (VBN begun))) (. .)))
+	Test: (TOP (S (NP (DT The) (NN finger-pointing)) (VP (VBZ has) (ADJP (RB already) (VBN begun))) (. .)))
+	Unmatched Gold: [(ADVP: already), (VP: begun)]
+	Unmatched Test: [(ADJP: already begun)]
+
+
+Sentence: 3
+	Gold: (TOP (S (`` ``) (NP (DT The) (NN equity) (NN market)) (VP (VBD was) (ADJP (JJ illiquid))) (. .)))
+	Test: (TOP (S (`` ``) (NP (DT The) (NN equity) (NN market)) (VP (VBD was) (NP (NNP illiquid))) (. .)))
+	Unmatched Gold: [(ADJP: illiquid)]
+	Unmatched Test: [(NP: illiquid)]
+
+
+Sentence: 4
+	Gold: (TOP (S (NP (DT The) (NNP Dow) (NNP Jones) (NNS industrials)) (VP (VBD closed) (PP (IN at) (NP (CD 2569.26)))) (. .)))
+	Test: (TOP (S (NP (DT The) (NNP Dow) (NNP Jones) (NNS industrials)) (VP (VBN closed) (PP (IN at) (NP (CD 2569.26)))) (. .)))
+	Unmatched Gold: []
+	Unmatched Test: []
+
+
+Sentence: 5
+	Gold: (TOP (S (NP (DT The) (NNP Dow)) (VP (VBD fell) (NP (CD 22.6) (NN %)) (PP (IN on) (NP (NNP Black) (NNP Monday)))) (. .)))
+	Test: (TOP (S (NP (DT The) (NNP Dow)) (VP (VBD fell) (NP (CD 22.6) (NN %)) (PP (IN on) (NP (NNP Black) (NNP Monday)))) (. .)))
+	Unmatched Gold: []
+	Unmatched Test: []
+
+
+Sentence: 6
+	Gold: (TOP (S (NP (DT The) (NN market)) (VP (VBD crumbled)) (. .)))
+	Test: (TOP (S (NP (DT The) (NN market)) (VP (VBN crumbled)) (. .)))
+	Unmatched Gold: []
+	Unmatched Test: []
+
+
+Sentence: 7
+	Gold: (TOP (S (NP (DT These) (NNS stocks)) (ADVP (RB eventually)) (VP (VBD reopened)) (. .)))
+	Test: (TOP (S (NP (DT These) (NNS stocks)) (VP (ADVP (RB eventually)) (VBN reopened)) (. .)))
+	Unmatched Gold: [(VP: reopened)]
+	Unmatched Test: [(VP: eventually reopened)]
+
+
+Sentence: 8
+	Gold: (TOP (S (CC But) (NP (NNS stocks)) (VP (VBD kept) (S (VP (VBG falling)))) (. .)))
+	Test: (TOP (S (CC But) (NP (NNS stocks)) (VP (VBD kept) (VP (VBG falling))) (. .)))
+	Unmatched Gold: [(S: falling)]
+	Unmatched Test: []
+
+
+Sentence: 9
+	Gold: (TOP (S (NP (NNS Buyers)) (VP (VBD stepped) (ADVP (IN in) (PP (TO to) (NP (DT the) (NNS futures) (NN pit))))) (. .)))
+	Test: (TOP (S (NP (NNS Buyers)) (VP (VBD stepped) (ADVP (RP in)) (PP (TO to) (NP (DT the) (NNS futures) (NN pit)))) (. .)))
+	Unmatched Gold: [(ADVP: in to the futures pit)]
+	Unmatched Test: [(ADVP: in)]
+
+
+Sentence: 10
+	Gold: (TOP (S (CC But) (NP (EX there)) (VP (VBD were) (NP (DT no) (NNS buyers))) (. .)))
+	Test: (TOP (S (CC But) (NP (EX there)) (VP (VBD were) (NP (DT no) (NNS buyers))) (. .)))
+	Unmatched Gold: []
+	Unmatched Test: []
+
+
+Sentence: 11
+	Gold: (TOP (S (ADVP (RB Just)) (VP (VBD thought) (SBAR (S (NP (PRP you)) (VP (MD 'd) (VP (VB like) (S (VP (TO to) (VP (VB know))))))))) (. .)))
+	Test: (TOP (S (ADVP (RB Just)) (VP (VBD thought) (SBAR (S (NP (PRP you)) (VP (MD 'd) (VP (VB like) (S (VP (TO to) (VP (VB know))))))))) (. .)))
+	Unmatched Gold: []
+	Unmatched Test: []
+
+
+Sentence: 12
+	Gold: (TOP (NP (NNP George) (NNP Morton)))
+	Test: (TOP (NP (NNP George) (NNP Morton)))
+	Unmatched Gold: []
+	Unmatched Test: []
+
+
+Sentence: 13
+	Gold: (TOP (S (NP (NP (NNP Hooker) (POS 's)) (NN philosophy)) (VP (VBD was) (S (VP (TO to) (VP (VB build) (CC and) (VB sell))))) (. .)))
+	Test: (TOP (S (NP (NP (NNP Hooker) (POS 's)) (NN philosophy)) (VP (VBD was) (S (VP (TO to) (VP (VB build) (CC and) (VP (VB sell)))))) (. .)))
+	Unmatched Gold: []
+	Unmatched Test: [(VP: sell)]
+
+
+Sentence: 14
+	Gold: (TOP (S (NP (PRP We)) (VP (VBP want) (S (VP (TO to) (VP (VB build) (CC and) (VB hold))))) (. .) ('' '')))
+	Test: (TOP (S (S (NP (PRP We)) (VP (VBP want) (S (VP (TO to) (VP (VB build) (CC and) (VP (VB hold))))))) (. .) ('' '')))
+	Unmatched Gold: []
+	Unmatched Test: [(S: We want to build and hold), (VP: hold)]
+
+
+Sentence: 15
+	Gold: (TOP (S (`` ``) (NP (DT This)) (VP (VBZ feels) (PP (ADVP (RBR more)) (IN like) (NP (DT a) (JJ one-shot) (NN deal)))) (. .)))
+	Test: (TOP (S (`` ``) (NP (DT This)) (VP (VBZ feels) (ADJP (JJR more) (PP (IN like) (NP (DT a) (JJ one-shot) (NN deal))))) (. .)))
+	Unmatched Gold: [(PP: more like a one-shot deal), (ADVP: more)]
+	Unmatched Test: [(ADJP: more like a one-shot deal), (PP: like a one-shot deal)]
+
+
+Sentence: 16
+	Gold: (TOP (S (NP (NNS People)) (VP (VBP are) (RB n't) (VP (VBG panicking))) (. .) ('' '')))
+	Test: (TOP (S (S (NP (NNS People)) (VP (VBP are) (ADJP (RB n't) (JJ panicking)))) (. .) ('' '')))
+	Unmatched Gold: [(VP: panicking)]
+	Unmatched Test: [(S: People are n't panicking), (ADJP: n't panicking)]
+
+
+Sentence: 17
+	Gold: (TOP (S (NP (DT The) (NN test)) (VP (MD may) (VP (VB come) (NP (NN today)))) (. .)))
+	Test: (TOP (S (NP (DT The) (NN test)) (VP (MD may) (VP (VB come) (NP (NN today)))) (. .)))
+	Unmatched Gold: []
+	Unmatched Test: []
+
+
+Sentence: 18
+	Gold: (TOP (S (CC But) (NP (NN fund) (NNS managers)) (VP (VBP say) (SBAR (S (NP (PRP they)) (VP (VBP 're) (ADJP (JJ ready)))))) (. .)))
+	Test: (TOP (S (CC But) (NP (NN fund) (NNS managers)) (VP (VBP say) (SBAR (S (NP (PRP they)) (VP (VBP 're) (ADJP (JJ ready)))))) (. .)))
+	Unmatched Gold: []
+	Unmatched Test: []
+
+
+Sentence: 19
+	Gold: (TOP (S (NP (NN Trading) (NN volume)) (VP (VBD was) (ADJP (ADJP (ADVP (RB only) (RB modestly)) (JJR higher)) (PP (IN than) (NP (JJ normal))))) (. .)))
+	Test: (TOP (S (NP (NN Trading) (NN volume)) (VP (VBD was) (RB only) (ADJP (ADJP (RB modestly) (JJR higher)) (IN than) (JJ normal))) (. .)))
+	Unmatched Gold: [(ADJP: only modestly higher than normal), (ADJP: only modestly higher), (ADVP: only modestly), (PP: than normal), (NP: normal)]
+	Unmatched Test: [(ADJP: modestly higher than normal), (ADJP: modestly higher)]
+
+
+Sentence: 20
+	Gold: (TOP (S (ADVP (RB Still)) (, ,) (NP (NN fund) (NNS groups)) (VP (VBP are) (RB n't) (VP (VBG taking) (NP (DT any) (NNS chances)))) (. .)))
+	Test: (TOP (S (ADVP (RB Still)) (, ,) (NP (NN fund) (NNS groups)) (VP (VBP are) (RB n't) (VP (VBG taking) (NP (DT any) (NNS chances)))) (. .)))
+	Unmatched Gold: []
+	Unmatched Test: []
+
+
+Sentence: 21
+	Gold: (TOP (S (NP (DT The) (NNS centers)) (ADVP (RB normally)) (VP (VBP are) (ADJP (JJ closed) (PP (IN through) (NP (DT the) (NN weekend))))) (. .)))
+	Test: (TOP (S (NP (DT The) (NNS centers)) (ADVP (RB normally)) (VP (VBP are) (VP (VBN closed) (PP (IN through) (NP (DT the) (NN weekend))))) (. .)))
+	Unmatched Gold: [(ADJP: closed through the weekend)]
+	Unmatched Test: [(VP: closed through the weekend)]
+
+
+Sentence: 22
+	Gold: (TOP (S (NP (DT The) (NNP Janus) (NNP Group)) (VP (VBD had) (NP (DT a) (JJ similar) (NN recording)) (PP (IN for) (NP (NNS investors)))) (. .)))
+	Test: (TOP (S (NP (DT The) (JJ Janus) (NN Group)) (VP (VBD had) (NP (DT a) (JJ similar) (NN recording)) (PP (IN for) (NP (NNS investors)))) (. .)))
+	Unmatched Gold: []
+	Unmatched Test: []
+
+
+Sentence: 23
+	Gold: (TOP (S (NP (DT The) (NN accord)) (VP (VBD expired) (NP (NN yesterday))) (. .)))
+	Test: (TOP (S (NP (DT The) (NN accord)) (VP (VBD expired) (NP (NN yesterday))) (. .)))
+	Unmatched Gold: []
+	Unmatched Test: []
+
+
+Sentence: 24
+	Gold: (TOP (S (NP (NNP Martinair) (NNP Holland)) (VP (VBZ is) (VP (VBN based) (PP (IN in) (NP (NNP Amsterdam))))) (. .)))
+	Test: (TOP (S (NP (NNP Martinair) (NNP Holland)) (VP (VBZ is) (VP (VBN based) (PP (IN in) (NP (NNP Amsterdam))))) (. .)))
+	Unmatched Gold: []
+	Unmatched Test: []
+
+
+Sentence: 25
+	Gold: (TOP (S (NP (NNP Bridget) (NNP O'Brian)) (VP (VBD contributed) (PP (TO to) (NP (DT this) (NN article)))) (. .)))
+	Test: (TOP (S (NP (NNP Bridget) (NNP O'Brian)) (VP (VBN contributed) (PP (TO to) (NP (DT this) (NN article)))) (. .)))
+	Unmatched Gold: []
+	Unmatched Test: []
+
+
+Sentence: 26
+	Gold: (TOP (S (`` ``) (NP (DT The) (NNS projects)) (VP (VBP are) (ADJP (JJ big))) (. .)))
+	Test: (TOP (S (`` ``) (NP (DT The) (NNS projects)) (VP (VBP are) (ADJP (JJ big))) (. .)))
+	Unmatched Gold: []
+	Unmatched Test: []
+
+
+Sentence: 27
+	Gold: (TOP (S (`` ``) (NP (PRP We)) (ADVP (RB usually)) (VP (VBP operate) (PP (IN in) (NP (DT that) (JJ conservative) (NN manner)))) (. .) ('' '')))
+	Test: (TOP (S (`` ``) (NP (PRP We)) (ADVP (RB usually)) (VP (VB operate) (SBAR (IN in) (S (NP (DT that) (JJ conservative) (NN manner)) (. .) ('' ''))))))
+	Unmatched Gold: [(VP: operate in that conservative manner), (PP: in that conservative manner)]
+	Unmatched Test: [(VP: operate in that conservative manner . ''), (SBAR: in that conservative manner . ''), (S: that conservative manner . '')]
+
+
+Sentence: 28
+	Gold: (TOP (S (ADVP (RB Now)) (NP (NNS producers)) (VP (VBP hope) (SBAR (S (NP (NNS prices)) (VP (VBP have) (VP (VBN hit) (NP (NN bottom))))))) (. .)))
+	Test: (TOP (S (ADVP (RB Now)) (NP (NP (NNS producers)) (NN hope) (NNS prices)) (VP (VBP have) (VP (VBD hit) (ADJP (JJ bottom)))) (. .)))
+	Unmatched Gold: [(VP: hope prices have hit bottom), (SBAR: prices have hit bottom), (S: prices have hit bottom), (NP: prices), (NP: bottom)]
+	Unmatched Test: [(NP: producers hope prices), (ADJP: bottom)]
+
+
+Sentence: 29
+	Gold: (TOP (S (NP (DT Some)) (VP (VBP say) (NP (NNP November))) (. .)))
+	Test: (TOP (S (NP (DT Some)) (VP (VBP say) (NP (NNP November))) (. .)))
+	Unmatched Gold: []
+	Unmatched Test: []
+
+
+Sentence: 30
+	Gold: (TOP (S (NP (PRP I)) (VP (VBP say) (NP (CD 1992))) (. .) ('' '')))
+	Test: (TOP (S (S (NP (PRP I)) (VP (VBP say) (NP (CD 1992)))) (. .) ('' '')))
+	Unmatched Gold: []
+	Unmatched Test: [(S: I say 1992)]
+
+
+Sentence: 31
+	Gold: (TOP (S (RB Then) (NP (DT a) (JJ second) (NN explosion)) (VP (VBD occurred)) (. .)))
+	Test: (TOP (S (ADVP (RB Then)) (NP (DT a) (JJ second) (NN explosion)) (VP (VBD occurred)) (. .)))
+	Unmatched Gold: []
+	Unmatched Test: [(ADVP: Then)]
+
+
+Sentence: 32
+	Gold: (TOP (S (S (NP (CD Two) (NNS workers)) (VP (VBD died))) (CC and) (S (NP (CD six)) (VP (VBP remain) (PP (IN in) (NP (DT the) (NN hospital))))) (. .)))
+	Test: (TOP (S (NP (CD Two) (NNS workers)) (VP (VBD died) (S (CC and) (NP (CD six)) (VP (VB remain) (PP (IN in) (NP (DT the) (NN hospital)))) (. .)))))
+	Unmatched Gold: [(S: Two workers died), (VP: died), (S: six remain in the hospital)]
+	Unmatched Test: [(VP: died and six remain in the hospital .), (S: and six remain in the hospital .)]
+
+
+Sentence: 33
+	Gold: (TOP (S (`` ``) (CC And) (RB then) (NP (PRP you)) (ADVP (RB still)) (VP (VB have) (S (VP (TO to) (VP (VB negotiate))))) (. .) ('' '')))
+	Test: (TOP (S (`` ``) (CC And) (ADVP (RB then)) (NP (PRP you)) (ADVP (RB still)) (VP (VBP have) (S (VP (TO to) (VP (VB negotiate))))) (. .) ('' '')))
+	Unmatched Gold: []
+	Unmatched Test: [(ADVP: then)]
+
+
+Sentence: 34
+	Gold: (TOP (S (NP (RB Not) (NN everything)) (VP (VBZ looks) (ADJP (JJ grim)) (PP (IN for) (NP (NNP Quantum)))) (. .)))
+	Test: (TOP (S (ADVP (RB Not)) (NP (NN everything)) (VP (VBZ looks) (ADJP (JJ grim) (PP (IN for) (NP (NNP Quantum))))) (. .)))
+	Unmatched Gold: [(NP: Not everything), (ADJP: grim)]
+	Unmatched Test: [(ADVP: Not), (NP: everything), (ADJP: grim for Quantum)]
+
+
+Sentence: 35
+	Gold: (TOP (S (NP (NNP Petrolane)) (VP (VBZ is) (NP (NP (DT the) (JJ second-largest) (NN propane) (NN distributor)) (PP (IN in) (NP (DT the) (NNP U.S.))))) (. .)))
+	Test: (TOP (S (NP (NNP Petrolane)) (VP (VBZ is) (NP (DT the) (JJ second-largest) (NN propane) (NN distributor)) (PP (IN in) (NP (DT the) (NNP U.S.)))) (. .)))
+	Unmatched Gold: [(NP: the second-largest propane distributor in the U.S.)]
+	Unmatched Test: []
+
+
+Sentence: 36
+	Gold: (TOP (S (NP (NN Revenue)) (VP (VBD totaled) (NP (QP ($ $) (CD 5) (CD million)))) (. .)))
+	Test: (TOP (S (NP (NN Revenue)) (VP (VBD totaled) (NP (QP ($ $) (CD 5) (CD million)))) (. .)))
+	Unmatched Gold: []
+	Unmatched Test: []
+
+
+Sentence: 37
+	Gold: (TOP (S (NP (NNS Superconcentrates)) (VP (VBP are) (RB n't) (ADJP (RB entirely) (JJ new)) (PP (IN for) (NP (NNP P&G)))) (. .)))
+	Test: (TOP (S (NP (NNP Superconcentrates)) (VP (VBP are) (ADJP (RB n't) (RB entirely) (JJ new) (PP (IN for) (NP (NNP P&G))))) (. .)))
+	Unmatched Gold: [(ADJP: entirely new)]
+	Unmatched Test: [(ADJP: n't entirely new for P&G)]
+
+
+Sentence: 38
+	Gold: (TOP (S (NP (PRP It)) (ADVP (RB also)) (VP (VBZ has) (NP (DT a) (NN product-testing) (NN facility)) (PP (IN in) (NP (NNP California)))) (. .)))
+	Test: (TOP (S (NP (PRP It)) (ADVP (RB also)) (VP (VBZ has) (NP (DT a) (JJ product-testing) (NN facility)) (PP (IN in) (NP (NNP California)))) (. .)))
+	Unmatched Gold: []
+	Unmatched Test: []
+
+
+Sentence: 39
+	Gold: (TOP (S (NP (JJ Many)) (VP (VBD called) (S (NP (PRP it)) (NP (RB simply) (NP (NP (DT a) (NN contrast)) (PP (IN in) (NP (NNS styles))))))) (. .)))
+	Test: (TOP (S (NP (JJ Many)) (VP (VBD called) (SBAR (S (NP (PRP it)) (VP (ADVP (RB simply)) (NP (DT a) (NN contrast)) (PP (IN in) (NP (NNS styles))))))) (. .)))
+	Unmatched Gold: [(NP: simply a contrast in styles), (NP: a contrast in styles)]
+	Unmatched Test: [(SBAR: it simply a contrast in styles), (VP: simply a contrast in styles), (ADVP: simply)]
+
+
+Sentence: 40
+	Gold: (TOP (S (CC But) (NP (DT some)) (VP (VBD saw) (NP (PRP it)) (PP (IN as) (NP (DT a) (JJ classic) (NN negotiating) (NN tactic)))) (. .)))
+	Test: (TOP (S (CC But) (NP (DT some)) (VP (VBD saw) (NP (PRP it)) (PP (IN as) (NP (DT a) (JJ classic) (VBG negotiating) (NN tactic)))) (. .)))
+	Unmatched Gold: []
+	Unmatched Test: []
+
+
+Sentence: 41
+	Gold: (TOP (S (NP (PRP I)) (VP (VBP do) (RB n't) (VP (VB feel) (ADJP (RB very) (JJ ferocious)))) (. .)))
+	Test: (TOP (S (NP (PRP I)) (VP (VBP do) (RB n't) (VP (VBP feel) (ADJP (RB very) (JJ ferocious)))) (. .)))
+	Unmatched Gold: []
+	Unmatched Test: []
+
+
+Sentence: 42
+	Gold: (TOP (S (NP (PRP I)) (VP (VBP do) (RB n't) (VP (VB feel) (ADJP (CC either) (JJ hard) (CC or) (JJ soft)))) (. .)))
+	Test: (TOP (S (NP (PRP I)) (VP (VBP do) (RB n't) (VP (VBP feel) (ADJP (RB either) (JJ hard) (CC or) (JJ soft)))) (. .)))
+	Unmatched Gold: []
+	Unmatched Test: []
+
+
+Sentence: 43
+	Gold: (TOP (S (NP (DT The) (NN company)) (VP (VBD did) (RB n't) (VP (VB break) (ADVP (RP out)) (NP (PRP$ its) (JJ fourth-quarter) (NNS results)))) (. .)))
+	Test: (TOP (S (NP (DT The) (NN company)) (VP (VBD did) (RB n't) (VP (VB break) (ADVP (RP out)) (NP (PRP$ its) (JJ fourth-quarter) (NNS results)))) (. .)))
+	Unmatched Gold: []
+	Unmatched Test: []
+
+
+Sentence: 44
+	Gold: (TOP (S (NP (NNS Terms)) (VP (VBD were) (RB n't) (VP (VBN disclosed))) (. .)))
+	Test: (TOP (S (NP (NNS Terms)) (VP (VBD were) (ADJP (RB n't) (VBN disclosed))) (. .)))
+	Unmatched Gold: [(VP: disclosed)]
+	Unmatched Test: [(ADJP: n't disclosed)]
+
+
+Sentence: 45
+	Gold: (TOP (S (NP (NNS Syms)) (VP (VBZ operates) (NP (CD 25) (JJ off-price) (NN apparel) (NNS stores)) (PP (IN in) (NP (DT the) (NNP U.S.)))) (. .)))
+	Test: (TOP (S (NP (NNP Syms)) (VP (VBZ operates) (NP (NP (CD 25) (NNS off-price)) (NN apparel) (NNS stores)) (PP (IN in) (NP (DT the) (NNP U.S.)))) (. .)))
+	Unmatched Gold: []
+	Unmatched Test: [(NP: 25 off-price)]
+
+
+Sentence: 46
+	Gold: (TOP (S (NP (PRP He)) (VP (VBD did) (RB n't) (VP (VBN forecast) (NP (NP (NNP Phillips) (POS 's)) (NNS results)))) (. .)))
+	Test: (TOP (S (NP (PRP He)) (VP (VBD did) (RB n't) (VP (VBN forecast) (NP (NP (NNP Phillips) (POS 's)) (NNS results)))) (. .)))
+	Unmatched Gold: []
+	Unmatched Test: []
+
+
+Sentence: 47
+	Gold: (TOP (S (NP (NNS Companies)) (VP (VBD added) (NP (NN capacity)) (ADVP (RB furiously))) (. .)))
+	Test: (TOP (S (NP (NNS Companies)) (VP (VBD added) (NP (NN capacity) (NNS furiously))) (. .)))
+	Unmatched Gold: [(NP: capacity), (ADVP: furiously)]
+	Unmatched Test: [(NP: capacity furiously)]
+
+
+Sentence: 48
+	Gold: (TOP (S (NP (NP (JJ Third-quarter) (NNS profits)) (PP (IN from) (NP (NN gasoline)))) (VP (VBD were) (ADJP (JJR weaker))) (. .)))
+	Test: (TOP (S (NP (NP (JJ Third-quarter) (NNS profits)) (PP (IN from) (NP (NN gasoline)))) (VP (VBD were) (ADJP (JJR weaker))) (. .)))
+	Unmatched Gold: []
+	Unmatched Test: []
+
+
+Sentence: 49
+	Gold: (TOP (S (NP (DT The) (JJ main) (NN reason)) (VP (VBZ remains) (NP (NN weather))) (. .)))
+	Test: (TOP (S (NP (DT The) (JJ main) (NN reason)) (VP (VBZ remains) (NP (NN weather))) (. .)))
+	Unmatched Gold: []
+	Unmatched Test: []
+
+
+Sentence: 50
+	Gold: (TOP (S (NP (NNP Olivetti)) (ADVP (RB reportedly)) (VP (VBD began) (S (VP (VBG shipping) (NP (DT these) (NNS tools)))) (PP (IN in) (NP (CD 1984)))) (. .)))
+	Test: (TOP (S (NP (NNP Olivetti)) (ADVP (RB reportedly)) (VP (VBD began) (S (VP (VBG shipping) (NP (DT these) (NNS tools)) (PP (IN in) (NP (CD 1984)))))) (. .)))
+	Unmatched Gold: [(S: shipping these tools), (VP: shipping these tools)]
+	Unmatched Test: [(S: shipping these tools in 1984), (VP: shipping these tools in 1984)]
+
+
+Sentence: 51
+	Gold: (TOP (S (NP (NNP Northview) (NNS officials)) (VP (MD could) (RB n't) (VP (VB be) (VP (VBN located)))) (. .)))
+	Test: (TOP (S (NP (JJ Northview) (NNS officials)) (VP (MD could) (RB n't) (VP (VB be) (VP (VBN located)))) (. .)))
+	Unmatched Gold: []
+	Unmatched Test: []
+
+
+Sentence: 52
+	Gold: (TOP (S (ADVP (RB However)) (, ,) (NP (DT the) (NN agreement)) (VP (VBD was) (VP (VBN canceled) (PP (IN in) (NP (NNP June) (CD 1984))))) (. .)))
+	Test: (TOP (S (ADVP (RB However)) (, ,) (NP (DT the) (NN agreement)) (VP (VBD was) (VP (VBN canceled) (PP (IN in) (NP (NNP June) (CD 1984))))) (. .)))
+	Unmatched Gold: []
+	Unmatched Test: []
+
+
+Sentence: 53
+	Gold: (TOP (S (VP (VBG Looking) (ADVP (RB ahead) (PP (TO to) (NP (NP (JJ other) (NN commodity) (NNS markets)) (NP (DT this) (NN week)))))) (: :)))
+	Test: (TOP (FRAG (S (VP (VBG Looking) (ADVP (RB ahead)) (PP (TO to) (NP (JJ other) (NN commodity) (NNS markets))))) (NP (DT this) (NN week)) (: :)))
+	Unmatched Gold: [(S: Looking ahead to other commodity markets this week :), (VP: Looking ahead to other commodity markets this week), (ADVP: ahead to other commodity markets this week), (PP: to other commodity markets this week), (NP: other commodity markets this week)]
+	Unmatched Test: [(FRAG: Looking ahead to other commodity markets this week :), (S: Looking ahead to other commodity markets), (VP: Looking ahead to other commodity markets), (ADVP: ahead), (PP: to other commodity markets)]
+
+
+Sentence: 54
+	Gold: (TOP (NP (NN Energy)))
+	Test: (TOP (NP (NN Energy)))
+	Unmatched Gold: []
+	Unmatched Test: []
+
+
+Sentence: 55
+	Gold: (TOP (NP (NN Ad) (NNS Notes) (: ...) (. .)))
+	Test: (TOP (S (NP (NN Ad) (NNS Notes)) (: ...) (. .)))
+	Unmatched Gold: [(NP: Ad Notes ... .)]
+	Unmatched Test: [(S: Ad Notes ... .), (NP: Ad Notes)]
+
+
+Sentence: 56
+	Gold: (TOP (NP (JJ NEW) (NN ACCOUNT) (: :)))
+	Test: (TOP (S (NP (NNP NEW)) (VP (VBP ACCOUNT)) (: :)))
+	Unmatched Gold: [(NP: NEW ACCOUNT :)]
+	Unmatched Test: [(S: NEW ACCOUNT :), (NP: NEW), (VP: ACCOUNT)]
+
+
+Sentence: 57
+	Gold: (TOP (NP (NNP ACCOUNT) (NNP REVIEW) (: :)))
+	Test: (TOP (S (NP (NN ACCOUNT)) (VP (VB REVIEW)) (: :)))
+	Unmatched Gold: [(NP: ACCOUNT REVIEW :)]
+	Unmatched Test: [(S: ACCOUNT REVIEW :), (NP: ACCOUNT), (VP: REVIEW)]
+
+
+Sentence: 58
+	Gold: (TOP (NP (JJ NOT-GUILTY) (NN PLEA) (: :)))
+	Test: (TOP (FRAG (ADJP (CD NOT-GUILTY) (NN PLEA)) (: :)))
+	Unmatched Gold: [(NP: NOT-GUILTY PLEA :)]
+	Unmatched Test: [(FRAG: NOT-GUILTY PLEA :), (ADJP: NOT-GUILTY PLEA)]
+
+
+Sentence: 59
+	Gold: (TOP (NP (JJ KOREAN) (NN AGENCY) (: :)))
+	Test: (TOP (INTJ (JJ KOREAN) (NNP AGENCY) (: :)))
+	Unmatched Gold: [(NP: KOREAN AGENCY :)]
+	Unmatched Test: [(INTJ: KOREAN AGENCY :)]
+
+
+Sentence: 60
+	Gold: (TOP (S (`` ``) (NP (NNS Retailers)) (VP (VBP are) (ADVP (RB just)) (PP (IN in) (NP (NN disarray)))) (. .) ('' '')))
+	Test: (TOP (SINV (`` ``) (S (NP (NNS Retailers)) (VP (VBP are) (ADVP (RB just)) (PP (IN in) (NP (NN disarray))))) (. .) ('' '')))
+	Unmatched Gold: [(S: `` Retailers are just in disarray . '')]
+	Unmatched Test: [(SINV: `` Retailers are just in disarray . ''), (S: Retailers are just in disarray)]
+
+
+Sentence: 61
+	Gold: (TOP (S (NP (NP (DT The) (NN government) (POS 's)) (NN action)) (VP (VBD was) (ADJP (JJ unusual))) (. .)))
+	Test: (TOP (S (NP (NP (DT The) (NN government) (POS 's)) (NN action)) (VP (VBD was) (ADJP (JJ unusual))) (. .)))
+	Unmatched Gold: []
+	Unmatched Test: []
+
+
+Sentence: 62
+	Gold: (TOP (S (NP (ADJP (JJ French) (JJ state-owned)) (NNP Rhone-Poulenc) (NNP S.A.)) (VP (VBZ holds) (NP (NP (CD 51) (NN %)) (PP (IN of) (NP (NNP Merieux))))) (. .)))
+	Test: (TOP (S (NP (JJ French) (JJ state-owned) (NNP Rhone-Poulenc) (NNP S.A.)) (VP (VBZ holds) (NP (CD 51) (NN %)) (PP (IN of) (NP (NNP Merieux)))) (. .)))
+	Unmatched Gold: [(ADJP: French state-owned), (NP: 51 % of Merieux)]
+	Unmatched Test: []
+
+
+Sentence: 63
+	Gold: (TOP (S (NP (DT The) (NN exchange) (NN ratio)) (VP (VBD was) (ADVP (RB never)) (VP (VBN established))) (. .)))
+	Test: (TOP (S (NP (DT The) (NN exchange) (NN ratio)) (VP (VBD was) (ADJP (RB never) (VBN established))) (. .)))
+	Unmatched Gold: [(ADVP: never), (VP: established)]
+	Unmatched Test: [(ADJP: never established)]
+
+
+Sentence: 64
+	Gold: (TOP (S (NP (NNP Weatherford)) (ADVP (RB currently)) (VP (VBZ has) (NP (NP (QP (RB approximately) (CD 11.1) (CD million)) (JJ common) (NNS shares)) (ADJP (JJ outstanding)))) (. .)))
+	Test: (TOP (S (NP (NNP Weatherford)) (ADVP (RB currently)) (VP (VBZ has) (ADJP (NP (NP (QP (RB approximately) (CD 11.1) (CD million))) (JJ common) (NNS shares)) (JJ outstanding))) (. .)))
+	Unmatched Gold: [(NP: approximately 11.1 million common shares outstanding), (ADJP: outstanding)]
+	Unmatched Test: [(ADJP: approximately 11.1 million common shares outstanding), (NP: approximately 11.1 million)]
+
+
+Sentence: 65
+	Gold: (TOP (S (PP (IN In) (NP (NNP Indianapolis))) (, ,) (NP (NNP Lilly)) (VP (VBD declined) (NP (NN comment))) (. .)))
+	Test: (TOP (S (PP (IN In) (NP (NNP Indianapolis))) (, ,) (NP (NNP Lilly)) (VP (VBD declined) (VP (VB comment))) (. .)))
+	Unmatched Gold: [(NP: comment)]
+	Unmatched Test: [(VP: comment)]
+
+
+Sentence: 66
+	Gold: (TOP (S (NP (NNP Bristol-Myers)) (VP (VBD declined) (S (VP (TO to) (VP (VB comment))))) (. .)))
+	Test: (TOP (S (NP (NNP Bristol-Myers)) (VP (VBD declined) (S (VP (TO to) (VP (VB comment))))) (. .)))
+	Unmatched Gold: []
+	Unmatched Test: []
+
+
+Sentence: 67
+	Gold: (TOP (S (PP (IN In) (NP (NNP New) (NNP York))) (, ,) (NP (DT the) (NN company)) (VP (VBD declined) (NP (NN comment))) (. .)))
+	Test: (TOP (S (PP (IN In) (NP (NNP New) (NNP York))) (, ,) (NP (DT the) (NN company)) (VP (VBD declined) (VP (VB comment))) (. .)))
+	Unmatched Gold: [(NP: comment)]
+	Unmatched Test: [(VP: comment)]
+
+
+Sentence: 68
+	Gold: (TOP (S (PP (IN In) (NP (NP (NNP Kalamazoo)) (, ,) (NP (NNP Mich.)) (, ,))) (NP (NNP Upjohn)) (VP (VBD declined) (NP (NN comment))) (. .)))
+	Test: (TOP (S (PP (IN In) (NP (NAC (NNP Kalamazoo) (, ,) (NNP Mich.) (, ,)) (NNP Upjohn))) (VP (VBD declined) (VP (VB comment))) (. .)))
+	Unmatched Gold: [(PP: In Kalamazoo , Mich. ,), (NP: Kalamazoo , Mich. ,), (NP: Kalamazoo), (NP: Mich.), (NP: Upjohn), (NP: comment)]
+	Unmatched Test: [(PP: In Kalamazoo , Mich. , Upjohn), (NP: Kalamazoo , Mich. , Upjohn), (NAC: Kalamazoo , Mich. ,), (VP: comment)]
+
+
+Sentence: 69
+	Gold: (TOP (S (NP (PRP She)) (VP (VBD analyzed) (NP (NNS families)) (PP (IN by) (NP (PRP$ their) (NN sleeping) (NNS arrangements)))) (. .)))
+	Test: (TOP (S (NP (PRP She)) (VP (VB analyzed) (NP (NNS families)) (PP (IN by) (NP (PRP$ their) (JJ sleeping) (NNS arrangements)))) (. .)))
+	Unmatched Gold: []
+	Unmatched Test: []
+
+
+Sentence: 70
+	Gold: (TOP (S (NP (PRP They)) (VP (VBD came) (PP (IN by) (NP (PRP$ their) (NN strangeness))) (ADVP (RB honestly))) (. .)))
+	Test: (TOP (S (NP (PRP They)) (VP (VBD came) (PP (IN by) (NP (PRP$ their) (NNP strangeness) (NNP honestly)))) (. .)))
+	Unmatched Gold: [(PP: by their strangeness), (NP: their strangeness), (ADVP: honestly)]
+	Unmatched Test: [(PP: by their strangeness honestly), (NP: their strangeness honestly)]
+
+
+Sentence: 71
+	Gold: (TOP (SINV (`` ``) (FRAG (NP (DT An) (NNP L.A.) (NN solution))) (, ,) ('' '') (VP (VBZ explains)) (NP (NNP Mr.) (NNP Friedman)) (. .)))
+	Test: (TOP (S (`` ``) (NP (DT An) (JJ L.A.) (NN solution)) (, ,) ('' '') (VP (VBZ explains) (NP (NNP Mr.) (NNP Friedman))) (. .)))
+	Unmatched Gold: [(SINV: `` An L.A. solution , '' explains Mr. Friedman .), (FRAG: An L.A. solution), (VP: explains)]
+	Unmatched Test: [(S: `` An L.A. solution , '' explains Mr. Friedman .), (VP: explains Mr. Friedman)]
+
+
+Sentence: 72
+	Gold: (TOP (S (NP (PRP He)) (VP (VBZ 's) (NP (DT a) (NN bore))) (. .)))
+	Test: (TOP (S (NP (PRP He)) (VP (VBZ 's) (NP (DT a) (NN bore))) (. .)))
+	Unmatched Gold: []
+	Unmatched Test: []
+
+
+Sentence: 73
+	Gold: (TOP (SBARQ (`` ``) (WHADVP (WRB Where)) (SQ (VP (VBZ 's)) (NP (DT the) (NN leadership))) (. ?)))
+	Test: (TOP (SBARQ (`` ``) (WHADVP (WRB Where)) (SQ (VP (VBZ 's) (NP (DT the) (NN leadership)))) (. ?)))
+	Unmatched Gold: [(VP: 's)]
+	Unmatched Test: [(VP: 's the leadership)]
+
+
+Sentence: 74
+	Gold: (TOP (S (`` ``) (S (NP (DT This)) (VP (ADVP (RB further)) (VBZ confuses) (NP (NNS retailers)))) (, ,) ('' '') (NP (PRP she)) (VP (VBZ says)) (. .)))
+	Test: (TOP (S (`` ``) (NP (DT This) (JJ further) (JJ confuses) (NNS retailers)) (, ,) ('' '') (NP (PRP she)) (VP (VBZ says)) (. .)))
+	Unmatched Gold: [(S: This further confuses retailers), (NP: This), (VP: further confuses retailers), (ADVP: further), (NP: retailers)]
+	Unmatched Test: [(NP: This further confuses retailers)]
+
+
+Sentence: 75
+	Gold: (TOP (SQ (VBZ Is) (NP (DT this)) (NP (NP (DT the) (JJ wrong) (NN time)) (SBAR (S (VP (TO to) (VP (VB open) (NP (DT a) (NN store))))))) (. ?)))
+	Test: (TOP (S (S (VP (VBZ Is) (NP (DT this) (DT the) (JJ wrong) (NN time)))) (VP (TO to) (VP (VB open) (NP (DT a) (NN store)))) (. ?)))
+	Unmatched Gold: [(SQ: Is this the wrong time to open a store ?), (NP: this), (NP: the wrong time to open a store), (NP: the wrong time), (SBAR: to open a store), (S: to open a store)]
+	Unmatched Test: [(S: Is this the wrong time to open a store ?), (S: Is this the wrong time), (VP: Is this the wrong time), (NP: this the wrong time)]
+
+
+Sentence: 76
+	Gold: (TOP (S (NP (PRP It)) (VP (VP (VBZ makes) (NP (NN investment) (NNS castings))) (CC and) (VP (VBZ has) (VP (VBN traded) (S (ADJP (RB over-the-counter)))))) (. .)))
+	Test: (TOP (S (NP (PRP It)) (VP (VBZ makes) (NP (NN investment) (NNS castings)) (CC and) (VP (VBZ has) (VP (VBD traded) (ADJP (JJ over-the-counter))))) (. .)))
+	Unmatched Gold: [(VP: makes investment castings), (S: over-the-counter)]
+	Unmatched Test: []
+
+
+Sentence: 77
+	Gold: (TOP (S (NP (DT The) (NNP American) (NNP Stock) (NNP Exchange)) (VP (VBD listed) (NP (NP (NNS shares)) (PP (IN of) (NP (CD two) (NNS companies))))) (. .)))
+	Test: (TOP (S (NP (DT The) (NNP American) (NN Stock) (NN Exchange)) (VP (VBN listed) (NP (NNS shares)) (PP (IN of) (NP (CD two) (NNS companies)))) (. .)))
+	Unmatched Gold: [(NP: shares of two companies)]
+	Unmatched Test: []
+
+
+Sentence: 78
+	Gold: (TOP (S (NP (PRP It)) (VP (VBD had) (VP (VBN traded) (S (ADJP (RB over-the-counter))))) (. .)))
+	Test: (TOP (S (NP (PRP It)) (VP (VBD had) (VP (VBD traded) (ADJP (JJ over-the-counter)))) (. .)))
+	Unmatched Gold: [(S: over-the-counter)]
+	Unmatched Test: []
+
+
+Sentence: 79
+	Gold: (TOP (S (NP (DT The) (NNS pharmaceuticals) (NN maker)) (VP (VBD had) (VP (VBN traded) (S (ADJP (RB over-the-counter))))) (. .)))
+	Test: (TOP (S (NP (DT The) (NNP pharmaceuticals) (NN maker)) (VP (VBD had) (VP (VBD traded) (ADJP (JJ over-the-counter)))) (. .)))
+	Unmatched Gold: [(S: over-the-counter)]
+	Unmatched Test: []
+
+
+Sentence: 80
+	Gold: (TOP (S (`` ``) (NP (PRP You)) (VP (MD ca) (RB n't) (VP (VB live) (PP (IN on) (NP (DT that))))) (. .) ('' '')))
+	Test: (TOP (SINV (`` ``) (S (NP (PRP You)) (VP (MD ca) (RB n't) (VP (VB live) (FRAG (WHPP (IN on) (WHNP (WDT that))))))) (. .) ('' '')))
+	Unmatched Gold: [(S: `` You ca n't live on that . ''), (PP: on that), (NP: that)]
+	Unmatched Test: [(SINV: `` You ca n't live on that . ''), (S: You ca n't live on that), (FRAG: on that), (WHPP: on that), (WHNP: that)]
+
+
+Sentence: 81
+	Gold: (TOP (S (CC But) (NP (DT that)) (VP (MD wo) (RB n't) (VP (VB be) (ADJP (JJ easy)))) (. .)))
+	Test: (TOP (SBARQ (CC But) (WHNP (WDT that)) (SQ (MD wo) (ADVP (RB n't)) (VP (VB be) (ADJP (JJ easy)))) (. .)))
+	Unmatched Gold: [(S: But that wo n't be easy .), (NP: that), (VP: wo n't be easy)]
+	Unmatched Test: [(SBARQ: But that wo n't be easy .), (WHNP: that), (SQ: wo n't be easy), (ADVP: n't)]
+
+
+Sentence: 82
+	Gold: (TOP (S (NP (NNP CNN)) (VP (VBZ wants) (S (VP (TO to) (VP (VB change) (NP (NP (PRP$ its) (NNS viewers) (POS ')) (NNS habits)))))) (. .)))
+	Test: (TOP (S (NP (NNP CNN)) (VP (VBZ wants) (S (VP (TO to) (VP (VB change) (NP (NP (PRP$ its) (NNS viewers) (POS ')) (NNS habits)))))) (. .)))
+	Unmatched Gold: []
+	Unmatched Test: []
+
+
+Sentence: 83
+	Gold: (TOP (S (ADVP (RB Now)) (, ,) (NP (NP (DT the) (NN push))) (VP (VBZ is) (ADJP (RB on)) (PP (IN for) (NP (JJR more-distinctive) (NNS shows)))) (. .)))
+	Test: (TOP (S (ADVP (RB Now)) (, ,) (NP (DT the) (NN push)) (VP (VBZ is) (ADVP (RP on)) (PP (IN for) (NP (JJ more-distinctive) (NNS shows)))) (. .)))
+	Unmatched Gold: [(NP: the push), (ADJP: on)]
+	Unmatched Test: [(ADVP: on)]
+
+
+Sentence: 84
+	Gold: (TOP (S (NP (NP (DT Some)) (PP (IN in) (NP (DT the) (NN industry)))) (VP (VBP are) (ADJP (JJ skeptical))) (. .)))
+	Test: (TOP (S (NP (NP (DT Some)) (PP (IN in) (NP (DT the) (NN industry)))) (VP (VBP are) (ADJP (JJ skeptical))) (. .)))
+	Unmatched Gold: []
+	Unmatched Test: []
+
+
+Sentence: 85
+	Gold: (TOP (NP (NNP Charles) (NNP F.) (NNP Vihon)))
+	Test: (TOP (S (NP (NNP Charles) (NNP F.)) (VP (VBN Vihon))))
+	Unmatched Gold: [(NP: Charles F. Vihon)]
+	Unmatched Test: [(S: Charles F. Vihon), (NP: Charles F.), (VP: Vihon)]
+
+
+Sentence: 86
+	Gold: (TOP (S (NP (NNP Sunbelt)) (VP (VBD foreclosed) (PP (IN on) (NP (DT the) (NN ranch)))) (. .)))
+	Test: (TOP (S (NP (NNP Sunbelt)) (VP (VBN foreclosed) (PP (IN on) (NP (DT the) (NN ranch)))) (. .)))
+	Unmatched Gold: []
+	Unmatched Test: []
+
+
+Sentence: 87
+	Gold: (TOP (S (NP (DT A) (JJ new) (NN president)) (VP (VBD was) (RB n't) (VP (VBN named))) (. .)))
+	Test: (TOP (S (NP (DT A) (JJ new) (NN president)) (VP (VBD was) (ADJP (RB n't) (VBN named))) (. .)))
+	Unmatched Gold: [(VP: named)]
+	Unmatched Test: [(ADJP: n't named)]
+
+
+Sentence: 88
+	Gold: (TOP (S (NP (DT The) (NN device)) (VP (VBD was) (VP (VBN replaced))) (. .)))
+	Test: (TOP (S (NP (DT The) (NN device)) (VP (VBD was) (VP (VBD replaced))) (. .)))
+	Unmatched Gold: []
+	Unmatched Test: []
+
+
+Sentence: 89
+	Gold: (TOP (S (NP (NNP DWG)) (VP (VBZ is) (NP (NP (DT a) (NN holding) (NN company)) (VP (VBN controlled) (PP (IN by) (NP (NNP Mr.) (NNP Posner)))))) (. .)))
+	Test: (TOP (S (NP (NNP DWG)) (VP (VBZ is) (SBAR (S (NP (DT a) (VBG holding) (NN company)) (VP (VBN controlled) (PP (IN by) (NP (NNP Mr.) (NNP Posner))))))) (. .)))
+	Unmatched Gold: [(NP: a holding company controlled by Mr. Posner)]
+	Unmatched Test: [(SBAR: a holding company controlled by Mr. Posner), (S: a holding company controlled by Mr. Posner)]
+
+
+Sentence: 90
+	Gold: (TOP (S (NP (DT The) (NN woman)) (VP (VBD won) (NP (DT the) (NN bet))) (. .)))
+	Test: (TOP (S (NP (DT The) (NN woman)) (VP (VBD won) (NP (DT the) (NN bet))) (. .)))
+	Unmatched Gold: []
+	Unmatched Test: []
+
+
+Sentence: 91
+	Gold: (TOP (S (NP (JJS Most) (JJ British) (NN programming)) (VP (VBZ is) (NP (NP (JJR more)) (PP (IN of) (NP (DT an) (JJ acquired) (NN taste))))) (. .)))
+	Test: (TOP (S (NP (ADJP (RBS Most) (JJ British)) (NN programming)) (VP (VBZ is) (ADJP (JJR more) (PP (IN of) (NP (DT an) (VBN acquired) (NN taste))))) (. .)))
+	Unmatched Gold: [(NP: more of an acquired taste), (NP: more)]
+	Unmatched Test: [(ADJP: Most British), (ADJP: more of an acquired taste)]
+
+
+Sentence: 92
+	Gold: (TOP (S (CC But) (ADVP (RB frequently)) (NP (EX there)) (VP (VBZ is) (RB n't) (NP (JJ much) (JJ choice))) (. .)))
+	Test: (TOP (S (CC But) (ADVP (RB frequently)) (NP (EX there)) (VP (VBZ is) (NP (RB n't) (JJ much) (NN choice))) (. .)))
+	Unmatched Gold: [(NP: much choice)]
+	Unmatched Test: [(NP: n't much choice)]
+
+
+Sentence: 93
+	Gold: (TOP (S (NP (DT The) (NNS companies)) (VP (VBP hope) (PP (IN for) (NP (NP (DT a) (JJ final) (NN agreement)) (PP (IN by) (NP (NN year-end)))))) (. .)))
+	Test: (TOP (S (NP (DT The) (NNS companies)) (VP (VBP hope) (PP (IN for) (NP (DT a) (JJ final) (NN agreement))) (PP (IN by) (NP (NN year-end)))) (. .)))
+	Unmatched Gold: [(PP: for a final agreement by year-end), (NP: a final agreement by year-end)]
+	Unmatched Test: [(PP: for a final agreement)]
+
+
+Sentence: 94
+	Gold: (TOP (S (NP (NP (NP (DT The) (NN venture) (POS 's)) (NN importance)) (PP (IN for) (NP (NNP Thomson)))) (VP (VBZ is) (ADJP (JJ great))) (. .)))
+	Test: (TOP (S (NP (NP (NP (DT The) (NN venture) (POS 's)) (NN importance)) (PP (IN for) (NP (NNP Thomson)))) (VP (VBZ is) (ADJP (JJ great))) (. .)))
+	Unmatched Gold: []
+	Unmatched Test: []
+
+
+Sentence: 95
+	Gold: (TOP (S (`` ``) (NP (PRP It)) (VP (VBZ 's) (ADVP (RB very) (RB much)) (NP (DT a) (VBG growing) (NN concern))) (. .)))
+	Test: (TOP (SINV (`` ``) (S (NP (PRP It)) (VP (VBZ 's) (ADJP (RB very) (JJ much)))) (NP (DT a) (VBG growing) (NN concern)) (. .)))
+	Unmatched Gold: [(S: `` It 's very much a growing concern .), (VP: 's very much a growing concern), (ADVP: very much)]
+	Unmatched Test: [(SINV: `` It 's very much a growing concern .), (S: It 's very much), (VP: 's very much), (ADJP: very much)]
+
+
+Sentence: 96
+	Gold: (TOP (S (CC But) (NP (DT that)) (VP (VBD was) (ADVP (NP (QP (DT all) (IN of) (CD three)) (NNS months)) (RB ago))) (. .)))
+	Test: (TOP (SBARQ (CC But) (WHNP (WDT that)) (SQ (VP (VBD was) (NP (DT all) (PP (IN of) (NP (CD three) (NNS months))) (ADVP (RB ago))))) (. .)))
+	Unmatched Gold: [(S: But that was all of three months ago .), (NP: that), (ADVP: all of three months ago), (NP: all of three months), (QP: all of three)]
+	Unmatched Test: [(SBARQ: But that was all of three months ago .), (WHNP: that), (SQ: was all of three months ago), (NP: all of three months ago), (PP: of three months), (NP: three months), (ADVP: ago)]
+
+
+Sentence: 97
+	Gold: (TOP (S (`` ``) (NP (DT The) (NN industry)) (VP (VBZ defies) (NP (NN characterization))) (. .) ('' '')))
+	Test: (TOP (S (`` ``) (NP (DT The) (NN industry)) (NP (NNP defies) (NNP characterization)) (. .) ('' '')))
+	Unmatched Gold: [(VP: defies characterization), (NP: characterization)]
+	Unmatched Test: [(NP: defies characterization)]
+
+
+Sentence: 98
+	Gold: (TOP (S (NP (NNS Companies)) (VP (MD will) (VP (VB continue) (S (VP (TO to) (VP (VB war) (PP (IN over) (NP (NNS standards)))))))) (. .)))
+	Test: (TOP (S (NP (NNS Companies)) (VP (MD will) (VP (VB continue) (PP (TO to) (NP (NN war))) (PP (IN over) (NP (NNS standards))))) (. .)))
+	Unmatched Gold: [(S: to war over standards), (VP: to war over standards), (VP: war over standards)]
+	Unmatched Test: [(PP: to war), (NP: war)]
+
+
+Sentence: 99
+	Gold: (TOP (S (NP (NNP Aldus) (NNS officials)) (VP (MD could) (RB n't) (VP (VB be) (VP (VBN reached) (PP (IN for) (NP (NN comment)))))) (. .)))
+	Test: (TOP (S (NP (JJ Aldus) (NNS officials)) (VP (MD could) (RB n't) (VP (VB be) (VP (VBN reached) (PP (IN for) (NP (NN comment)))))) (. .)))
+	Unmatched Gold: []
+	Unmatched Test: []
+
+
+Sentence: 100
+	Gold: (TOP (S (NP (DT A) (NN bus)) (VP (VBZ is) (NP (NP (DT the) (NNS data) (NN highway)) (PP (IN within) (NP (DT a) (NN computer))))) (. .)))
+	Test: (TOP (S (NP (DT A) (NN bus)) (VP (VBZ is) (NP (DT the) (NNP data) (NN highway)) (PP (IN within) (NP (DT a) (NN computer)))) (. .)))
+	Unmatched Gold: [(NP: the data highway within a computer)]
+	Unmatched Test: []
+
+
+Sentence: 101
+	Gold: (TOP (S (NP (NP (DT The) (NN gap)) (PP (IN between) (NP (NNS winners) (CC and) (NNS laggards)))) (VP (MD will) (VP (VB grow))) (. .)))
+	Test: (TOP (S (NP (NP (NP (DT The) (NN gap)) (PP (IN between) (NP (NNS winners)))) (CC and) (NNP laggards)) (VP (MD will) (VP (VB grow))) (. .)))
+	Unmatched Gold: [(PP: between winners and laggards), (NP: winners and laggards)]
+	Unmatched Test: [(NP: The gap between winners), (PP: between winners), (NP: winners)]
+
+
+Sentence: 102
+	Gold: (TOP (S (CC But) (NP (PRP they)) (VP (MD will) (VP (VB have) (S (VP (TO to) (VP (VB act) (ADVP (RB quickly))))))) (. .)))
+	Test: (TOP (S (CC But) (NP (PRP they)) (VP (MD will) (VP (VBP have) (S (VP (TO to) (VP (VB act) (ADVP (RB quickly))))))) (. .)))
+	Unmatched Gold: []
+	Unmatched Test: []
+
+
+Sentence: 103
+	Gold: (TOP (S (NP (NN Population) (NN Drain)) (VP (VBZ Ends) (PP (IN For) (NP (JJ Midwestern) (NNS States))))))
+	Test: (TOP (S (NP (NN Population) (NN Drain)) (VP (VBZ Ends) (PP (IN For) (NP (JJ Midwestern) (NNS States))))))
+	Unmatched Gold: []
+	Unmatched Test: []
+
+
+Sentence: 104
+	Gold: (TOP (S (NP (NNP IOWA)) (VP (VBZ IS) (VP (VBG MAKING) (NP (DT a) (NN comeback)))) (. .)))
+	Test: (TOP (S (NP (NNP IOWA)) (VP (VBZ IS) (S (VP (VBG MAKING) (NP (DT a) (NN comeback))))) (. .)))
+	Unmatched Gold: []
+	Unmatched Test: [(S: MAKING a comeback)]
+
+
+Sentence: 105
+	Gold: (TOP (SINV (ADVP (RB So)) (VP (VBP are)) (NP (NNP Indiana) (, ,) (NNP Ohio) (CC and) (NNP Michigan)) (. .)))
+	Test: (TOP (S (ADVP (RB So)) (VP (VBP are) (NP (NNP Indiana) (, ,) (NNP Ohio) (CC and) (NNP Michigan))) (. .)))
+	Unmatched Gold: [(SINV: So are Indiana , Ohio and Michigan .), (VP: are)]
+	Unmatched Test: [(S: So are Indiana , Ohio and Michigan .), (VP: are Indiana , Ohio and Michigan)]
+
+
+Sentence: 106
+	Gold: (TOP (S (NP (JJR More) (JJ Elderly)) (VP (VBP Maintain) (NP (PRP$ Their) (NN Independence)))))
+	Test: (TOP (S (ADVP (RBR More) (JJ Elderly)) (VP (VB Maintain) (NP (PRP$ Their) (NN Independence)))))
+	Unmatched Gold: [(NP: More Elderly)]
+	Unmatched Test: [(ADVP: More Elderly)]
+
+
+Sentence: 107
+	Gold: (TOP (S (SBAR (IN As) (S (NP (NNS people)) (VP (VB get) (ADJP (RB even) (JJR older))))) (, ,) (NP (JJ many)) (VP (VBP become) (ADJP (JJ widowed))) (. .)))
+	Test: (TOP (S (SBAR (IN As) (S (NP (NNS people)) (VP (VB get) (ADJP (ADJP (RB even) (JJR older)) (, ,) (JJ many))))) (VP (VB become) (NP (NNP widowed))) (. .)))
+	Unmatched Gold: [(SBAR: As people get even older), (S: people get even older), (VP: get even older), (NP: many), (ADJP: widowed)]
+	Unmatched Test: [(SBAR: As people get even older , many), (S: people get even older , many), (VP: get even older , many), (ADJP: even older , many), (NP: widowed)]
+
+
+Sentence: 108
+	Gold: (TOP (S (NP (NNS Careers)) (VP (VBP Count) (ADVP (RBS Most)) (PP (IN For) (NP (DT the) (JJ Well-to-Do))))))
+	Test: (TOP (S (NP (NNS Careers)) (VP (VB Count) (ADVP (RBS Most)) (PP (IN For) (NP (DT the) (NN Well-to-Do))))))
+	Unmatched Gold: []
+	Unmatched Test: []
+
+
+Sentence: 109
+	Gold: (TOP (NP (NNS Odds) (CC and) (NNS Ends)))
+	Test: (TOP (NP (NP (NNS Odds)) (CC and) (NNS Ends)))
+	Unmatched Gold: []
+	Unmatched Test: [(NP: Odds)]
+
+
+Sentence: 110
+	Gold: (TOP (S (NP (DT This) (JJ small) (NNP Dallas) (NN suburb)) (VP (POS 's) (VP (VBD got) (NP (NN trouble)))) (. .)))
+	Test: (TOP (S (NP (DT This) (JJ small) (NNP Dallas) (NN suburb) (POS 's)) (VP (VBD got) (NP (NN trouble))) (. .)))
+	Unmatched Gold: [(NP: This small Dallas suburb), (VP: 's got trouble)]
+	Unmatched Test: [(NP: This small Dallas suburb 's)]
+
+
+Sentence: 111
+	Gold: (TOP (S (NP (PRP It)) (VP (MD would) (VP (VB open) (NP (NP (DT a) (NN can)) (PP (IN of) (NP (NNS worms)))))) (. .) ('' '')))
+	Test: (TOP (S (S (NP (PRP It)) (VP (MD would) (VP (VB open) (NP (DT a) (NN can)) (PP (IN of) (NP (NNP worms)))))) (. .) ('' '')))
+	Unmatched Gold: [(NP: a can of worms)]
+	Unmatched Test: [(S: It would open a can of worms)]
+
+
+Sentence: 112
+	Gold: (TOP (SINV (ADVP (RB Now)) (VP (VBZ comes)) (NP (DT the) (NN pool) (NN flap)) (. .)))
+	Test: (TOP (S (ADVP (RB Now)) (VP (VBZ comes) (NP (DT the) (NN pool) (NN flap))) (. .)))
+	Unmatched Gold: [(SINV: Now comes the pool flap .), (VP: comes)]
+	Unmatched Test: [(S: Now comes the pool flap .), (VP: comes the pool flap)]
+
+
+Sentence: 113
+	Gold: (TOP (NP (NNP Anita) (NNP Davis)))
+	Test: (TOP (NP (NNP Anita) (NNP Davis)))
+	Unmatched Gold: []
+	Unmatched Test: []
+
+
+Sentence: 114
+	Gold: (TOP (SBARQ (WHADVP (WRB Why)) (FRAG (ADJP (JJ constructive))) (. ?)))
+	Test: (TOP (SBARQ (WHADVP (WRB Why)) (SQ%%%%%VP (VBZ constructive)) (. ?)))
+	Unmatched Gold: [(FRAG: constructive), (ADJP: constructive)]
+	Unmatched Test: [(SQ%%%%%VP: constructive)]
+
+
+Sentence: 115
+	Gold: (TOP (S (CC But) (NP (DT these)) (VP (VBP are) (RB not) (NP (NP (DT the) (NNS differences)) (SBAR (WHNP (WDT that)) (S (VP (VBP make) (NP (NNS headlines))))))) (. .)))
+	Test: (TOP (S (CC But) (NP (DT these)) (VP (VBP are) (ADVP (RB not)) (NP (DT the) (NNS differences)) (SBAR (WHNP (WDT that)) (S (VP (VB make) (NP (NNP headlines)))))) (. .)))
+	Unmatched Gold: [(NP: the differences that make headlines)]
+	Unmatched Test: [(ADVP: not)]
+
+
+Sentence: 116
+	Gold: (TOP (S (VP (VB Sound) (ADJP (JJ familiar))) (. ?)))
+	Test: (TOP (S (VP (VB Sound) (ADJP (JJ familiar))) (. ?)))
+	Unmatched Gold: []
+	Unmatched Test: []
+
+
+Sentence: 117
+	Gold: (TOP (S (VP (VBN Heard) (NP (DT that)) (ADVP (RB before))) (. ?)))
+	Test: (TOP (S (VP (VBN Heard) (PP (IN that) (ADVP (RB before)))) (. ?)))
+	Unmatched Gold: [(NP: that)]
+	Unmatched Test: [(PP: that before)]
+
+
+Sentence: 118
+	Gold: (TOP (S (NP (NP (NNS Opponents)) (PP (IN of) (NP (DT the) (NN cut)))) (VP (VBP are) (VP (VBG playing) (NP (NN hardball)))) (. .)))
+	Test: (TOP (S (NP (NP (NNS Opponents)) (PP (IN of) (NP (DT the) (NN cut)))) (VP (VBP are) (S (VP (VBG playing) (NP (NNP hardball))))) (. .)))
+	Unmatched Gold: []
+	Unmatched Test: [(S: playing hardball)]
+
+
+Sentence: 119
+	Gold: (TOP (S (NP (DT The) (NNP House)) (VP (VBZ appears) (ADJP (JJ reluctant) (S (VP (TO to) (VP (VB join) (NP (DT the) (NNS senators))))))) (. .)))
+	Test: (TOP (S (NP (DT The) (NN House)) (VP (VBZ appears) (ADJP (JJ reluctant) (S (VP (TO to) (VP (VB join) (NP (DT the) (NNS senators))))))) (. .)))
+	Unmatched Gold: []
+	Unmatched Test: []
+
+
+Sentence: 120
+	Gold: (TOP (S (NP (NNS Things)) (VP (VBD had) (ADVP (RB just)) (VP (VBN gone) (ADVP (RB too) (RB far)))) (. .) ('' '')))
+	Test: (TOP (S (S (NP (NNS Things)) (VP (VBD had) (RB just) (VP (VBN gone) (ADVP (RB too) (RB far))))) (. .) ('' '')))
+	Unmatched Gold: [(ADVP: just)]
+	Unmatched Test: [(S: Things had just gone too far)]
+
+
+Sentence: 121
+	Gold: (TOP (FRAG (PP (IN Among) (NP (PRP$ its) (NNS provisions))) (: :)))
+	Test: (TOP (PP (IN Among) (NP (PRP$ its) (NNS provisions) (: :))))
+	Unmatched Gold: [(FRAG: Among its provisions :), (PP: Among its provisions), (NP: its provisions)]
+	Unmatched Test: [(PP: Among its provisions :), (NP: its provisions :)]
+
+
+Sentence: 122
+	Gold: (TOP (S (NP (DT A) (JJ similar) (NN provision)) (VP (VBZ is) (PP (IN in) (NP (DT the) (NNP House) (NN version)))) (. .)))
+	Test: (TOP (S (NP (DT A) (JJ similar) (NN provision)) (VP (VBZ is) (PP (IN in) (NP (DT the) (NNP House) (NN version)))) (. .)))
+	Unmatched Gold: []
+	Unmatched Test: []
+
+
+Sentence: 123
+	Gold: (TOP (S (NP (NNP John) (NNP E.) (NNP Yang)) (VP (VBD contributed) (PP (TO to) (NP (DT this) (NN article)))) (. .)))
+	Test: (TOP (S (NP (NNP John) (NNP E.) (NNP Yang)) (VP (VBN contributed) (PP (TO to) (NP (DT this) (NN article)))) (. .)))
+	Unmatched Gold: []
+	Unmatched Test: []
+
+
+Sentence: 124
+	Gold: (TOP (SQ (VBP Are) (NP (PRP you)) (VP (VBG kidding)) (. ?)))
+	Test: (TOP (SQ (VBP Are) (NP (PRP you)) (ADJP (JJ kidding)) (. ?)))
+	Unmatched Gold: [(VP: kidding)]
+	Unmatched Test: [(ADJP: kidding)]
+
+
+Sentence: 125
+	Gold: (TOP (S (NP (PRP$ Your) (NN paper)) (VP (VBZ needs) (NP (DT a) (JJ serious) (NN reality) (NN check))) (. .)))
+	Test: (TOP (S (NP (PRP$ Your) (NN paper)) (VP (VBZ needs) (NP (DT a) (JJ serious) (NN reality) (NN check))) (. .)))
+	Unmatched Gold: []
+	Unmatched Test: []
+
+
+Sentence: 126
+	Gold: (TOP (NP (NNP Reva) (NNP Levin)))
+	Test: (TOP (NP (NNP Reva) (NNP Levin)))
+	Unmatched Gold: []
+	Unmatched Test: []
+
+
+Sentence: 127
+	Gold: (TOP (NP (NP (NNP Cambridge)) (, ,) (NP (NNP Mass) (. .))))
+	Test: (TOP (S (NP (NNP Cambridge)) (, ,) (VP (NN Mass)) (. .)))
+	Unmatched Gold: [(NP: Cambridge , Mass .), (NP: Mass .)]
+	Unmatched Test: [(S: Cambridge , Mass .), (VP: Mass)]
+
+
+Sentence: 128
+	Gold: (TOP (NP (NP (NNP FRANKLIN) (NNP SAVINGS) (NNP ASSOCIATION)) (PRN (-LRB- -LRB-) (NP (NP (NNP Ottawa)) (, ,) (NP (NNP Kan.))) (-RRB- -RRB-)) (: --)))
+	Test: (TOP (NP (NP (NNP FRANKLIN) (NNP SAVINGS)) (NNP ASSOCIATION) (PRN (-LRB- -LRB-) (INTJ (UH Ottawa) (, ,) (UH Kan.)) (-RRB- -RRB-)) (: --)))
+	Unmatched Gold: [(NP: FRANKLIN SAVINGS ASSOCIATION), (NP: Ottawa , Kan.), (NP: Ottawa), (NP: Kan.)]
+	Unmatched Test: [(NP: FRANKLIN SAVINGS), (INTJ: Ottawa , Kan.)]
+
+
+Sentence: 129
+	Gold: (TOP (SQ (VBZ Does) (NP (DT this)) (VP (VB signal) (SBAR (S (NP (DT another) (NNP Black) (NNP Monday)) (VP (VBZ is) (VP (VBG coming)))))) (. ?)))
+	Test: (TOP (S (S (VP (VBZ Does) (NP (DT this) (NN signal)))) (NP (DT another) (NNP Black) (NNP Monday)) (VP (VBZ is) (ADJP (JJ coming))) (. ?)))
+	Unmatched Gold: [(SQ: Does this signal another Black Monday is coming ?), (NP: this), (VP: signal another Black Monday is coming), (SBAR: another Black Monday is coming), (S: another Black Monday is coming), (VP: coming)]
+	Unmatched Test: [(S: Does this signal another Black Monday is coming ?), (S: Does this signal), (VP: Does this signal), (NP: this signal), (ADJP: coming)]
+
+
+Sentence: 130
+	Gold: (TOP (NP (NNP Joseph) (NNP Granville) (. .)))
+	Test: (TOP (S (NP (NNP Joseph)) (VP (VBN Granville)) (. .)))
+	Unmatched Gold: [(NP: Joseph Granville .)]
+	Unmatched Test: [(S: Joseph Granville .), (NP: Joseph), (VP: Granville)]
+
+
+Sentence: 131
+	Gold: (TOP (S (NP (PRP I)) (VP (VBP see) (NP (NP (DT no) (JJ major) (NN support)) (PP (IN until) (NP (CD 2200))))) (. .)))
+	Test: (TOP (S (NP (PRP I)) (VP (VB see) (NP (DT no) (JJ major) (NN support)) (PP (IN until) (NP (CD 2200)))) (. .)))
+	Unmatched Gold: [(NP: no major support until 2200)]
+	Unmatched Test: []
+
+
+Sentence: 132
+	Gold: (TOP (NP (NNP Elaine) (NNP Garzarelli) (. .)))
+	Test: (TOP (S (NP (NNP Elaine)) (VP (VBN Garzarelli)) (. .)))
+	Unmatched Gold: [(NP: Elaine Garzarelli .)]
+	Unmatched Test: [(S: Elaine Garzarelli .), (NP: Elaine), (VP: Garzarelli)]
+
+
+Sentence: 133
+	Gold: (TOP (S (NP (PRP$ My) (NN advice)) (VP (VBZ is) (S (VP (TO to) (VP (VB buy))))) (. .) ('' '')))
+	Test: (TOP (S (S (NP (PRP$ My) (NN advice)) (VP (VBZ is) (S (VP (TO to) (VP (VB buy)))))) (. .) ('' '')))
+	Unmatched Gold: []
+	Unmatched Test: [(S: My advice is to buy)]
+
+
+Sentence: 134
+	Gold: (TOP (NP (NNP Ned) (NNP Davis) (. .)))
+	Test: (TOP (FRAG (NP (NNP Ned) (NNP Davis)) (. .)))
+	Unmatched Gold: [(NP: Ned Davis .)]
+	Unmatched Test: [(FRAG: Ned Davis .), (NP: Ned Davis)]
+
+
+Sentence: 135
+	Gold: (TOP (S (`` ``) (S (NP (NN Margin) (NN debt)) (VP (VBD was) (PP (IN at) (NP (DT a) (JJ record) (NN high))))) (. .)))
+	Test: (TOP (S (NP (`` ``) (NN Margin) (NN debt)) (VP (VBD was) (PP (IN at) (NP (DT a) (NN record) (NN high)))) (. .)))
+	Unmatched Gold: [(S: Margin debt was at a record high), (NP: Margin debt)]
+	Unmatched Test: [(NP: `` Margin debt)]
+
+
+Sentence: 136
+	Gold: (TOP (S (NP (EX There)) (VP (VBD was) (NP (NP (JJ tremendous) (JJ public) (NN enthusiasm)) (PP (IN for) (NP (NN stock) (JJ mutual) (NNS funds))))) (. .)))
+	Test: (TOP (S (NP (EX There)) (VP (VBD was) (NP (JJ tremendous) (JJ public) (NN enthusiasm)) (PP (IN for) (NP (NNP stock) (JJ mutual) (NNS funds)))) (. .)))
+	Unmatched Gold: [(NP: tremendous public enthusiasm for stock mutual funds)]
+	Unmatched Test: []
+
+
+Sentence: 137
+	Gold: (TOP (FRAG (NP (NN Sort)) (PP (IN of) (NP (DT a) (JJ two-step) (NN bear) (NN market))) (. .) ('' '')))
+	Test: (TOP (S (NP (NP (NN Sort)) (PP (IN of) (NP (DT a) (NNP two-step) (NNP bear) (NN market)))) (. .) ('' '')))
+	Unmatched Gold: [(FRAG: Sort of a two-step bear market . '')]
+	Unmatched Test: [(S: Sort of a two-step bear market . ''), (NP: Sort of a two-step bear market)]
+
+
+Sentence: 138
+	Gold: (TOP (S (`` ``) (NP (PRP I)) (VP (VBP guess) (SBAR (S (NP (IN that)) (VP (POS 's) (NP (PRP$ my) (NN forecast)))))) (. .) ('' '')))
+	Test: (TOP (SINV (`` ``) (S (NP (PRP I)) (VP (VBP guess) (SBAR (WHNP (WDT that)) (S (VP (VBZ 's) (NP (PRP$ my) (NN forecast))))))) (. .) ('' '')))
+	Unmatched Gold: [(S: `` I guess that 's my forecast . ''), (S: that 's my forecast), (NP: that)]
+	Unmatched Test: [(SINV: `` I guess that 's my forecast . ''), (S: I guess that 's my forecast), (WHNP: that), (S: 's my forecast)]
+
+
+Sentence: 139
+	Gold: (TOP (NP (NNP Leon) (NNP G.) (NNP Cooperman) (. .)))
+	Test: (TOP (S (NP (NNP Leon) (NNP G.)) (VP (VBN Cooperman)) (. .)))
+	Unmatched Gold: [(NP: Leon G. Cooperman .)]
+	Unmatched Test: [(S: Leon G. Cooperman .), (NP: Leon G.), (VP: Cooperman)]
+
+
+Sentence: 140
+	Gold: (TOP (S (PP (IN Unlike) (NP (CD 1987))) (, ,) (NP (DT the) (NN dollar)) (VP (VBZ has) (VP (VBN been) (ADJP (JJ strong)))) (. .)))
+	Test: (TOP (S (PP (IN Unlike) (NP (CD 1987))) (, ,) (NP (DT the) (NN dollar)) (VP (VBZ has) (VP (VBN been) (ADJP (JJ strong)))) (. .)))
+	Unmatched Gold: []
+	Unmatched Test: []
+
+
+Sentence: 141
+	Gold: (TOP (S (`` ``) (IN So) (NP (PRP it)) (VP (VBZ 's) (NP (DT a) (ADJP (RB very) (JJ mixed)) (NN bag))) (. .) ('' '')))
+	Test: (TOP (S (`` ``) (ADVP (RB So)) (S (NP (PRP it)) (VP (VBZ 's) (NP (DT a) (ADJP (RB very) (JJ mixed)) (NN bag)))) (. .) ('' '')))
+	Unmatched Gold: []
+	Unmatched Test: [(ADVP: So), (S: it 's a very mixed bag)]
+
+
+Sentence: 142
+	Gold: (TOP (NP (NNP John) (NNP Kenneth) (NNP Galbraith) (. .)))
+	Test: (TOP (S (NP (NNP John) (NNP Kenneth)) (VP (VBN Galbraith)) (. .)))
+	Unmatched Gold: [(NP: John Kenneth Galbraith .)]
+	Unmatched Test: [(S: John Kenneth Galbraith .), (NP: John Kenneth), (VP: Galbraith)]
+
+
+Sentence: 143
+	Gold: (TOP (NP (NNP Mario) (NNP Gabelli) (. .)))
+	Test: (TOP (S (NP (NNP Mario)) (VP (VBN Gabelli)) (. .)))
+	Unmatched Gold: [(NP: Mario Gabelli .)]
+	Unmatched Test: [(S: Mario Gabelli .), (NP: Mario), (VP: Gabelli)]
+
+
+Sentence: 144
+	Gold: (TOP (NP (NNP Jim) (NNP Rogers) (. .)))
+	Test: (TOP (S (NP (NNP Jim)) (VP (VBN Rogers)) (. .)))
+	Unmatched Gold: [(NP: Jim Rogers .)]
+	Unmatched Test: [(S: Jim Rogers .), (NP: Jim), (VP: Rogers)]
+
+
+Sentence: 145
+	Gold: (TOP (NP (NNP Frank) (NNP Curzio) (. .)))
+	Test: (TOP (S (NP (NNP Frank)) (VP (VBN Curzio)) (. .)))
+	Unmatched Gold: [(NP: Frank Curzio .)]
+	Unmatched Test: [(S: Frank Curzio .), (NP: Frank), (VP: Curzio)]
+
+
+Sentence: 146
+	Gold: (TOP (NP (NNP Frank) (NNP W.) (NNP Terrizzi) (. .)))
+	Test: (TOP (S (NP (NNP Frank) (NNP W.)) (VP (VBN Terrizzi)) (. .)))
+	Unmatched Gold: [(NP: Frank W. Terrizzi .)]
+	Unmatched Test: [(S: Frank W. Terrizzi .), (NP: Frank W.), (VP: Terrizzi)]
+
+
+Sentence: 147
+	Gold: (TOP (S (INTJ (UH Yes)) (, ,) (NP (PRP he)) (VP (VBD did)) (. .)))
+	Test: (TOP (S (INTJ (UH Yes)) (, ,) (NP (PRP he)) (VP (VBD did)) (. .)))
+	Unmatched Gold: []
+	Unmatched Test: []
+
+
+Sentence: 148
+	Gold: (TOP (FRAG (NP (JJ Absolute) (NN rubbish)) (. .)))
+	Test: (TOP (S (NP (NNP Absolute)) (VP (VBN rubbish)) (. .)))
+	Unmatched Gold: [(FRAG: Absolute rubbish .), (NP: Absolute rubbish)]
+	Unmatched Test: [(S: Absolute rubbish .), (NP: Absolute), (VP: rubbish)]
+
+
+Sentence: 149
+	Gold: (TOP (S (ADVP (RB Apparently)) (, ,) (NP (PRP$ their) (NN verdict)) (VP (VBZ is) (ADVP (RB in))) (. .)))
+	Test: (TOP (S (ADVP (RB Apparently)) (, ,) (NP (PRP$ their) (NN verdict)) (VP (VBZ is) (ADVP (RP in))) (. .)))
+	Unmatched Gold: []
+	Unmatched Test: []
+
+
+Sentence: 150
+	Gold: (TOP (S (ADVP (RB Right) (RB now)) (NP (PRP they)) (VP (VBP 're) (VP (VBG pursuing) (NP (NN evidence)))) (. .)))
+	Test: (TOP (S (ADVP (RB Right) (RB now)) (NP (PRP they)) (VP (VBP 're) (S (VP (VBG pursuing) (NP (NN evidence))))) (. .)))
+	Unmatched Gold: []
+	Unmatched Test: [(S: pursuing evidence)]
+
+
+Sentence: 151
+	Gold: (TOP (FRAG (INTJ (UH Ah)) (, ,) (INTJ (UH yes)) (, ,) (NP (NP (NN something)) (VP (VBN called) (S (NP (DT a) (NNP Star) (NNP Chamber))))) (. .)))
+	Test: (TOP (S (INTJ (UH Ah) (, ,) (UH yes) (, ,) (NN something)) (VP (VBD called) (NP (DT a) (NNP Star) (NNP Chamber))) (. .)))
+	Unmatched Gold: [(FRAG: Ah , yes , something called a Star Chamber .), (INTJ: Ah), (INTJ: yes), (NP: something called a Star Chamber), (NP: something), (S: a Star Chamber)]
+	Unmatched Test: [(S: Ah , yes , something called a Star Chamber .), (INTJ: Ah , yes , something)]
+
+
+Sentence: 152
+	Gold: (TOP (FRAG (NP (DT No) (NN doubt) (SBAR (S (NP (WDT that)) (VP (VBZ 's) (ADJP (RB partially) (JJ true)))))) (. .)))
+	Test: (TOP (S (ADVP (RB No)) (VP (VBP doubt) (SBAR (WHNP (WDT that)) (S (VP (VBZ 's) (ADJP (RB partially) (JJ true)))))) (. .)))
+	Unmatched Gold: [(FRAG: No doubt that 's partially true .), (NP: No doubt that 's partially true), (S: that 's partially true), (NP: that)]
+	Unmatched Test: [(S: No doubt that 's partially true .), (ADVP: No), (VP: doubt that 's partially true), (WHNP: that), (S: 's partially true)]
+
+
+Sentence: 153
+	Gold: (TOP (S (NP (PRP it)) (VP (VBD defended) (NP (NP (JJ appropriate) (JJ constitutional) (NNS safeguards)) (CC and) (NP (JJ practical) (JJ common) (NN sense)))) (. .)))
+	Test: (TOP (S (NP (PRP it)) (VP (VBD defended) (NP (JJ appropriate) (JJ constitutional) (NNP safeguards) (CC and) (JJ practical) (JJ common) (NN sense))) (. .)))
+	Unmatched Gold: [(NP: appropriate constitutional safeguards), (NP: practical common sense)]
+	Unmatched Test: []
+
+
+Sentence: 154
+	Gold: (TOP (S (NP (NNS Individuals)) (VP (MD can) (ADVP (RB always)) (VP (VB have) (S (NP (PRP$ their) (NNS hands)) (VP (VBN slapped))))) (. .)))
+	Test: (TOP (S (NP (NNS Individuals)) (VP (MD can) (RB always) (VP (VB have) (NP (PRP$ their) (NNS hands) (NN slapped)))) (. .)))
+	Unmatched Gold: [(ADVP: always), (S: their hands slapped), (NP: their hands), (VP: slapped)]
+	Unmatched Test: [(NP: their hands slapped)]
+
+
+Sentence: 155
+	Gold: (TOP (S (NP (PRP I)) (VP (VBP do) (RB not) (PP (IN by) (NP (DT any) (NNS means))) (VP (VB defend) (NP (NNP HUD) (NN management)))) (. .)))
+	Test: (TOP (S (S (NP (PRP I)) (VP (VBP do) (ADVP (RB not)) (PP (IN by) (NP (DT any) (NNS means))))) (VP (VB defend) (NP (NNP HUD) (NNP management))) (. .)))
+	Unmatched Gold: [(VP: do not by any means defend HUD management)]
+	Unmatched Test: [(S: I do not by any means), (VP: do not by any means), (ADVP: not)]
+
+
+Sentence: 156
+	Gold: (TOP (NP (NNP Raymond) (NNP Weber)))
+	Test: (TOP (NP (NNP Raymond) (NNP Weber)))
+	Unmatched Gold: []
+	Unmatched Test: []
+
+
+Sentence: 157
+	Gold: (TOP (NP (NP (NNP Parsippany)) (, ,) (NP (NNP N.J) (. .))))
+	Test: (TOP (SINV (ADVP (RB Parsippany)) (, ,) (NP (NNP N.J)) (. .)))
+	Unmatched Gold: [(NP: Parsippany , N.J .), (NP: Parsippany), (NP: N.J .)]
+	Unmatched Test: [(SINV: Parsippany , N.J .), (ADVP: Parsippany), (NP: N.J)]
+
+
+Sentence: 158
+	Gold: (TOP (NP (NNP Clark) (NNP S.) (NNP Spalsbury) (NNP Jr) (. .)))
+	Test: (TOP (S (NP (NNP Clark) (NNP S.)) (VP (VB Spalsbury) (NP (NNP Jr))) (. .)))
+	Unmatched Gold: [(NP: Clark S. Spalsbury Jr .)]
+	Unmatched Test: [(S: Clark S. Spalsbury Jr .), (NP: Clark S.), (VP: Spalsbury Jr), (NP: Jr)]
+
+
+Sentence: 159
+	Gold: (TOP (NP (NP (NNP Estes) (NNP Park)) (, ,) (NP (NNP Colo)) (. .)))
+	Test: (TOP (S (NP (NNP Estes) (NNP Park)) (, ,) (VP (VBN Colo)) (. .)))
+	Unmatched Gold: [(NP: Estes Park , Colo .), (NP: Colo)]
+	Unmatched Test: [(S: Estes Park , Colo .), (VP: Colo)]
+
+
+Sentence: 160
+	Gold: (TOP (FRAG (NP (RB Just) (DT a) (NN coincidence)) (. ?)))
+	Test: (TOP (SINV (ADVP (RB Just)) (NP (DT a) (NN coincidence)) (. ?)))
+	Unmatched Gold: [(FRAG: Just a coincidence ?), (NP: Just a coincidence)]
+	Unmatched Test: [(SINV: Just a coincidence ?), (ADVP: Just), (NP: a coincidence)]
+
+
+Sentence: 161
+	Gold: (TOP (S (CC But) (NP (PRP they)) (VP (VBP are) (ADJP (JJ worried))) (. .)))
+	Test: (TOP (S (CC But) (NP (PRP they)) (VP (VBP are) (VP (VBN worried))) (. .)))
+	Unmatched Gold: [(ADJP: worried)]
+	Unmatched Test: [(VP: worried)]
+
+
+Sentence: 162
+	Gold: (TOP (S (NP (NP (NNP Nasdaq) (POS 's)) (JJS biggest) (NNS stocks)) (VP (VBD were) (VP (VBN hammered))) (. .)))
+	Test: (TOP (S (NP (NP (NNP Nasdaq) (POS 's)) (JJS biggest) (NNS stocks)) (VP (VBD were) (NP (NNP hammered))) (. .)))
+	Unmatched Gold: [(VP: hammered)]
+	Unmatched Test: [(NP: hammered)]
+
+
+Sentence: 163
+	Gold: (TOP (S (CC But) (NP (PRP they)) (VP (VBD fell) (ADVP (RB sharply))) (. .)))
+	Test: (TOP (S (CC But) (NP (PRP they)) (VP (VBD fell) (ADVP (RB sharply))) (. .)))
+	Unmatched Gold: []
+	Unmatched Test: []
+
+
+Sentence: 164
+	Gold: (TOP (S (NP (NP (DT The) (NN turnover)) (PP (IN in) (NP (DT both) (NNS issues)))) (VP (VBD was) (ADJP (RB roughly) (JJ normal))) (. .)))
+	Test: (TOP (S (NP (NP (DT The) (NN turnover)) (PP (IN in) (NP (DT both) (NNS issues)))) (VP (VBD was) (ADJP (RB roughly) (JJ normal))) (. .)))
+	Unmatched Gold: []
+	Unmatched Test: []
+
+
+Sentence: 165
+	Gold: (TOP (S (NP (NNP Commercial) (NNP Intertech)) (VP (VBD plummeted) (NP (CD 6)) (PP (TO to) (NP (CD 26)))) (. .)))
+	Test: (TOP (S (NP (JJ Commercial) (NNS Intertech)) (VP (VBD plummeted) (NP (QP (CD 6) (TO to) (CD 26)))) (. .)))
+	Unmatched Gold: [(NP: 6), (PP: to 26), (NP: 26)]
+	Unmatched Test: [(NP: 6 to 26), (QP: 6 to 26)]
+
+
+Sentence: 166
+	Gold: (TOP (NP (NNP Friday) (, ,) (NNP October) (CD 13) (, ,) (CD 1989)))
+	Test: (TOP (NP (NNP Friday) (, ,) (NNP October) (CD 13) (, ,) (CD 1989)))
+	Unmatched Gold: []
+	Unmatched Test: []
+
+
+Sentence: 167
+	Gold: (TOP (NP (JJ PRIME) (NN RATE) (: :)))
+	Test: (TOP (NP (NNP PRIME) (NN RATE) (: :)))
+	Unmatched Gold: []
+	Unmatched Test: []
+
+
+Sentence: 168
+	Gold: (TOP (NP (QP (CD 10) (CD 1\/2)) (NN %) (. .)))
+	Test: (TOP (FRAG (NP (QP (CD 10) (CD 1\/2)) (NN %)) (. .)))
+	Unmatched Gold: [(NP: 10 1\/2 % .)]
+	Unmatched Test: [(FRAG: 10 1\/2 % .), (NP: 10 1\/2 %)]
+
+
+Sentence: 169
+	Gold: (TOP (NP (JJ FEDERAL) (NNS FUNDS) (: :)))
+	Test: (TOP (NP (JJ FEDERAL) (NNS FUNDS) (: :)))
+	Unmatched Gold: []
+	Unmatched Test: []
+
+
+Sentence: 170
+	Gold: (TOP (NP (NP (NN Source)) (: :) (NP (NNP Fulton) (NNP Prebon) (PRN (-LRB- -LRB-) (NNP U.S.A) (. .) (-RRB- -RRB-)) (NNP Inc)) (. .)))
+	Test: (TOP (FRAG (NP (NN Source)) (: :) (NP (NNP Fulton) (NNP Prebon)) (PRN (-LRB- -LRB-) (NP (NNP U.S.A) (. .)) (-RRB- -RRB-)) (NP (NNP Inc)) (. .)))
+	Unmatched Gold: [(NP: Source : Fulton Prebon -LRB- U.S.A . -RRB- Inc .), (NP: Fulton Prebon -LRB- U.S.A . -RRB- Inc)]
+	Unmatched Test: [(FRAG: Source : Fulton Prebon -LRB- U.S.A . -RRB- Inc .), (NP: Fulton Prebon), (NP: U.S.A .), (NP: Inc)]
+
+
+Sentence: 171
+	Gold: (TOP (NP (NN DISCOUNT) (NN RATE) (: :)))
+	Test: (TOP (S (VP (VB DISCOUNT) (NP (NN RATE))) (: :)))
+	Unmatched Gold: [(NP: DISCOUNT RATE :)]
+	Unmatched Test: [(S: DISCOUNT RATE :), (VP: DISCOUNT RATE), (NP: RATE)]
+
+
+Sentence: 172
+	Gold: (TOP (NP (CD 7) (NN %) (. .)))
+	Test: (TOP (FRAG (ADJP (CD 7) (NN %)) (. .)))
+	Unmatched Gold: [(NP: 7 % .)]
+	Unmatched Test: [(FRAG: 7 % .), (ADJP: 7 %)]
+
+
+Sentence: 173
+	Gold: (TOP (NP (NN CALL) (NN MONEY) (: :)))
+	Test: (TOP (S (VP (VB CALL) (NP (NN MONEY))) (: :)))
+	Unmatched Gold: [(NP: CALL MONEY :)]
+	Unmatched Test: [(S: CALL MONEY :), (VP: CALL MONEY), (NP: MONEY)]
+
+
+Sentence: 174
+	Gold: (TOP (NP (QP (CD 9) (CD 3\/4) (NN %) (TO to) (CD 10) (NN %)) (. .)))
+	Test: (TOP (S (NP (QP (CD 9) (CD 3\/4)) (NN %)) (PP (TO to) (NP (CD 10) (NN %))) (. .)))
+	Unmatched Gold: [(NP: 9 3\/4 % to 10 % .), (QP: 9 3\/4 % to 10 %)]
+	Unmatched Test: [(S: 9 3\/4 % to 10 % .), (NP: 9 3\/4 %), (QP: 9 3\/4), (PP: to 10 %), (NP: 10 %)]
+
+
+Sentence: 175
+	Gold: (TOP (NP (NP (JJ COMMERCIAL) (NN PAPER)) (VP (VBN placed) (ADVP (RB directly)) (PP (IN by) (NP (NNP General) (NNP Motors) (NNP Acceptance) (NNP Corp.)))) (: :)))
+	Test: (TOP (S (NP (JJ COMMERCIAL) (NN PAPER)) (VP (VBN placed) (ADVP (RB directly)) (PP (IN by) (NP (NP (NNP General) (NNPS Motors)) (NNP Acceptance) (NNP Corp.)))) (: :)))
+	Unmatched Gold: [(NP: COMMERCIAL PAPER placed directly by General Motors Acceptance Corp. :)]
+	Unmatched Test: [(S: COMMERCIAL PAPER placed directly by General Motors Acceptance Corp. :), (NP: General Motors)]
+
+
+Sentence: 176
+	Gold: (TOP (NP (JJ COMMERCIAL) (NN PAPER) (: :)))
+	Test: (TOP (INTJ (JJ COMMERCIAL) (NNP PAPER) (: :)))
+	Unmatched Gold: [(NP: COMMERCIAL PAPER :)]
+	Unmatched Test: [(INTJ: COMMERCIAL PAPER :)]
+
+
+Sentence: 177
+	Gold: (TOP (NP (NP (NNS CERTIFICATES)) (PP (IN OF) (NP (NN DEPOSIT))) (: :)))
+	Test: (TOP (NP (NP (NNS CERTIFICATES)) (PP (IN OF) (NP (NNP DEPOSIT) (: :)))))
+	Unmatched Gold: [(PP: OF DEPOSIT), (NP: DEPOSIT)]
+	Unmatched Test: [(PP: OF DEPOSIT :), (NP: DEPOSIT :)]
+
+
+Sentence: 178
+	Gold: (TOP (S (NP (DT The) (JJ minimum) (NN unit)) (VP (VBZ is) (NP ($ $) (CD 100,000))) (. .)))
+	Test: (TOP (S (NP (DT The) (JJ minimum) (NN unit)) (VP (VBZ is) (NP ($ $) (CD 100,000))) (. .)))
+	Unmatched Gold: []
+	Unmatched Test: []
+
+
+Sentence: 179
+	Gold: (TOP (NP (NP (JJ Typical) (NNS rates)) (PP (IN in) (NP (DT the) (JJ secondary) (NN market))) (: :)))
+	Test: (TOP (S (NP (JJ Typical) (NNS rates)) (PP (IN in) (NP (DT the) (JJ secondary) (NN market))) (: :)))
+	Unmatched Gold: [(NP: Typical rates in the secondary market :)]
+	Unmatched Test: [(S: Typical rates in the secondary market :)]
+
+
+Sentence: 180
+	Gold: (TOP (NP (NNS BANKERS) (NNS ACCEPTANCES) (: :)))
+	Test: (TOP (NP (NP (NNS BANKERS)) (NNPS ACCEPTANCES) (: :)))
+	Unmatched Gold: []
+	Unmatched Test: [(NP: BANKERS)]
+
+
+Sentence: 181
+	Gold: (TOP (NP (NNP LONDON) (JJ LATE) (NNS EURODOLLARS) (: :)))
+	Test: (TOP (NP (NNP LONDON) (JJ LATE) (NNPS EURODOLLARS) (: :)))
+	Unmatched Gold: []
+	Unmatched Test: []
+
+
+Sentence: 182
+	Gold: (TOP (NP (NP (NNP LONDON) (RB INTERBANK) (VBN OFFERED) (NNS RATES)) (PRN (-LRB- -LRB-) (NP (NNP LIBOR)) (-RRB- -RRB-)) (: :)))
+	Test: (TOP (S (NP (NNP LONDON) (NNP INTERBANK)) (VP (VBN OFFERED) (NP (NP (NNS RATES)) (PRN (-LRB- -LRB-) (NP (NNP LIBOR)) (-RRB- -RRB-)) (: :)))))
+	Unmatched Gold: [(NP: LONDON INTERBANK OFFERED RATES -LRB- LIBOR -RRB- :), (NP: LONDON INTERBANK OFFERED RATES)]
+	Unmatched Test: [(S: LONDON INTERBANK OFFERED RATES -LRB- LIBOR -RRB- :), (NP: LONDON INTERBANK), (VP: OFFERED RATES -LRB- LIBOR -RRB- :), (NP: RATES -LRB- LIBOR -RRB- :), (NP: RATES)]
+
+
+Sentence: 183
+	Gold: (TOP (NP (JJ FOREIGN) (JJ PRIME) (NNS RATES) (: :)))
+	Test: (TOP (FRAG (ADJP (JJ FOREIGN)) (NP (JJ PRIME) (NNS RATES)) (: :)))
+	Unmatched Gold: [(NP: FOREIGN PRIME RATES :)]
+	Unmatched Test: [(FRAG: FOREIGN PRIME RATES :), (ADJP: FOREIGN), (NP: PRIME RATES)]
+
+
+Sentence: 184
+	Gold: (TOP (NP (NN TREASURY) (NNS BILLS) (: :)))
+	Test: (TOP (NP (NNP TREASURY) (NNS BILLS) (: :)))
+	Unmatched Gold: []
+	Unmatched Test: []
+
+
+Sentence: 185
+	Gold: (TOP (NP (NP (NP (CD 7.63) (NN %)) (NP (CD 13) (NNS weeks))) (: ;) (NP (NP (CD 7.60) (NN %)) (NP (CD 26) (NNS weeks))) (. .)))
+	Test: (TOP (FRAG (NP (CD 7.63) (NN %)) (NP (CD 13) (NNS weeks)) (: ;) (NP (CD 7.60) (NN %)) (NP (CD 26) (NNS weeks)) (. .)))
+	Unmatched Gold: [(NP: 7.63 % 13 weeks ; 7.60 % 26 weeks .), (NP: 7.63 % 13 weeks), (NP: 7.60 % 26 weeks)]
+	Unmatched Test: [(FRAG: 7.63 % 13 weeks ; 7.60 % 26 weeks .)]
+
+
+Sentence: 186
+	Gold: (TOP (NP (NP (NN Source)) (: :) (NP (NNP Telerate) (NNP Systems) (NNP Inc)) (. .)))
+	Test: (TOP (FRAG (NP (NN Source)) (: :) (NP (NNP Telerate) (NNPS Systems) (NNP Inc)) (. .)))
+	Unmatched Gold: [(NP: Source : Telerate Systems Inc .)]
+	Unmatched Test: [(FRAG: Source : Telerate Systems Inc .)]
+
+
+Sentence: 187
+	Gold: (TOP (NP (NP (NNP FEDERAL) (NNP NATIONAL) (NNP MORTGAGE) (NNP ASSOCIATION)) (PRN (-LRB- -LRB-) (NP (NNP Fannie) (NNP Mae)) (-RRB- -RRB-)) (: :)))
+	Test: (TOP (S (NP (NNP FEDERAL) (NNP NATIONAL)) (VP (VB MORTGAGE) (NP (NNP ASSOCIATION) (PRN (-LRB- -LRB-) (NP (NNP Fannie) (NNP Mae)) (-RRB- -RRB-)) (: :)))))
+	Unmatched Gold: [(NP: FEDERAL NATIONAL MORTGAGE ASSOCIATION -LRB- Fannie Mae -RRB- :), (NP: FEDERAL NATIONAL MORTGAGE ASSOCIATION)]
+	Unmatched Test: [(S: FEDERAL NATIONAL MORTGAGE ASSOCIATION -LRB- Fannie Mae -RRB- :), (NP: FEDERAL NATIONAL), (VP: MORTGAGE ASSOCIATION -LRB- Fannie Mae -RRB- :), (NP: ASSOCIATION -LRB- Fannie Mae -RRB- :)]
+
+
+Sentence: 188
+	Gold: (TOP (NP (NP (NN Source)) (: :) (NP (NNP Telerate) (NNP Systems) (NNP Inc)) (. .)))
+	Test: (TOP (FRAG (NP (NN Source)) (: :) (NP (NNP Telerate) (NNPS Systems) (NNP Inc)) (. .)))
+	Unmatched Gold: [(NP: Source : Telerate Systems Inc .)]
+	Unmatched Test: [(FRAG: Source : Telerate Systems Inc .)]
+
+
+Sentence: 189
+	Gold: (TOP (NP (NNP MERRILL) (NNP LYNCH) (NNP READY) (NNP ASSETS) (NNP TRUST) (: :)))
+	Test: (TOP (S (NP (NNP MERRILL) (NNP LYNCH)) (NP (JJ READY) (NNS ASSETS)) (VP (VB TRUST)) (: :)))
+	Unmatched Gold: [(NP: MERRILL LYNCH READY ASSETS TRUST :)]
+	Unmatched Test: [(S: MERRILL LYNCH READY ASSETS TRUST :), (NP: MERRILL LYNCH), (NP: READY ASSETS), (VP: TRUST)]
+
+
+Sentence: 190
+	Gold: (TOP (NP (CD 8.33) (NN %) (. .)))
+	Test: (TOP (FRAG (ADJP (CD 8.33) (NN %)) (. .)))
+	Unmatched Gold: [(NP: 8.33 % .)]
+	Unmatched Test: [(FRAG: 8.33 % .), (ADJP: 8.33 %)]
+
+
+Sentence: 191
+	Gold: (TOP (S (CC And) (NP (PRP they)) (VP (VBP plan) (S (VP (TO to) (VP (VB buy) (NP (JJR more)) (NP (NN today)))))) (. .)))
+	Test: (TOP (S (CC And) (NP (PRP they)) (VP (VBP plan) (S (VP (TO to) (VP (VB buy) (NP (JJR more) (NN today)))))) (. .)))
+	Unmatched Gold: [(NP: more), (NP: today)]
+	Unmatched Test: [(NP: more today)]
+
+
+Sentence: 192
+	Gold: (TOP (S (RB Then) (NP (PRP he)) (VP (VBD jumped) (PP (IN into) (NP (DT the) (NN market)))) (: :)))
+	Test: (TOP (S (ADVP (RB Then)) (NP (PRP he)) (VP (VBD jumped) (PP (IN into) (NP (DT the) (NN market)))) (: :)))
+	Unmatched Gold: []
+	Unmatched Test: [(ADVP: Then)]
+
+
+Sentence: 193
+	Gold: (TOP (S (NP (JJ Other) (NN money) (NNS managers)) (ADVP (RB also)) (VP (VBD opened) (NP (PRP$ their) (NNS wallets))) (. .)))
+	Test: (TOP (S (NP (JJ Other) (NN money) (NNS managers)) (ADVP (RB also)) (VP (VBD opened) (NP (PRP$ their) (NN wallets))) (. .)))
+	Unmatched Gold: []
+	Unmatched Test: []
+
+
+Sentence: 194
+	Gold: (TOP (S (NP (PRP It)) (VP (MD can) (VP (VB happen) (SBAR (IN before) (S (NP (PRP you)) (VP (MD can) (VP (VB turn) (ADVP (RB around)))))))) (. .) ('' '')))
+	Test: (TOP (S (NP (PRP It)) (VP (MD can) (VP (VB happen) (SBAR (IN before) (S (S (NP (PRP you)) (VP (MD can) (VP (VB turn) (ADVP (RP around))))) (. .) ('' '')))))))
+	Unmatched Gold: [(VP: can happen before you can turn around), (VP: happen before you can turn around), (SBAR: before you can turn around)]
+	Unmatched Test: [(VP: can happen before you can turn around . ''), (VP: happen before you can turn around . ''), (SBAR: before you can turn around . ''), (S: you can turn around . '')]
+
+
+Sentence: 195
+	Gold: (TOP (S (NP (DT All) (WDT that)) (ADVP (RB now)) (VP (VBZ has) (VP (VBN changed))) (. .)))
+	Test: (TOP (S (NP (PDT All) (DT that)) (ADVP (RB now)) (VP (VBZ has) (VP (VBN changed))) (. .)))
+	Unmatched Gold: []
+	Unmatched Test: []
+
+
+Sentence: 196
+	Gold: (TOP (S (VP (VB Consider) (NP (DT this))) (: :)))
+	Test: (TOP (S (VP (VB Consider) (NP (DT this))) (: :)))
+	Unmatched Gold: []
+	Unmatched Test: []
+
+
+Sentence: 197
+	Gold: (TOP (S (`` ``) (NP (DT That)) (VP (VBD did) (RB not) (VP (VB happen))) (. .)))
+	Test: (TOP (SINV (`` ``) (SBAR (WHNP (WDT That)) (S (VP (VBD did) (RB not) (VP (VB happen))))) (. .)))
+	Unmatched Gold: [(S: `` That did not happen .), (NP: That)]
+	Unmatched Test: [(SINV: `` That did not happen .), (SBAR: That did not happen), (WHNP: That), (S: did not happen)]
+
+
+Sentence: 198
+	Gold: (TOP (S (CC But) (NP (DT some) (NNS players)) (VP (VBD were) (ADJP (JJ quick) (S (VP (TO to) (VP (VB seize) (NP (DT the) (NN moment))))))) (. .)))
+	Test: (TOP (S (CC But) (NP (DT some) (NNS players)) (VP (VBD were) (ADJP (JJ quick) (S (VP (TO to) (VP (VB seize) (NP (DT the) (NN moment))))))) (. .)))
+	Unmatched Gold: []
+	Unmatched Test: []
+
+
+Sentence: 199
+	Gold: (TOP (NP (NP (QP ($ $) (CD 15.2) (CD billion))) (PP (IN of) (NP (ADJP (JJ three-month) (CC and) (JJ six-month)) (NNS bills))) (. .)))
+	Test: (TOP (FRAG (NP (QP ($ $) (CD 15.2) (CD billion))) (PP (IN of) (NP (JJ three-month) (CC and) (NP (JJ six-month) (NNS bills)))) (. .)))
+	Unmatched Gold: [(NP: $ 15.2 billion of three-month and six-month bills .), (ADJP: three-month and six-month)]
+	Unmatched Test: [(FRAG: $ 15.2 billion of three-month and six-month bills .), (NP: six-month bills)]
+
+
+Sentence: 200
+	Gold: (TOP (NP (NP (QP ($ $) (CD 9.75) (CD billion))) (PP (IN of) (NP (JJ 52-week) (NNS bills))) (. .)))
+	Test: (TOP (FRAG (NP (QP ($ $) (CD 9.75) (CD billion))) (PP (IN of) (NP (JJ 52-week) (NNS bills))) (. .)))
+	Unmatched Gold: [(NP: $ 9.75 billion of 52-week bills .)]
+	Unmatched Test: [(FRAG: $ 9.75 billion of 52-week bills .)]
+
+
+Sentence: 201
+	Gold: (TOP (NP (NNP Connecticut) (NNP Light) (CC &) (NNP Power) (NNP Co.) (: --)))
+	Test: (TOP (NP (NNP Connecticut) (JJ Light) (CC &) (NP (NNP Power) (NNP Co.)) (: --)))
+	Unmatched Gold: []
+	Unmatched Test: [(NP: Power Co.)]
+
+
+Sentence: 202
+	Gold: (TOP (NP (NNP B&H) (NNP Crude) (NNP Carriers) (NNP Ltd.) (: --)))
+	Test: (TOP (NP (NP (NNP B&H) (JJ Crude) (NNS Carriers)) (NNP Ltd.) (: --)))
+	Unmatched Gold: []
+	Unmatched Test: [(NP: B&H Crude Carriers)]
+
+
+Sentence: 203
+	Gold: (TOP (NP (NP (QP (CD Four) (CD million)) (JJ common) (NNS shares)) (, ,) (PP (IN via) (NP (NNP Salomon) (NNP Brothers) (NNP Inc))) (. .)))
+	Test: (TOP (S (NP (QP (CD Four) (CD million)) (JJ common) (NNS shares)) (, ,) (PP (IN via) (NP (NNP Salomon) (NNPS Brothers) (NNP Inc))) (. .)))
+	Unmatched Gold: [(NP: Four million common shares , via Salomon Brothers Inc .)]
+	Unmatched Test: [(S: Four million common shares , via Salomon Brothers Inc .)]
+
+
+Sentence: 204
+	Gold: (TOP (NP (NNP Baldwin) (NNP Technology) (NNP Co.) (: --)))
+	Test: (TOP (S (VP (VB Baldwin) (NP (NNP Technology) (NNP Co.))) (: --)))
+	Unmatched Gold: [(NP: Baldwin Technology Co. --)]
+	Unmatched Test: [(S: Baldwin Technology Co. --), (VP: Baldwin Technology Co.), (NP: Technology Co.)]
+
+
+Sentence: 205
+	Gold: (TOP (NP (NNP Blockbuster) (NNP Entertainment) (NNP Corp.) (: --)))
+	Test: (TOP (NP (NNP Blockbuster) (NP (NNP Entertainment) (NNP Corp.)) (: --)))
+	Unmatched Gold: []
+	Unmatched Test: [(NP: Entertainment Corp.)]
+
+
+Sentence: 206
+	Gold: (TOP (NP (NNP Chase) (NNP Manhattan) (NNP Corp.) (: --)))
+	Test: (TOP (NP (NNP Chase) (NP (NNP Manhattan) (NNP Corp.)) (: --)))
+	Unmatched Gold: []
+	Unmatched Test: [(NP: Manhattan Corp.)]
+
+
+Sentence: 207
+	Gold: (TOP (NP (NNP Comcast) (NNP Corp.) (: --)))
+	Test: (TOP (INTJ (UH Comcast) (NNP Corp.) (: --)))
+	Unmatched Gold: [(NP: Comcast Corp. --)]
+	Unmatched Test: [(INTJ: Comcast Corp. --)]
+
+
+Sentence: 208
+	Gold: (TOP (NP (NP (ADJP (QP ($ $) (CD 150) (CD million))) (JJ convertible) (NNS debentures)) (, ,) (PP (IN via) (NP (NNP Merrill) (NNP Lynch))) (. .)))
+	Test: (TOP (S (NP (NP (QP ($ $) (CD 150) (CD million))) (JJ convertible) (NNS debentures)) (, ,) (PP (IN via) (NP (NNP Merrill) (NNP Lynch))) (. .)))
+	Unmatched Gold: [(NP: $ 150 million convertible debentures , via Merrill Lynch .), (ADJP: $ 150 million)]
+	Unmatched Test: [(S: $ 150 million convertible debentures , via Merrill Lynch .), (NP: $ 150 million)]
+
+
+Sentence: 209
+	Gold: (TOP (NP (NNP CSS) (NNP Industries) (: --)))
+	Test: (TOP (NP (NNP CSS) (NNPS Industries) (: --)))
+	Unmatched Gold: []
+	Unmatched Test: []
+
+
+Sentence: 210
+	Gold: (TOP (NP (NP (QP (CD 1.3) (CD million)) (JJ common) (NNS shares)) (, ,) (PP (IN via) (NP (NNP Merrill) (NNP Lynch))) (. .)))
+	Test: (TOP (S (NP (QP (CD 1.3) (CD million)) (JJ common) (NNS shares)) (, ,) (PP (IN via) (NP (NNP Merrill) (NNP Lynch))) (. .)))
+	Unmatched Gold: [(NP: 1.3 million common shares , via Merrill Lynch .)]
+	Unmatched Test: [(S: 1.3 million common shares , via Merrill Lynch .)]
+
+
+Sentence: 211
+	Gold: (TOP (NP (NNP Eastern) (NNP Utilities) (NNP Associates) (: --)))
+	Test: (TOP (NP (NP (JJ Eastern) (NNS Utilities)) (NNPS Associates) (: --)))
+	Unmatched Gold: []
+	Unmatched Test: [(NP: Eastern Utilities)]
+
+
+Sentence: 212
+	Gold: (TOP (NP (NP (QP (CD 1.5) (CD million)) (JJ common) (NNS shares)) (, ,) (PP (IN via) (NP (NNP PaineWebber) (NNP Inc))) (. .)))
+	Test: (TOP (S (NP (QP (CD 1.5) (CD million)) (JJ common) (NNS shares)) (, ,) (PP (IN via) (NP (NNP PaineWebber) (NNP Inc))) (. .)))
+	Unmatched Gold: [(NP: 1.5 million common shares , via PaineWebber Inc .)]
+	Unmatched Test: [(S: 1.5 million common shares , via PaineWebber Inc .)]
+
+
+Sentence: 213
+	Gold: (TOP (NP (NNP Employee) (NNP Benefit) (NNP Plans) (NNP Inc.) (: --)))
+	Test: (TOP (S (NP (NN Employee) (NN Benefit)) (VP (VBZ Plans) (NP (NNP Inc.) (: --)))))
+	Unmatched Gold: [(NP: Employee Benefit Plans Inc. --)]
+	Unmatched Test: [(S: Employee Benefit Plans Inc. --), (NP: Employee Benefit), (VP: Plans Inc. --), (NP: Inc. --)]
+
+
+Sentence: 214
+	Gold: (TOP (NP (NNP Exabyte) (NNP Corp.) (: --)))
+	Test: (TOP (INTJ (UH Exabyte) (NNP Corp.) (: --)))
+	Unmatched Gold: [(NP: Exabyte Corp. --)]
+	Unmatched Test: [(INTJ: Exabyte Corp. --)]
+
+
+Sentence: 215
+	Gold: (TOP (NP (NP (CD 2,850,000) (JJ common) (NNS shares)) (, ,) (PP (IN via) (NP (NNP Goldman) (NNP Sachs))) (. .)))
+	Test: (TOP (S (NP (NNP 2,850,000) (JJ common) (NNS shares)) (, ,) (PP (IN via) (NP (NNP Goldman) (NNP Sachs))) (. .)))
+	Unmatched Gold: [(NP: 2,850,000 common shares , via Goldman Sachs .)]
+	Unmatched Test: [(S: 2,850,000 common shares , via Goldman Sachs .)]
+
+
+Sentence: 216
+	Gold: (TOP (NP (NNP Knowledgeware) (NNP Inc.) (: --)))
+	Test: (TOP (INTJ (UH Knowledgeware) (NNP Inc.) (: --)))
+	Unmatched Gold: [(NP: Knowledgeware Inc. --)]
+	Unmatched Test: [(INTJ: Knowledgeware Inc. --)]
+
+
+Sentence: 217
+	Gold: (TOP (NP (NP (QP (CD 2.4) (CD million)) (JJ common) (NNS shares)) (, ,) (PP (IN via) (NP (NNP Montgomery) (NNP Securities))) (. .)))
+	Test: (TOP (S (NP (QP (CD 2.4) (CD million)) (JJ common) (NNS shares)) (, ,) (PP (IN via) (NP (NNP Montgomery) (NNPS Securities))) (. .)))
+	Unmatched Gold: [(NP: 2.4 million common shares , via Montgomery Securities .)]
+	Unmatched Test: [(S: 2.4 million common shares , via Montgomery Securities .)]
+
+
+Sentence: 218
+	Gold: (TOP (NP (NNP Oregon) (: --)))
+	Test: (TOP (NP (NNP Oregon) (: --)))
+	Unmatched Gold: []
+	Unmatched Test: []
+
+
+Sentence: 219
+	Gold: (TOP (NP (NP (NNP Washington)) (, ,) (NP (NNP D.C.)) (: --)))
+	Test: (TOP (INTJ (NNP Washington) (, ,) (NNP D.C.) (: --)))
+	Unmatched Gold: [(NP: Washington , D.C. --), (NP: Washington), (NP: D.C.)]
+	Unmatched Test: [(INTJ: Washington , D.C. --)]
+
+
+Sentence: 220
+	Gold: (TOP (NP (NNP Virginia) (NNP Public) (NNP School) (NNP Authority) (: --)))
+	Test: (TOP (FRAG (NP (NNP Virginia) (JJ Public) (NN School)) (NP (NN Authority)) (: --)))
+	Unmatched Gold: [(NP: Virginia Public School Authority --)]
+	Unmatched Test: [(FRAG: Virginia Public School Authority --), (NP: Virginia Public School), (NP: Authority)]
+
+
+Sentence: 221
+	Gold: (TOP (NP (NP (NNP Austin)) (, ,) (NP (NNP Texas)) (: --)))
+	Test: (TOP (INTJ (NNP Austin) (, ,) (NNP Texas) (: --)))
+	Unmatched Gold: [(NP: Austin , Texas --), (NP: Austin), (NP: Texas)]
+	Unmatched Test: [(INTJ: Austin , Texas --)]
+
+
+Sentence: 222
+	Gold: (TOP (NP (NNP California) (NNP Health) (NNP Facilities) (NNP Financing) (NNP Authority) (: --)))
+	Test: (TOP (S (NP (NNP California) (NN Health) (NNS Facilities)) (VP (VBG Financing) (NP (NNP Authority) (: --)))))
+	Unmatched Gold: [(NP: California Health Facilities Financing Authority --)]
+	Unmatched Test: [(S: California Health Facilities Financing Authority --), (NP: California Health Facilities), (VP: Financing Authority --), (NP: Authority --)]
+
+
+Sentence: 223
+	Gold: (TOP (NP (NNP Connecticut) (: --)))
+	Test: (TOP (NP (NNP Connecticut) (: --)))
+	Unmatched Gold: []
+	Unmatched Test: []
+
+
+Sentence: 224
+	Gold: (TOP (NP (NNP Pennsylvania) (NNP Higher) (NNP Education) (NNP Facilities) (NNP Authority) (: --)))
+	Test: (TOP (FRAG (NP (NNP Pennsylvania) (JJR Higher) (NN Education)) (NP (NNP Facilities) (NNP Authority)) (: --)))
+	Unmatched Gold: [(NP: Pennsylvania Higher Education Facilities Authority --)]
+	Unmatched Test: [(FRAG: Pennsylvania Higher Education Facilities Authority --), (NP: Pennsylvania Higher Education), (NP: Facilities Authority)]
+
+
+Sentence: 225
+	Gold: (TOP (NP (NNP Tennessee) (NNP Valley) (NNP Authority) (: --)))
+	Test: (TOP (NP (NNP Tennessee) (NP (NNP Valley) (NNP Authority)) (: --)))
+	Unmatched Gold: []
+	Unmatched Test: [(NP: Valley Authority)]
+
+
+Sentence: 226
+	Gold: (TOP (NP (NP (NNP University)) (PP (IN of) (NP (NNP Medicine) (CC And) (NNP Dentistry))) (PP (IN of) (NP (NNP New) (NNP Jersey))) (: --)))
+	Test: (TOP (S (NP (NP (NNP University)) (PP (IN of) (NP (NN Medicine)))) (CC And) (VP (VBN Dentistry) (PP (IN of) (NP (NNP New) (NNP Jersey)))) (: --)))
+	Unmatched Gold: [(NP: University of Medicine And Dentistry of New Jersey --), (PP: of Medicine And Dentistry), (NP: Medicine And Dentistry)]
+	Unmatched Test: [(S: University of Medicine And Dentistry of New Jersey --), (NP: University of Medicine), (PP: of Medicine), (NP: Medicine), (VP: Dentistry of New Jersey)]
+
+
+Sentence: 227
+	Gold: (TOP (NP (NP (NNP West) (NNP Virginia) (NNP Parkways)) (, ,) (NP (NNP Economic) (NNP Development) (CC And) (NNP Tourism) (NNP Authority)) (: --)))
+	Test: (TOP (FRAG (NP (NNP West) (NNP Virginia)) (NP (NP (NNP Parkways) (, ,) (JJ Economic) (NN Development)) (CC And) (NN Tourism) (NN Authority)) (: --)))
+	Unmatched Gold: [(NP: West Virginia Parkways , Economic Development And Tourism Authority --), (NP: West Virginia Parkways), (NP: Economic Development And Tourism Authority)]
+	Unmatched Test: [(FRAG: West Virginia Parkways , Economic Development And Tourism Authority --), (NP: West Virginia), (NP: Parkways , Economic Development And Tourism Authority), (NP: Parkways , Economic Development)]
+
+
+Sentence: 228
+	Gold: (TOP (NP (NP (NNP San) (NNP Antonio)) (, ,) (NP (NNP Texas)) (: --)))
+	Test: (TOP (FRAG (NP (NNP San) (NNP Antonio)) (, ,) (NP (NNP Texas)) (: --)))
+	Unmatched Gold: [(NP: San Antonio , Texas --)]
+	Unmatched Test: [(FRAG: San Antonio , Texas --)]
+
+
+Sentence: 229
+	Gold: (TOP (NP (NNP South) (NNP Dakota) (NNP Health) (CC &) (NNP Education) (NNP Facility) (NNP Authority) (: --)))
+	Test: (TOP (FRAG (NP (NNP South) (JJ Dakota) (NN Health)) (CC &) (NP (NNP Education) (NN Facility) (NN Authority)) (: --)))
+	Unmatched Gold: [(NP: South Dakota Health & Education Facility Authority --)]
+	Unmatched Test: [(FRAG: South Dakota Health & Education Facility Authority --), (NP: South Dakota Health), (NP: Education Facility Authority)]
+
+
+Sentence: 230
+	Gold: (TOP (S (CC But) (NP (PRP he)) (VP (VBZ 's) (RB not) (ADJP (RB so) (JJ sure) (PP (IN about) (NP (NP (NN everyone)) (ADJP (RB else)))))) (. .)))
+	Test: (TOP (S (CC But) (NP (PRP he)) (VP (VBZ 's) (ADJP (RB not) (RB so) (JJ sure) (PP (IN about) (NP (NN everyone)))) (ADVP (RB else))) (. .)))
+	Unmatched Gold: [(ADJP: so sure about everyone else), (PP: about everyone else), (NP: everyone else), (ADJP: else)]
+	Unmatched Test: [(ADJP: not so sure about everyone), (PP: about everyone), (ADVP: else)]
+
+
+Sentence: 231
+	Gold: (TOP (S (NP (PRP I)) (VP (VBP 'm) (VP (VBG going) (S (VP (TO to) (VP (VB hold) (ADVP (RP on))))))) (. .)))
+	Test: (TOP (S (NP (PRP I)) (VP (VBP 'm) (VP (VBG going) (S (VP (TO to) (VP (VB hold) (ADVP (RP on))))))) (. .)))
+	Unmatched Gold: []
+	Unmatched Test: []
+
+
+Sentence: 232
+	Gold: (TOP (S (ADVP (RB Now)) (NP (PRP it)) (VP (VBZ 's) (VP (VBG happening) (ADVP (RB again)))) (. .) ('' '')))
+	Test: (TOP (S (ADVP (RB Now)) (S (NP (PRP it)) (VP (VBZ 's) (VP (VBG happening) (ADVP (RB again))))) (. .) ('' '')))
+	Unmatched Gold: []
+	Unmatched Test: [(S: it 's happening again)]
+
+
+Sentence: 233
+	Gold: (TOP (S (CC And) (, ,) (ADVP (RB finally)) (, ,) (NP (EX there)) (VP (VBD were) (NP (DT the) (NNS gloaters))) (. .)))
+	Test: (TOP (S (CC And) (, ,) (ADVP (RB finally)) (, ,) (NP (EX there)) (VP (VBD were) (NP (DT the) (NN gloaters))) (. .)))
+	Unmatched Gold: []
+	Unmatched Test: []
+
+
+Sentence: 234
+	Gold: (TOP (S (`` ``) (NP (PRP I)) (VP (VBD got) (ADJP (RP out)) (PP (IN in) (NP (CD 1987)))) (. .)))
+	Test: (TOP (S (`` ``) (NP (PRP I)) (VP (VBD got) (ADVP (RP out)) (PP (IN in) (NP (CD 1987)))) (. .)))
+	Unmatched Gold: [(ADJP: out)]
+	Unmatched Test: [(ADVP: out)]
+
+
+Sentence: 235
+	Gold: (TOP (SQ (MD Would) (NP (NNP Mr.) (NNP Antori)) (ADVP (RB ever)) (VP (VB get) (ADVP (RB back)) (ADJP (RP in))) (. ?)))
+	Test: (TOP (SQ (MD Would) (NP (NNP Mr.) (NNP Antori)) (RB ever) (VP (VB get) (ADVP (RP back)) (PP (IN in))) (. ?)))
+	Unmatched Gold: [(ADVP: ever), (ADJP: in)]
+	Unmatched Test: [(PP: in)]
+
+
+Sentence: 236
+	Gold: (TOP (SQ (`` ``) (VBP Are) (NP (PRP you)) (VP (VBG kidding)) (. !)))
+	Test: (TOP (S (`` ``) (VP (VBP Are) (ADJP (NP (PRP you)) (JJ kidding))) (. !)))
+	Unmatched Gold: [(SQ: `` Are you kidding !), (VP: kidding)]
+	Unmatched Test: [(S: `` Are you kidding !), (VP: Are you kidding), (ADJP: you kidding)]
+
+
+Sentence: 237
+	Gold: (TOP (S (NP (NNS Palmtops)) (VP (VBP are) (RB n't) (ADVP (RB far) (RB behind))) (. .)))
+	Test: (TOP (S (NP (NNP Palmtops)) (VP (VBP are) (ADVP (RB n't)) (ADVP (RB far) (RB behind))) (. .)))
+	Unmatched Gold: []
+	Unmatched Test: [(ADVP: n't)]
+
+
+Sentence: 238
+	Gold: (TOP (S (NP (PRP It)) (VP (VBZ 's) (ADJP (JJ huge))) (. .) ('' '')))
+	Test: (TOP (S (S (NP (PRP It)) (VP (VBZ 's) (ADJP (JJ huge)))) (. .) ('' '')))
+	Unmatched Gold: []
+	Unmatched Test: [(S: It 's huge)]
+
+
+Sentence: 239
+	Gold: (TOP (S (S (VP (VBG Making) (S (NP (NNS computers)) (ADJP (JJR smaller))))) (ADVP (RB often)) (VP (VBZ means) (S (VP (VBG sacrificing) (NP (NN memory))))) (. .)))
+	Test: (TOP (S (ADVP (NP (VBG Making) (NNS computers)) (JJR smaller)) (ADVP (RB often)) (VP (VBZ means) (NP (JJ sacrificing) (NN memory))) (. .)))
+	Unmatched Gold: [(S: Making computers smaller), (VP: Making computers smaller), (S: computers smaller), (NP: computers), (ADJP: smaller), (S: sacrificing memory), (VP: sacrificing memory), (NP: memory)]
+	Unmatched Test: [(ADVP: Making computers smaller), (NP: Making computers), (NP: sacrificing memory)]
+
+
+Sentence: 240
+	Gold: (TOP (S (NP (NN Size) (CC and) (NN weight) (NNS considerations)) (ADVP (RB also)) (VP (VBP have) (VP (VBN limited) (NP (NN screen) (NNS displays)))) (. .)))
+	Test: (TOP (S (NP (NN Size) (CC and) (NN weight) (NNS considerations)) (ADVP (RB also)) (VP (VB have) (NP (JJ limited) (NN screen) (NNS displays))) (. .)))
+	Unmatched Gold: [(VP: limited screen displays), (NP: screen displays)]
+	Unmatched Test: [(NP: limited screen displays)]
+
+
+Sentence: 241
+	Gold: (TOP (S (NP (DT The) (JJ competitive) (NN sniping)) (VP (MD can) (VP (VB get) (ADJP (RB pretty) (JJ petty)) (PP (IN at) (NP (NNS times))))) (. .)))
+	Test: (TOP (S (NP (DT The) (JJ competitive) (NN sniping)) (VP (MD can) (VP (VB get) (RB pretty) (VP (VBN petty) (PP (IN at) (NP (NNS times)))))) (. .)))
+	Unmatched Gold: [(ADJP: pretty petty)]
+	Unmatched Test: [(VP: petty at times)]
+
+
+Sentence: 242
+	Gold: (TOP (S (NP (NNS Analysts)) (VP (VBP do) (RB n't) (VP (VB see) (NP (PRP it)) (NP (DT that) (NN way)))) (. .)))
+	Test: (TOP (S (NP (NNS Analysts)) (VP (VBP do) (RB n't) (VP (VB see) (NP (PRP it)) (PP (IN that) (NP (NN way))))) (. .)))
+	Unmatched Gold: [(NP: that way)]
+	Unmatched Test: [(PP: that way), (NP: way)]
+
+
+Sentence: 243
+	Gold: (TOP (SBARQ (WHNP (WP What)) (FRAG (PP (IN about) (NP (NNP Big) (NNP Blue)))) (. ?)))
+	Test: (TOP (FRAG (WHNP (WP What)) (PP (IN about) (NP (NNP Big) (NNP Blue))) (. ?)))
+	Unmatched Gold: [(SBARQ: What about Big Blue ?), (FRAG: about Big Blue)]
+	Unmatched Test: [(FRAG: What about Big Blue ?)]
+
+
+Sentence: 244
+	Gold: (TOP (FRAG (NP (NN Plunge)) (. ?)))
+	Test: (TOP (FRAG (NP (NN Plunge)) (. ?)))
+	Unmatched Gold: []
+	Unmatched Test: []
+
+
+Sentence: 245
+	Gold: (TOP (FRAG (WHNP (WDT What) (NN plunge)) (. ?)))
+	Test: (TOP (FRAG (WHNP (WP What)) (NP (NN plunge)) (. ?)))
+	Unmatched Gold: [(WHNP: What plunge)]
+	Unmatched Test: [(WHNP: What), (NP: plunge)]
+
+
+Sentence: 246
+	Gold: (TOP (S (NP (NNP IBM)) (VP (VBD closed) (PP (IN at) (NP ($ $) (CD 102))) (, ,) (ADVP (RB down) (NP ($ $) (CD 5.625)))) (. .)))
+	Test: (TOP (S (NP (NNP IBM)) (VP (VBD closed) (PP (IN at) (NP ($ $) (CD 102))) (, ,) (ADVP (RP down)) (NP ($ $) (CD 5.625))) (. .)))
+	Unmatched Gold: [(ADVP: down $ 5.625)]
+	Unmatched Test: [(ADVP: down)]
+
+
+Sentence: 247
+	Gold: (TOP (S (NP (NP (NNP Tandem) (POS 's)) (JJ new) (JJ high-end) (NN computer)) (VP (VBZ is) (VP (VBN called) (S (NP (NNP Cyclone))))) (. .)))
+	Test: (TOP (S (NP (NP (NNP Tandem) (POS 's)) (JJ new) (JJ high-end) (NN computer)) (VP (VBZ is) (VP (VBD called) (NP (NNP Cyclone)))) (. .)))
+	Unmatched Gold: [(S: Cyclone)]
+	Unmatched Test: []
+
+
+Sentence: 248
+	Gold: (TOP (S (NP (DT That)) (VP (MD will) (VP (VB spur) (NP (NP (NNP Tandem) (POS 's)) (NN growth)))) (. .)))
+	Test: (TOP (SBARQ (WHNP (WDT That)) (SQ (VP (MD will) (VP (VB spur) (NP (NP (NNP Tandem) (POS 's)) (NN growth))))) (. .)))
+	Unmatched Gold: [(S: That will spur Tandem 's growth .), (NP: That)]
+	Unmatched Test: [(SBARQ: That will spur Tandem 's growth .), (WHNP: That), (SQ: will spur Tandem 's growth)]
+
+
+Sentence: 249
+	Gold: (TOP (S (VP (VB Do) (RB n't) (VP (VB jump) (ADVP (RB yet)))) (. .)))
+	Test: (TOP (SQ (VBP Do) (RB n't) (VP (VB jump) (ADVP (RB yet))) (. .)))
+	Unmatched Gold: [(S: Do n't jump yet .), (VP: Do n't jump yet)]
+	Unmatched Test: [(SQ: Do n't jump yet .)]
+
+
+Sentence: 250
+	Gold: (TOP (S (NP (DT This)) (VP (MD may) (VP (VB sound) (ADJP (RB strangely) (JJ optimistic)))) (. .)))
+	Test: (TOP (S (NP (DT This)) (VP (MD may) (VP (VB sound) (ADJP (RB strangely) (JJ optimistic)))) (. .)))
+	Unmatched Gold: []
+	Unmatched Test: []
+
+
+Sentence: 251
+	Gold: (TOP (S (NP (DT The) (NNS financial-services) (NN industry)) (VP (VBD was) (VP (VBN battered) (PP (IN by) (NP (DT the) (CD 1987) (NN crash))))) (. .)))
+	Test: (TOP (S (NP (DT The) (JJ financial-services) (NN industry)) (VP (VBD was) (VP (VBN battered) (PP (IN by) (NP (DT the) (CD 1987) (NN crash))))) (. .)))
+	Unmatched Gold: []
+	Unmatched Test: []
+
+
+Sentence: 252
+	Gold: (TOP (S (NP (NN Growth)) (VP (VBZ is) (ADJP (JJR slower))) (. .)))
+	Test: (TOP (S (NP (NN Growth)) (VP (VBZ is) (ADJP (JJR slower))) (. .)))
+	Unmatched Gold: []
+	Unmatched Test: []
+
+
+Sentence: 253
+	Gold: (TOP (S (NP (NNS Profits)) (VP (VBP are) (ADJP (JJR softer))) (. .)))
+	Test: (TOP (S (NP (NNS Profits)) (VP (VBP are) (ADJP (JJR softer))) (. .)))
+	Unmatched Gold: []
+	Unmatched Test: []
+
+
+Sentence: 254
+	Gold: (TOP (S (NP (NN Debt) (NNS burdens)) (VP (VBP are) (ADJP (JJR heavier))) (. .)))
+	Test: (TOP (S (NP (NN Debt) (NNS burdens)) (VP (VBP are) (ADJP (JJR heavier))) (. .)))
+	Unmatched Gold: []
+	Unmatched Test: []
+
+
+Sentence: 255
+	Gold: (TOP (S (`` ``) (NP (NP (DT A) (NN lot)) (PP (IN of) (NP (JJ pent-up) (NN demand)))) (VP (VBZ is) (VP (VBN gone))) (. .) ('' '')))
+	Test: (TOP (SINV (`` ``) (S (NP (NP (DT A) (NN lot)) (PP (IN of) (NP (JJ pent-up) (NN demand)))) (VP (VBZ is) (VP (VBN gone)))) (. .) ('' '')))
+	Unmatched Gold: [(S: `` A lot of pent-up demand is gone . '')]
+	Unmatched Test: [(SINV: `` A lot of pent-up demand is gone . ''), (S: A lot of pent-up demand is gone)]
+
+
+Sentence: 256
+	Gold: (TOP (S (`` ``) (NP (DT That)) (VP (VBD was) (VP (VBN offset) (PP (IN by) (NP (NP (NN strength)) (ADVP (RB elsewhere)))))) (. .)))
+	Test: (TOP (SINV (`` ``) (SBAR (WHNP (WDT That)) (S (VP (VBD was) (VP (VB offset) (PP (IN by) (NP (NN strength))) (ADVP (RB elsewhere)))))) (. .)))
+	Unmatched Gold: [(S: `` That was offset by strength elsewhere .), (NP: That), (PP: by strength elsewhere), (NP: strength elsewhere)]
+	Unmatched Test: [(SINV: `` That was offset by strength elsewhere .), (SBAR: That was offset by strength elsewhere), (WHNP: That), (S: was offset by strength elsewhere), (PP: by strength)]
+
+
+Sentence: 257
+	Gold: (TOP (S (NP (NNS Surveys)) (VP (VBD suggested) (SBAR (IN that) (S (NP (NN consumer) (NN confidence)) (VP (VBD was) (ADJP (JJ high)) (PP (IN before) (NP (NNP Friday))))))) (. .)))
+	Test: (TOP (S (NP (NNS Surveys)) (VP (VBD suggested) (SBAR (S (NP (DT that) (NN consumer) (NN confidence)) (VP (VBD was) (ADJP (JJ high) (PP (IN before) (NP (NNP Friday)))))))) (. .)))
+	Unmatched Gold: [(S: consumer confidence was high before Friday), (NP: consumer confidence), (ADJP: high)]
+	Unmatched Test: [(S: that consumer confidence was high before Friday), (NP: that consumer confidence), (ADJP: high before Friday)]
+
+
+Sentence: 258
+	Gold: (TOP (S (NP (DT The) (NNS doomsayers)) (VP (VBD had) (NP (DT a) (JJ receptive) (NN audience))) (. .)))
+	Test: (TOP (S (NP (DT The) (NN doomsayers)) (VP (VBD had) (NP (DT a) (JJ receptive) (NN audience))) (. .)))
+	Unmatched Gold: []
+	Unmatched Test: []
+
+
+Sentence: 259
+	Gold: (TOP (S (NP (PRP They)) (VP (VBP are) (ADJP (RBR more) (JJ sophisticated)) (NP (DT this) (NN time))) (. .)))
+	Test: (TOP (SINV (S (NP (PRP They)) (VP (VBP are) (ADJP (RBR more) (JJ sophisticated)))) (NP (DT this) (NN time)) (. .)))
+	Unmatched Gold: [(S: They are more sophisticated this time .), (VP: are more sophisticated this time)]
+	Unmatched Test: [(SINV: They are more sophisticated this time .), (S: They are more sophisticated), (VP: are more sophisticated)]
+
+
+Sentence: 260
+	Gold: (TOP (S (NP (DT A) (NNP Dow) (NN spokeswoman)) (VP (VBD declined) (S (VP (TO to) (VP (VB comment) (PP (IN on) (NP (DT the) (NNS estimates))))))) (. .)))
+	Test: (TOP (S (NP (DT A) (NNP Dow) (NN spokeswoman)) (VP (VBD declined) (S (VP (TO to) (VP (VB comment) (PP (IN on) (NP (DT the) (NNS estimates))))))) (. .)))
+	Unmatched Gold: []
+	Unmatched Test: []
+
+
+Sentence: 261
+	Gold: (TOP (S (NP (NP (JJS Most)) (PP (IN of) (NP (DT the) (CD 10)))) (VP (VBP have) (NP (JJ big) (JJ commodity-chemical) (NNS operations))) (. .)))
+	Test: (TOP (S (NP (NP (JJS Most)) (PP (IN of) (NP (DT the) (CD 10)))) (VP (VB have) (NP (JJ big) (JJ commodity-chemical) (NNS operations))) (. .)))
+	Unmatched Gold: []
+	Unmatched Test: []
+
+
+Sentence: 262
+	Gold: (TOP (S (NP (NNP Du) (NNP Pont)) (VP (VBD declined) (S (VP (TO to) (VP (VB comment))))) (. .)))
+	Test: (TOP (S (NP (NNP Du) (NNP Pont)) (VP (VBD declined) (S (VP (TO to) (VP (VB comment))))) (. .)))
+	Unmatched Gold: []
+	Unmatched Test: []
+
+
+Sentence: 263
+	Gold: (TOP (S (NP (NNP Monsanto)) (VP (VBD declined) (S (VP (TO to) (VP (VB comment))))) (. .)))
+	Test: (TOP (S (NP (NNP Monsanto)) (VP (VBD declined) (S (VP (TO to) (VP (VB comment))))) (. .)))
+	Unmatched Gold: []
+	Unmatched Test: []
+
+
+Sentence: 264
+	Gold: (TOP (NP (NNP Dow) (NNP Chemical) (NNP Co.) (: --)))
+	Test: (TOP (NP (NNP Dow) (NP (NNP Chemical) (NNP Co.)) (: --)))
+	Unmatched Gold: []
+	Unmatched Test: [(NP: Chemical Co.)]
+
+
+Sentence: 265
+	Gold: (TOP (NP (NNP Centel) (NNP Capital) (NNP Corp.) (: --)))
+	Test: (TOP (S (VP (VB Centel) (NP (NNP Capital) (NNP Corp.))) (: --)))
+	Unmatched Gold: [(NP: Centel Capital Corp. --)]
+	Unmatched Test: [(S: Centel Capital Corp. --), (VP: Centel Capital Corp.), (NP: Capital Corp.)]
+
+
+Sentence: 266
+	Gold: (TOP (NP (NNP Federal) (NNP Home) (NNP Loan) (NNP Mortgage) (NNP Corp.) (: --)))
+	Test: (TOP (FRAG (NP (JJ Federal) (NN Home) (NN Loan)) (NP (NNP Mortgage) (NNP Corp.)) (: --)))
+	Unmatched Gold: [(NP: Federal Home Loan Mortgage Corp. --)]
+	Unmatched Test: [(FRAG: Federal Home Loan Mortgage Corp. --), (NP: Federal Home Loan), (NP: Mortgage Corp.)]
+
+
+Sentence: 267
+	Gold: (TOP (NP (NNP Federal) (NNP Home) (NNP Loan) (NNP Mortgage) (NNP Corp.) (: --)))
+	Test: (TOP (FRAG (NP (JJ Federal) (NN Home) (NN Loan)) (NP (NNP Mortgage) (NNP Corp.)) (: --)))
+	Unmatched Gold: [(NP: Federal Home Loan Mortgage Corp. --)]
+	Unmatched Test: [(FRAG: Federal Home Loan Mortgage Corp. --), (NP: Federal Home Loan), (NP: Mortgage Corp.)]
+
+
+Sentence: 268
+	Gold: (TOP (S (NP (NN Pricing) (NNS details)) (VP (VBD were) (RB n't) (ADJP (RB immediately) (JJ available))) (. .)))
+	Test: (TOP (S (NP (NN Pricing) (NNS details)) (VP (VBD were) (RB n't) (ADJP (RB immediately) (JJ available))) (. .)))
+	Unmatched Gold: []
+	Unmatched Test: []
+
+
+Sentence: 269
+	Gold: (TOP (NP (NNP Federal) (NNP Home) (NNP Loan) (NNP Mortgage) (NNP Corp.) (: --)))
+	Test: (TOP (FRAG (NP (JJ Federal) (NN Home) (NN Loan)) (NP (NNP Mortgage) (NNP Corp.)) (: --)))
+	Unmatched Gold: [(NP: Federal Home Loan Mortgage Corp. --)]
+	Unmatched Test: [(FRAG: Federal Home Loan Mortgage Corp. --), (NP: Federal Home Loan), (NP: Mortgage Corp.)]
+
+
+Sentence: 270
+	Gold: (TOP (S (NP (DT The) (NN collateral)) (VP (VBZ is) (VP (VBG being) (VP (VBN sold) (PP (IN by) (NP (DT a) (NN thrift) (NN institution)))))) (. .)))
+	Test: (TOP (S (NP (DT The) (NN collateral)) (VP (VBZ is) (VP (VBG being) (VP (VBN sold) (PP (IN by) (NP (DT a) (NN thrift) (NN institution)))))) (. .)))
+	Unmatched Gold: []
+	Unmatched Test: []
+
+
