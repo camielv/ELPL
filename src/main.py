@@ -1,6 +1,8 @@
 from Parser import Parser
 from CKY import CKY
 import operator
+import argparse
+
 def printKeys():
     SentenceParser = Parser()
     parse_information = SentenceParser.load_database( 'parse_information_unknown.p' )
@@ -76,15 +78,33 @@ def readDocument(path_sentences, path_trees):
     correct_trees.close()
     test_trees.close()
 
-def parseData():
+def parseData(path_corpus):
     TreeParser = Parser()
-    database = TreeParser.parse_document('../data/wsj.02-21.training.nounary')
+    database = TreeParser.parse_document(path_corpus)
     TreeParser.save_database(database, 'parse_information_unknown.p')
 
 if __name__ == '__main__':
-    #parseData()
-    printStep2()
-    #readDocument('../data/test.sentence.23', '../data/test.trees.23')
+    inputParser = argparse.ArgumentParser(description='CKY and Viterbi implementation by Anna Keune (6056547) and Camiel Verschoor (6229298)')
+    info = {
+    'c' : 'Path of the training corpus file.',
+    's' : 'Path of the test sentences.',
+    't' : 'Path of the test trees (golden standard file).',
+    }
+    
+    # Required parameters
+    inputParser.add_argument('-c', '--corpus-path', type=str, help=info['c'], required=True)
+    inputParser.add_argument('-s', '--sentences-path', type=str, help=info['s'], required=True)
+    inputParser.add_argument('-t', '--test-trees-path', type=str, help=info['t'], required=True)
+    
+    # Optional parameters
+    #inputparser.add_argument('-l', '--max-sentence-length', type=int, default=15, help=info['l'])   
+    
+    
+    arguments = inputParser.parse_args()
+    
+    parseData(arguments.corpus_path)
+    #printStep2()
+    readDocument(arguments.sentences_path, arguments.test_trees_path)
     #printKeys()
     '''
     x = Parser()
