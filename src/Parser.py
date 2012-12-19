@@ -1,9 +1,19 @@
+'''
+Filename: main.py
+Authors:
+Anna Keune          6056547
+Camiel Verschoor    6229298
+
+Descriptions:
+We save the rules in a in dictionary of dictionaries as dictionaries are O(1) in lookup.
+Furthermore we rename low frequency words to XXXUNKNOWN and numbers to XXXNUMBER for more accurate results
+'''
+
 import cPickle as pickle
-'''
-    We save the rules in a in dictionary of dictionaries as dictionaries are a quick datatype.
-'''
+
 class Parser():
     def __init__(self):
+        ''' Constructor '''
         pass
 
     def save_database(self, database, path):
@@ -133,11 +143,15 @@ class Parser():
         return parse_information
 
     def renameLowTerminals(self, parse_information):
+        ''' Rename low frequency words to non-english word XXXUNKNOWN '''
         name = 'XXXUNKNOWN'
         terminals = parse_information['transition_terminal'].keys()
         parse_information['transition_terminal'][name] = dict()
+
         for terminal in terminals:
+            # Check if there are frequencies below 6
             if sum(parse_information['transition_terminal'][terminal].values()) < 6:
+
                 # Update databases and remove low freq words
                 tags = parse_information['transition_terminal'][terminal].keys()
                 for tag in tags:
@@ -151,6 +165,8 @@ class Parser():
                     else:
                         parse_information['transition_terminal'][name][tag] = 1
 
+                    # Delete old terminals
                     del parse_information['probability_terminal'][tag][terminal]
+                # Delete old terminals
                 del parse_information['transition_terminal'][terminal]
         return parse_information

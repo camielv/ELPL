@@ -1,13 +1,22 @@
 '''
-    Implementation of CKY based on Stanford slides.
+Filename: main.py
+Authors:
+Anna Keune          6056547
+Camiel Verschoor    6229298
+
+Descriptions:
+Implementation of CKY and Viterbi based on Stanford slides.
+The implementation is combined due to the easy structure of CKY
 '''
 class CKY():
     def __init__( self, parse_information):
+        ''' Constructor initializes the class '''
         self.parse_information = parse_information
         self.score = dict()
         self.trace = dict()
 
     def run( self, words ):
+        ''' Main method that performs CKY and prepares viterbi '''
         n = len( words )
 
         # Save unknown words
@@ -24,20 +33,20 @@ class CKY():
 
         # Step 1 search terminal possibilities and save them with their probability
         for i in range(n):
-            # Check if number
+            # Check if number if so rename
             try:
                 float(words[i])
                 words[i] = 'XXXNUMBER'
             except ValueError:
                 words[i] = words[i].upper()
-                # Check if word exists otherwise cast it to uknown
+                # Check if word exists otherwise cast it to unknown
                 if not(words[i] in self.parse_information['transition_terminal']):
                     words[i] = 'XXXUNKNOWN'
 
             # Find all possible rules to terminal and save them
             poss_rules = self.parse_information['transition_terminal'][words[i]].keys()
             for rule in poss_rules:
-
+                # Calculate probability
                 key = (rule,)
                 total_count_rule = self.parse_information['probability_terminal'][rule].values()
 
@@ -63,7 +72,7 @@ class CKY():
 
                         poss_unaries = self.parse_information['transition_non-terminal'][candidate].keys()
                         for unary in poss_unaries:
-
+                            # Calculate probability
                             key = (unary,)
                             total_count_rule = self.parse_information['probability_non-terminal'][unary].values()
 
@@ -101,7 +110,7 @@ class CKY():
 
                                 poss_rules = self.parse_information['transition_non-terminal'][consequence].keys()
                                 for poss_rule in poss_rules:
-
+                                    # Calculate the probability of A -> B C
                                     key = (poss_rule,)
                                     total_count_rule = self.parse_information['probability_non-terminal'][poss_rule].values()
 
@@ -112,7 +121,7 @@ class CKY():
                                         score[(split, end)][candidate_B] * \
                                         self.parse_information['probability_non-terminal'][poss_rule][consequence] / \
                                         float(sum(total_count_rule))
-
+                                    # If category does not exist or has a higher probability save it
                                     if not(key in score[(begin, end)]):
                                         score[(begin, end)][key] = P
                                         trace[(begin, end)][key] = (consequence, split)
@@ -131,7 +140,7 @@ class CKY():
 
                             poss_unaries = self.parse_information['transition_non-terminal'][candidate].keys()
                             for unary in poss_unaries:
-
+                                # Calculate probability
                                 key = (unary,)
                                 total_count_rule = self.parse_information['probability_non-terminal'][unary].values()
 
@@ -141,7 +150,7 @@ class CKY():
                                 P = ( self.parse_information['probability_non-terminal'][unary][candidate] / \
                                     float( sum( total_count_rule ) ) ) \
                                     * score[(begin, end)][candidate]
-
+                                    # If category does not exist or has a higher probability save it
                                 if not(key in score[(begin, end)]):
                                     score[(begin, end)][key] = P
                                     trace[(begin, end)][key] = candidate
@@ -152,21 +161,34 @@ class CKY():
                                     added = True
         self.score = score
         self.trace = trace
+        # Start viterbi
+        print "-- Viterbi backward pass --"
         tree = self.viterbi(0, n, ('TOP',))
 
+        # Fix correct output
         return tree[:len(tree)-1] + " )\n"
 
     def viterbi(self, i, j, tag):
+        ''' 
+            Recursively does the backwards pass through the table and
+            creates the highest probable parse.
+        '''
+        # Base case when at the lowest part of the chart
         if(abs(i-j) == 1):
+            # Tag is a string then its a terminal
             if isinstance(tag, str):
+                # Use original words
                 return self.sentence.pop()
             else:
+                # Else unary rule
                 rule = self.trace[(i,j)][tag]
                 return "(" + tag[0] + " " + self.viterbi(i, j, rule) + ")"
         rule = self.trace[(i,j)][tag]
+        # Unary rule in chart
         if len(rule) == 1:
             return "(" + tag[0] + " " + self.viterbi(i, j, rule) + ")"
         else:
+        # Multiple rule
             x = self.viterbi(i, rule[1], (rule[0][0],))
             y = self.viterbi(rule[1], j, (rule[0][1],))
             # Handling NP@ case
