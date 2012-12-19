@@ -6,6 +6,8 @@ Camiel Verschoor    (6229298)
 
 18 December 2012
 -----------------------------
+Results can be found here:
+    https://github.com/camielv/ELPL/tree/master/results
 
 These source files are an implementation of a tree Parser, CKY and Viterbi algorithm.
 
