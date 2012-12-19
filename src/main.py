@@ -44,11 +44,11 @@ def printStep1():
         P = parse_information['probability_terminal'][rule][best_key] / float(sum(total_count))
         print rule, "->", best_key, ":", P
 '''
-def readDocument(path_sentences, path_trees):
+def readDocument(path_sentences, path_trees, path_output, max_length):
     file_sentences = open(path_sentences, 'r+')
     file_trees     = open(path_trees, 'r+')
     correct_trees  = open("set_correct2.txt", 'w+')
-    test_trees  = open("set_test2.txt", 'w+')
+    test_trees  = open(path_output, 'w+')
 
     SentenceParser = Parser()
     parse_information = SentenceParser.load_database( 'parse_information_unknown.p' )
@@ -63,6 +63,8 @@ def readDocument(path_sentences, path_trees):
         words = sentence.split(' ')
 
         size = len(words) - 2
+        if size > max_length:
+            continue
         print "Sentence:", i, "Size:", size
         i += 1
         if sentence == '':
@@ -89,6 +91,8 @@ if __name__ == '__main__':
     'c' : 'Path of the training corpus file.',
     's' : 'Path of the test sentences.',
     't' : 'Path of the test trees (golden standard file).',
+    'o' : 'Path of the output file (defaults to \'output.txt\').',
+    'm' : 'Max length of the sentences (defaults to 15).'
     }
     
     # Required parameters
@@ -97,14 +101,14 @@ if __name__ == '__main__':
     inputParser.add_argument('-t', '--test-trees-path', type=str, help=info['t'], required=True)
     
     # Optional parameters
-    #inputparser.add_argument('-l', '--max-sentence-length', type=int, default=15, help=info['l'])   
-    
+    inputParser.add_argument('-o', '--output-path', type=str, help=info['o'], default='output.txt')
+    inputParser.add_argument('-m', '--max-sentence-length', type=int, help=info['m'], default=15)   
     
     arguments = inputParser.parse_args()
     
     parseData(arguments.corpus_path)
     #printStep2()
-    readDocument(arguments.sentences_path, arguments.test_trees_path)
+    readDocument(arguments.sentences_path, arguments.test_trees_path, arguments.output_path, arguments.max_sentence_length)
     #printKeys()
     '''
     x = Parser()
